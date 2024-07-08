@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCOUNT OVERVIEW</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+.try:hover{
+    color: orange;
+}
+  .subNavitem{
+      margin-right: 20px;
+  }
+  .subpageFooterBg{
+  width: 100%;
+  position: relative;
+  background-image: url('./images/subfootbg.png');
+  background-size:cover;
+  background-position: center;
+  background-repeat:no-repeat;
+
+  }
+.navFix {
+    position: fixed;
+    top: 73px;
+    height: 60px;
+    padding-top: 10px;
+    z-index: 3;
+    width: 100%;
+    background-color: white;
+
+}
+.videoGetStart{
+border-radius: 5px;
+text-align: center;
+left: 45%;
+top: 400px;
+background: linear-gradient(to right,#373838, #7b7c7c, #7b7c7c,transparent, transparent);
+background-size: 200%;
+transition: background-position 1s; 
+
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.liActive{
+    color: rgb(255, 170, 0);
+}
+.spreadsActive{
+  
+  border-bottom: rgb(248, 176, 31) solid 3px;
+  color: rgb(248, 176, 31);
+}
+.accountOverviewBg {
+    background-image: url(./images/ACCOUNTOVERVIEW.png);
+    background-position: center;
+    background-size:contain;
+
+    /* background-repeat: no-repeat; */
+    
+    
+}
+.startButton{
+    background-color: #585858;
+     border:#585858 1px solid; 
+    width: 80%;
+    text-align: center;
+    transition: all 1s;
+}
+.startButton:hover{
+    background-color: transparent;
+    transition: all 1s;
+}
+.standardStartButton:hover{
+    background-color: transparent;
+    transition: all 1s;
+}
+.standardStartButton{
+    background-color: #FFD400;
+     border:#FFD400 1px solid; 
+    width: 80%;
+    text-align: center;
+    transition: all 1s;
+}
+.DetailsStandardButton{
+    background-color: #FFD400;
+     border:#FFD400 1px solid; 
+    text-align: center;
+    transition: all 1s;
+}
+.DetailsStandardButton:hover{
+    /* border:#585858 1px solid; */
+    background-color: transparent;
+    transition: all 1s;
+  
+}
+.TryButton{
+    border-bottom:transparent 1px solid;
+    transition: all 1s;
+}
+.TryButton:hover{
+    border-bottom:#585858 1px solid;
+    transition: all 1s;
+}
+.alphaBox{
+
+   box-shadow: rgb(222, 220, 220) 0px 0px 20px;
+}
+.accountFeatureBox{
+    box-shadow: rgb(203, 202, 202) 0px 0px 10px;
+}
+.detailsBox:hover .borderChange{
+
+border-left:white 2px solid;
+border-right:white 2px solid;
+border-bottom:#393D48 3px solid
+
+}
+.detailsBox:hover{
+    background-color:#FAFAFA ;
+}
+.DetailsStandardButton{
+    opacity: 0; 
+}
+.detailsBox:hover .DetailsStandardButton{
+    opacity: 1; 
+}
+.DetailsTryButton{
+    opacity: 0; 
+}
+.detailsBox:hover .TryButton{
+    opacity: 1; 
+}
+</style>
+<body>
+    
+<!--头部菜单开始-->
+<header class="header pt-5">
+  <div class="xl:max-w-screen-xl lg:max-w-screen-lg mx-10 sm:mx-auto max-w-screen-sm md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="containerNav lg:flex hidden max-w-screen-lg xl:max-w-screen-xl mx-auto flex-row justify-between items-center">
+          <div class="latoTextSmall  text-white flex flex-row loginList">
+              <p><a class="hover:text-gray-500 text-white mr-5" href="###">Patner</a></p>
+              <p><a class="hover:text-gray-500 text-white" href="###">PRO</a></p>
+          </div>
+          <div class="flex latoTextSmall  items-center justify-center flex-row text-center text-white typeList ">
+              <div>
+                <a class="hover:text-gray-500 text-white" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">Support</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="hover:text-gray-500 text-white" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="./index.html"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex hidden navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid-cols-2 grid lg:grid hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid-cols-2 grid lg:hidden grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 phoneNav LatoButton text-black " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 navlist lg:block hidden">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5 ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="sidebarClass lg:hidden block">
+        <div class=" flex flex-col">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="m-5 float-right ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col my-10 items-center justify-center">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+<!--头部菜单结束-->
+<!--banner-->
+<div class="w-full">
+    <div class="container text-black pb-20 pt-52">
+        <div class="mb-10">
+            <ul class="menu menu-horizontal LatoSubtitle">
+                <li class="mr-2">HOME > </li>
+                <li class="mr-2"> MARKET > </li>
+                <li class="mr-2"> ACCOUNT OVERVIEW </li>
+            </ul>
+        </div>
+        <h1 class="LatoSubPageThinTile my-5">ACCOUNT OVERVIEW</h1>
+        <p class="LatoThinSubHeadingContent">BCR is Lorem ipsm dolor sit amet, consetetur adiposcing elit.</p>
+    </div>
+</div>
+    <!--Subnav-->
+<div id="subNavContainer" class="subNavContainer relative pt-8">
+    <div id="navWrap" class="navWrap border-b-[1px] border-t-[1px] h-[50px] pb-5">
+        <ul class=" flex-row flex subNav justify-center LatoSmall items-center">
+            <li class="subNavitem mt-3 liActive"><a href="">ACCOUNT OVERVIEW</a> </li>
+            <li class="subNavitem mt-3"><a href="#forex"> DEPOSIT&WITHDRAWAL</a></li>
+        </ul>
+    </div>
+</div>
+<!--ACCOUNT-->
+<div class="py-10 accountOverviewBg w-full">
+    <div class="flex container flex-col sm:flex-row  justify-center items-center">
+        <div class="sm:basis-[35%] basis-1 w-full basis-1 bg-white alphaBox border-t-[3px] border-b-[1px] border-l-[1px]  border-r-[1px] border-t-gray-400  rounded-xl">
+            <div class=" flex flex-col  ">
+                <div class="border-b-[1px]">
+                    <div class="md:m-5 m-0 flex flex-col justify-center items-center">
+                        <p class="LatoCardmenu">Account</p>
+                        <p class="LatoThinHeading">Alpha</p>
+                    </div>
+                </div>
+                <div class="border-b-[1px]">
+                    <div class="m-5 flex flex-row justify-between items-center">
+                        <p  class="text-[#595F71] latoTextBase">Trading Platform</p>
+                        <p class="LatoMainNavMenuRespond">Meta Trader</p>
+                    </div>
+                </div>
+                <div class="border-b-[1px]">
+                    <div class="m-5 flex flex-row  justify-between items-center">
+                        <div  class="text-[#595F71] latoTextBase">
+                            <p>Commission</p>
+                            <p>(per lot per side)</p>
+                        </div>
+                        <p class="robotoNum">$0</p>
+                    </div>
+                </div>
+                <div class="border-b-[1px]">
+                    <div class="m-5 flex flex-row  justify-between items-center">
+                        <div  class="text-[#595F71] latoTextBase">
+                            <p>Spreads from</p>
+                            <p>(pips)</p>
+                        </div>
+                        <p class="robotoNum">1.7+</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="m-5 flex flex-col justify-center items-center">
+                        <div class="bg-[#585858] border-[#58585] startButton rounded-md hover:text-black text-white"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                        <button class="mt-5 TryButton LatoOverline text-[#595F71]">TRY A FREE DEMO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sm:basis-[35%] sm:my-0 my-10 basis-1 w-full basis-1 bg-white sm:mx-16 mx-0 md:py-10 py-3 alphaBox border-t-[3px] border-b-[1px] border-l-[1px]  border-r-[1px] border-b-yellow-400 border-r-yellow-400 border-l-yellow-400 border-t-yellow-400  rounded-xl">
+            <div class=" flex flex-col  ">
+                <div class="border-b-[1px]">
+                    <div class="md:m-5 m-0 flex flex-col justify-center items-center">
+                        <p class="LatoCardmenu">Account</p>
+                        <p class="LatoMainHeading ">Standard</p>
+                    </div>
+                </div>
+                <div class="border-b-[1px]">
+                    <div class="m-5 flex flex-row justify-between items-center">
+                        <p  class="text-[#595F71] latoTextBase">Trading Platform</p>
+                        <p class="LatoMainNavMenuRespond">Meta Trader</p>
+                    </div>
+                </div>
+                <div class="border-b-[1px]">
+                    <div class="m-5 flex flex-row latoTextBase justify-between items-center">
+                        <div  class="text-[#595F71]">
+                            <p>Commission</p>
+                            <p>(per lot per side)</p>
+                        </div>
+                        <p class="robotoNum">$6</p>
+                    </div>
+                </div>
+                <div class="border-b-[1px]">
+                    <div class="m-5 flex flex-row latoTextBase justify-between items-center">
+                        <div  class="text-[#595F71]">
+                            <p>Spreads from</p>
+                            <p>(pips)</p>
+                        </div>
+                        <p class="robotoNum">0.0+</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="m-5 flex flex-col  justify-center items-center">
+                        <div class="standardStartButton rounded-md hover:text-yellow-500 text-black"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                        <button class="mt-5  text-[#595F71] LatoOverline TryButton">TRY A FREE DEMO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sm:basis-[35%] basis-1 w-full basis-1 bg-white alphaBox border-t-[3px] border-b-[1px] border-l-[1px]  border-r-[1px] border-t-gray-400  rounded-xl">
+          <div class=" flex flex-col  ">
+              <div class="border-b-[1px]">
+                  <div class="md:m-5 m-0 flex flex-col justify-center items-center">
+                      <p class="LatoCardmenu">Account</p>
+                      <p class="LatoThinHeading">Alpha</p>
+                  </div>
+              </div>
+              <div class="border-b-[1px]">
+                  <div class="m-5 flex flex-row justify-between items-center">
+                      <p  class="text-[#595F71] latoTextBase">Trading Platform</p>
+                      <p class="LatoMainNavMenuRespond">Meta Trader</p>
+                  </div>
+              </div>
+              <div class="border-b-[1px]">
+                  <div class="m-5 flex flex-row  justify-between items-center">
+                      <div  class="text-[#595F71] latoTextBase">
+                          <p>Commission</p>
+                          <p>(per lot per side)</p>
+                      </div>
+                      <p class="robotoNum">$0</p>
+                  </div>
+              </div>
+              <div class="border-b-[1px]">
+                  <div class="m-5 flex flex-row  justify-between items-center">
+                      <div  class="text-[#595F71] latoTextBase">
+                          <p>Spreads from</p>
+                          <p>(pips)</p>
+                      </div>
+                      <p class="robotoNum">1.7+</p>
+                  </div>
+              </div>
+              <div>
+                  <div class="m-5 flex flex-col justify-center items-center">
+                      <div class="bg-[#585858] border-[#58585] startButton rounded-md hover:text-black text-white"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                      <button class="mt-5 TryButton LatoOverline text-[#595F71]">TRY A FREE DEMO</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+</div>
+<!--account feature-->
+<div class="bg-[#EFEFF0] w-full py-10">
+    <div class="container sm:block hidden">
+        <h1 class="text-center LatoThinSubHeading">Account Feature Comparison</h1>
+            <div class="my-10 sm:grid hidden grid-cols-4 bg-white justify-between accountFeatureBox border-[1px] drop-shadow-xl ">
+                <div class="flex flex-col LatojobInfo">
+                    <div class="bg-[#393D48] border-b-yellow-500 border-b-[3px] rounded-l-lg ">
+                        <p class="m-5 text-[transparent]">ddd</p>
+                    </div>
+                    <div class="border-b-[1px]">
+                        <p class="m-5">MINIMUM DEPOSIT</p>
+                    </div>
+                    <div class="border-b-[1px]">
+                        <p class="m-5">SPREAD</p>
+                    </div >
+                    <div class="border-b-[1px]">
+                        <p class="m-5">COMMISSION PER TOUND TURN</p>
+                    </div>
+                    <div class="border-b-[1px]">
+                        <p class="m-5">MAXIMUM LEVERAGE</p>
+                    </div>
+                    <div class="border-b-[1px]">
+                        <p class="m-5">SUPPORTED CURRENCIES</p>
+                    </div>
+                    <div class="border-b-[1px]">
+                        <p class="m-5">MAXIMUM LOSTS PER TRANSACTION</p>
+                    </div>
+                    <div class="border-b-[1px]">
+                        <p class="m-5">SWAP</p>
+                    </div>
+                    <div class="border-b-[1px]">
+                        <p class="m-5">PROMOTION PARTICIPATION</p>
+                    </div>
+                    <div class="bg-[#FAFAFA]">
+                        <p class="m-5 text-[transparent]">PROMOTION PARTICIPATION</p>
+                        <p class="m-5  py-3 text-[transparent]">PROMOTION PARTICIPATION</p>
+                    </div>
+                </div>
+                <div class="flex flex-col text-center LatoRegularCardmenu bg-white detailsBox">
+                    <div class="bg-[#393D48]  borderChange  border-l-[#393D48] border-b-yellow-500 border-b-[3px]   border-r-[#393D48]  border-l-[2px] border-r-[2px]">
+                        <p class="m-5 text-white">STANDARD</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">$300</p>
+                    </div>
+                    <div  class="border-b-[1px] DetailsBg">
+                        <p class="m-5">1.7+</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">✖</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">400:1</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">AUD/USD/GBP/EUR</p>
+                    </div >
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">10</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">✔︎</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">✔︎</p>
+                    </div>
+                    <div class=" DetailsBg  bg-[#FAFAFA] flex flex-col justify-center items-center">
+                        <div class="DetailsStandardButton my-5 rounded-md hover:text-yellow-500 text-black"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                        <button class=" DetailsTryButton text-[#595F71] LatoOverline  my-3 TryButton">TRY A FREE DEMO</button>
+                    </div>
+                </div>
+                <div class="flex flex-col text-center bg-white LatoRegularCardmenu  detailsBox">
+                    <div class="bg-[#393D48] borderChange   border-l-[#393D48] border-b-yellow-500 border-b-[3px]  border-r-[#393D48]  border-l-[1px] border-r-[1px]">
+                        <P class="m-5 text-white">ALPHA</P>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">$500</p>
+                    </div>
+                    <div  class="border-b-[1px] DetailsBg">
+                        <p class="m-5">0.0+</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">7 AUD / 6 USD / 5 GBP / 6 EUR</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">400:1</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">AUD/USD/GBP/EUR</p>
+                    </div >
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">20</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">✔︎</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">✖</p>
+                    </div>
+                    <div class=" DetailsBg  bg-[#FAFAFA] flex flex-col justify-center items-center">
+                        <div class="DetailsStandardButton my-5 rounded-md hover:text-yellow-500 text-black"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                        <button class=" DetailsTryButton text-[#595F71] LatoOverline TryButton my-3">TRY A FREE DEMO</button>
+                    </div>
+                </div>
+                <div class="flex flex-col text-center LatoRegularCardmenu bg-white detailsBox">
+                    <div class="bg-[#393D48] borderChange  border-l-[#393D48] border-b-yellow-500 border-b-[3px] border-r-[#393D48]  border-l-[1px] border-r-[1px] rounded-tr-lg">
+                        <P class="m-5 text-white">SWAP-FREE</P>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">$300</p>
+                    </div>
+                    <div  class="border-b-[1px] DetailsBg">
+                        <p class="m-5">Standard / Alpha</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">Standard / Alpha</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5">400:1</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="tableMargin">AUD/USD/GBP/EUR</p>
+                    </div >
+                    <div class="border-b-[1px] DetailsBg" >
+                        <p class="tableMargin">Standard / Alpha</p>
+                    </div>
+                    <div class="border-b-[1px] DetailsBg">
+                        <p class="m-5 text-yellow-500">View Details</p>
+                    </div>
+                    <div class="DetailsBg border-b-[1px]">
+                        <p class="tableMargin">Standard / Alpha</p>
+                    </div>
+                    <div class=" DetailsBg  bg-[#FAFAFA] flex flex-col justify-center items-center">
+                        <div class="DetailsStandardButton my-5 rounded-md hover:text-yellow-500 text-black"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                        <button class=" DetailsTryButton text-[#595F71]  my-3 LatoOverline TryButton">TRY A FREE DEMO</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="sm:hidden block">
+      <h1 class="text-center LatoThinSubHeading">Account Feature Comparison</h1>
+        <div class="my-10 grid grid-cols-4 bg-white justify-between accountFeatureBox border-[1px] drop-shadow-xl">
+            <div class="flex flex-col LatojobInfo">
+                <div class="bg-[#393D48] border-b-yellow-500 border-b-[3px] rounded-l-lg">
+                  <p class="m-5 text-[transparent]">ddd</p>
+                </div>
+                <div class="border-b-[1px]">
+                  <p class="m-3">MINIMUM DEPOSIT</p>
+                </div>
+                <div class="border-b-[1px]">
+                  <p class="m-3">SPREAD</p>
+                </div >
+                <div class="border-b-[1px]">
+                  <p class="m-3">COMMISSION PER TOUND TURN</p>
+                </div>
+                <div class="border-b-[1px]">
+                    <p class="my-6">MAXIMUM LEVERAGE</p>
+                </div>
+                <div class="border-b-[1px]">
+                  <p class="m-3">SUPPORTED CURRENCIES</p>
+                </div>
+                <div class="border-b-[1px]">
+                  <p class="m-3">MAXIMUM LOSTS PER TRANSACTION</p>
+                </div>
+                <div class="border-b-[1px]">
+                    <p class="m-3">SWAP</p>
+                </div>
+                <div class="border-b-[1px]">
+                    <p class="m-3">PROMOTION PARTICIPATION</p>
+                </div>
+                <div class="">
+                    <p class="text-[transparent]">PROMOTION PARTICIPATION</p>
+                    <p class=" text-[transparent]">PROMOTION PARTICIPATION</p>
+                </div>
+            </div>
+            <div class="flex flex-col text-center LatoRegularCardmenu bg-white ">
+                <div class="bg-[#393D48]  borderChange  border-l-[#393D48] border-b-yellow-500 border-b-[3px]   border-r-[#393D48]  border-l-[2px] border-r-[2px]">
+                    <p class="m-5 text-white">STANDARD</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="m-3">$300</p>
+                </div>
+                <div  class="border-b-[1px] DetailsBg">
+                    <p class="m-3">1.7+</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                  <p class="phoneTableMargin">✖</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="my-6">400:1</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                  <p class="phoneTableMargin">AUD/USD/GBP/EUR</p>
+                </div >
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="phoneTableMargin">10</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="m-3">✔︎</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="phoneTableMargin">✔︎</p>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <div class=" my-3 rounded-md hover:text-yellow-500 text-black"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                    <button class="  text-[#595F71] LatoOverline TryButton">TRY A FREE DEMO</button>
+                </div>
+            </div>
+            <div class="flex flex-col text-center bg-white LatoRegularCardmenu ">
+                <div class="bg-[#393D48] borderChange   border-l-[#393D48] border-b-yellow-500 border-b-[3px]  border-r-[#393D48]  border-l-[1px] border-r-[1px]">
+                    <P class="m-5 text-white">ALPHA</P>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="m-3">$500</p>
+                </div>
+                <div  class="border-b-[1px] DetailsBg">
+                    <p class="m-3">0.0+</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="m-3">7 AUD / 6 USD / 5 GBP / 6 EUR</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="m-6">400:1</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="phoneTableMargin">AUD/USD/GBP/EUR</p>
+                </div >
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="phoneTableMargin">20</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="m-3">✔︎</p>
+                </div>
+                <div class="border-b-[1px] DetailsBg">
+                    <p class="phoneTableMargin">✖</p>
+                </div>
+                <div class=" DetailsBg   flex flex-col justify-center items-center">
+                    <div class=" my-3 rounded-md hover:text-yellow-500 text-black"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                    <button class="  text-[#595F71] LatoOverline TryButton ">TRY A FREE DEMO</button>
+                </div>
+            </div>
+            <div class="flex flex-col text-center LatoRegularCardmenu bg-white ">
+              <div class="bg-[#393D48]  borderChange  border-l-[#393D48] border-b-yellow-500 border-b-[3px]   border-r-[#393D48]  border-l-[2px] border-r-[2px]">
+                  <p class="m-5 text-white">SWAP-FREE</p>
+              </div>
+              <div class="border-b-[1px] DetailsBg">
+                  <p class="m-3">$300</p>
+              </div>
+              <div  class="border-b-[1px] DetailsBg">
+                  <p class="m-3">Standard/Alpha</p>
+              </div>
+              <div class="border-b-[1px] DetailsBg">
+                <p class="phoneTableMargin">Standard/Alpha</p>
+              </div>
+              <div class="border-b-[1px] DetailsBg">
+                  <p class="my-6">400:1</p>
+              </div>
+              <div class="border-b-[1px] DetailsBg">
+                <p class="phoneTableMargin">AUD/USD/GBP/EUR</p>
+              </div >
+              <div class="border-b-[1px] DetailsBg">
+                  <p class="phoneTableMargin">Standard/Alpha</p>
+              </div>
+              <div class="border-b-[1px] DetailsBg">
+                  <p class="m-3 text-yellow-500">view details</p>
+              </div>
+              <div class="border-b-[1px] DetailsBg">
+                  <p class="phoneTableMargin">Standard/Alpha</p>
+              </div>
+              <div class="flex flex-col justify-center items-center">
+                  <div class=" my-3 rounded-md hover:text-yellow-500 text-black"><button class="m-[10px] LatoOverline">START TRADING NOW</button></div>
+                  <button class="  text-[#595F71] LatoOverline TryButton">TRY A FREE DEMO</button>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+  <!--join us-->
+  <div class="subpageFooterBg">
+    <div class="flex flex-col items-center justify-center max-w-screen-xl py-20 mx-auto text-white">
+        <h1 class="mb-10 text-center text-white text-7xl">Join us as a journey</h1>
+        <p class="mb-10">Sign up in minutes and start doing money right.</p>
+        <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+    </div>
+</div>
+<!--footer-->
+<div class="bg-[#070B0F]">
+<div class="flex flex-col max-w-screen-xl mx-auto">
+<div class="border-b-[1px]">
+  <div class="grid grid-cols-2 m-5">
+    <img src="./images/logonew.png" alt="">
+    <div class="flex flex-row text-white justify-self-end">
+      <button class="LatoTextTitle">Ready to get started?</button>
+      <button  class="ml-3 text-white latoRegularTableNav rounded-lg bg-[#FFD400]"><p class="m-3">get start</p> </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div class="flex flex-col items-center justify-between m-5 text-white md:flex-row">
+      <div class="flex flex-col hidden md:block">
+        <p>Subscribe to our newsletter</p>
+        <div class="flex flex-row mt-10">
+          <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+          <button><img src="./images/Submit.png"></button>
+        </div>
+      </div>
+      <div class="md:basis-[60%] basis-1 gap-x-24  md:gap-x-32  grid grid-cols-3">
+        <div>
+          <h1 class="text-yellow-500">Services</h1>
+          <p class="mt-5">Email Marketing</p>
+          <p  class="mt-5">Campaigns</p>
+          <p  class="mt-5">Branding</p>
+          <p  class="mt-5">Offline</p>
+        </div>
+        <div>
+         <h1 class="text-yellow-500">About</h1> 
+         <p  class="mt-5">Our Story</p>
+         <p  class="mt-5">Benefits</p>
+         <p  class="mt-5">Team</p>
+         <p  class="mt-5">Careers</p>
+        </div>
+        <div>
+          <h1 class="text-yellow-500">Help</h1>
+          <p  class="mt-5">FAQs</p>
+          <p  class="mt-5">Contact Us</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="max-w-screen-xl mx-auto">
+    <div class="flex flex-col items-center justify-between m-5 md:flex-row">
+      <div class="grid grid-cols-2 text-white gap-x-10 md:gap-x-16">
+        <p>Terms & Conditions</p>
+        <p>privacy Policy</p>
+      </div>
+      <div class="grid grid-cols-3 my-10 gap-x-10 md:my-0">
+        <img src="./images/Path.png" alt="">
+        <img src="./images/twitter.png" alt="">
+        <img src="./images/instagram.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="fixFooter bg-[#EFEFF0] w-full LatoCaptial">
+  <div class="container m-5 md:flex hidden flex-row justify-around items-center ">
+    <div class="flex felx-row items-center">
+      <p>Excellent</p>
+      <img class="mx-5 w-[15%] h-[15%]" src="./images/footerstars.png" alt="">
+      <p>4.9 out of 5 based on 666 reviews</p>
+      <img class="w-[2%] mx-5 h-[2%]" src="./images/onestar.png" alt="">
+      <p>Trustpilot</p>
+    </div>
+    <div class="flex flex-row  justify-center items-center">
+      <button class="bg-yellow-500 rounded-md">
+        <p class=" LatoCaptial mx-3 my-2">OPEN AN ACOCUNT</p>
+      </button>
+      <button class="bg-yellow-500 ml-5 rounded-md">
+        <div class="flex mx-3 my-2 flex-row justify-center items-center">
+          <img class="w-[10%] hidden sm:block mr-2" src="./images/blacktalkicon.png" alt="">
+          <p class="LatoCaptial">24/5 Support</p>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="container m-5 md:hidden block ">
+   
+    <div class="flex flex-row  justify-center items-center">
+      <button class="bg-yellow-500 rounded-md">
+        <p class=" LatoThinCardmenu mx-10 my-2">OPEN AN ACOCUNT</p>
+      </button>
+      
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/same.js"></script>
+<script>
+    $(document).ready(function () {
+    var navHeight = $("#subNavContainer").offset().top;
+    var navFix = $("#navWrap");
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > navHeight) {
+            navFix.addClass("navFix");
+        }
+        else {
+            navFix.removeClass("navFix");
+        }
+    })
+})
+
+$(".subNav li").click(function(){
+    if(!$(this).hasClass('liActive')){
+        $(this).addClass('liActive')
+        $(this).siblings().removeClass('liActive')
+    }
+})
+
+
+
+
+</script>
+</html>

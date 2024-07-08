@@ -1,0 +1,306 @@
+/**
+ * demo.css
+ * https://coidea.website
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2018, COIDEA
+ * https://coidea.website
+ */
+
+ @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,900|Roboto:400,700");
+ 
+ body section.slideshow {
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 100%;
+   height: 100vh;
+   margin: 0 auto;
+   visibility: hidden;
+   overflow: hidden;
+ }
+
+ @media screen and (max-width: 992px) {
+   body section.slideshow ul.navigationC {
+     width: 480px;
+     height: 480px;
+     right: -170px;
+     margin-top: -240px;
+   }
+ }
+ @media screen and (max-width: 768px) {
+   body section.slideshow ul.navigationC {
+     width: 320px;
+     height: 320px;
+     margin-top: -160px;
+     right: -190px;
+   }
+ }
+
+ body section.slideshow ul.navigationC li.navigationC-item {
+   position: absolute;
+   display: inline-block;
+   overflow: hidden;
+   width: 80px;
+   height: 80px;
+   padding: 5px;
+   text-align: center;
+   cursor: pointer;
+   border-radius: 50%;
+   transition: border 0.6s ease-in-out;
+ }
+ @media screen and (max-width: 992px) {
+   body section.slideshow ul.navigationC li.navigationC-item {
+     width: 92px;
+     height: 92px;
+   }
+ }
+ @media screen and (max-width: 768px) {
+   body section.slideshow ul.navigationC li.navigationC-item {
+     width: 48px;
+     height: 48px;
+   }
+ }
+ body section.slideshow ul.navigationC li.navigationC-item .rotate-holder {
+   position: fixed;
+   display: block;
+   width: 0;
+   height: 0;
+   left: -9999px;
+   top: -9999px;
+ }
+ body section.slideshow ul.navigationC li.navigationC-item .background-holder {
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   border-radius: 50%;
+   background-repeat: no-repeat;
+   background-position: center center;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   opacity: 1;
+   visibility: visible;
+   transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+ }
+ body section.slideshow ul.navigationC li.navigationC-item:hover .background-holder {
+   opacity: 0.75;
+ }
+ /*body section.slideshow ul.navigation li.navigation-item.active .background-holder {
+   opacity: 0;
+   visibility: hidden;
+ }*/
+ body section.slideshow .detail {
+   position: absolute;
+   display: block;
+   /*width: 100%;
+   height: 100%;*/
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 8;
+ }
+ body section.slideshow .detail .detail-item {
+   position: absolute;
+   display: block;
+   
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   opacity: 0;
+   visibility: hidden;
+   /* transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; */
+   /* transition: transform 4s */
+ }
+ body section.slideshow .detail .detail-item .headline{
+   position: absolute;
+   display: block;
+   /* width: 100%; */
+   width:100%;
+   /* max-width: calc(100% - 480px); */
+   height: auto;
+   top: 34%;
+   /* left: 61%; */
+   margin-left: calc(100% - 750px);
+   /* transform: translate(-50%, -50%); */
+   overflow: visible;
+   white-space: nowrap;
+   box-sizing: border-box;
+   z-index: 2;
+ }
+ body section.slideshow .detail .detail-item .headline img{
+   
+   /* width: 100%; */
+   width:350px;
+   /* max-width: calc(100% - 480px); */
+   height: auto;
+  
+ }
+ @media screen and (max-width: 992px) {
+   body section.slideshow .detail .detail-item .headline {
+     max-width: calc(100% - 380px);
+   }
+ }
+ @media screen and (max-width: 768px) {
+   body section.slideshow .detail .detail-item .headline {
+     max-width: calc(100% - 120px);
+   }
+ }
+ /* body section.slideshow .detail .detail-item .headline .letter {
+   font-family: "Playfair Display", serif;
+   position: relative;
+   display: inline-block;
+   opacity: 0;
+   visibility: hidden;
+   color: #FFFFFF;
+   font-size: 132px;
+   line-height: 110px;
+   font-weight: 900;
+   font-kerning: none;
+   white-space: nowrap;
+   box-sizing: border-box;
+ } */
+ @media screen and (max-width: 992px) {
+   body section.slideshow .detail .detail-item .headline .letter {
+     font-size: 78px;
+     line-height: 126px;
+   }
+ }
+ @media screen and (max-width: 992px) {
+   body section.slideshow .detail .detail-item .headline .letter {
+     font-size: 48px;
+     line-height: 126px;
+   }
+ }
+ body section.slideshow .detail .detail-item .background {
+   position: absolute;
+   display: block;
+   width: 100%;
+   width: calc(100% + 100px);
+   height: 100%;
+   height: calc(100% + 100px);
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   overflow: visible;
+   background-repeat: no-repeat;
+   background-position: center center;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   z-index: 1;
+ }
+ body section.slideshow .detail .detail-item .background::before {
+   content: "";
+   background: -moz-linear-gradient(left, black 0%, rgba(0, 0, 0, 0) 100%);
+   background: -webkit-linear-gradient(left, black 0%, rgba(0, 0, 0, 0) 100%);
+   background: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#00000000",GradientType=1 );
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 2;
+ }
+ body section.slideshow .detail .detail-item.activeC {
+   opacity: 1;
+   visibility: visible;
+   transform: rotateX(360deg);
+   transition: transform .3s;
+ }
+ .dashedCircle {
+   margin:10px auto;
+   width:700px;
+   height:700px;
+   border:1px dashed #fff;
+   border-radius:545px;
+   position:absolute;
+  
+   right: -350px;
+   /* animation:myfirst 4s; */
+   /* right: -840px; */
+   /* transform: rotate(-90deg); */
+   /* florence */
+   top: 8%;
+   /* margin-top: -320px;  */
+ }
+ 
+ body section.slideshow ul.navigationC {
+   position: absolute;
+   display: block;
+   width: 840px;
+   height: 840px;
+   padding: 40px;
+   margin: 0;
+   
+   right: -410px; 
+   transform: rotate(0deg);
+   /* animation:mynavfirst 4s; */
+   /* right: -920px; */
+   /* florence */
+   top: 2%;
+   /* right:-840px; */
+
+   /* margin-top: -320px; */
+   z-index: 9;
+ }
+ .navigationCaminate{
+  animation:mynavfirst 4s;
+
+}
+.navigationDashaminate{
+  animation:myfirst 4s;
+
+}
+  @keyframes myfirst
+{
+0%{ right:-770px; top:8%; transform: rotate(90deg);}
+
+100%{right:-350px; top:8%;transform: rotate(0deg)}
+}  
+@keyframes mynavfirst
+{
+0%{ right:-840px; top:2%; transform: rotate(180deg);}
+
+100%{right:-410px; top:2%;transform: rotate(0deg)}
+} 
+ body ul#navigationC .activeC{
+   overflow: visible;
+   
+ }
+ body .activeC .background-holder{
+   width: 150px !important;
+   height: 150px !important;
+   background-color: rgb(4, 3, 3);
+   transform: matrix(0.10452, 0.99452, -0.99452, 0.10452, -22, -30) !important;
+ }
+ .up img{
+   width: 15%;
+   transform: translateY(150px);
+ }
+ .down img{
+   width: 15%;
+   transform: translateX(0px);
+   transform: translateY(700px);
+ }
+ .control{
+   position: absolute;
+   left: calc(100% - 590px);
+   z-index: 400;
+ }

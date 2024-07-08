@@ -1,0 +1,1053 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {   
+    font-family: mFont;
+    src: url('/dist/Lato/Lato-Medium-8.ttf');
+    /* src: url('/dist/Lato/Lato-BlackItalic.ttf');
+    src: url('/dist/Lato/Lato-Bold.ttf'); */
+}
+@font-face {
+    font-family: mFontThin;
+    src: url('/dist/Lato/Lato-Thin-18.ttf');
+    /* src: url('/dist/Lato/Lato-BlackItalic.ttf');
+    src: url('/dist/Lato/Lato-Bold.ttf'); */
+    } 
+@font-face {
+    font-family: mFontRegular;
+    src: url('/dist/Lato/Lato-Regular-15.ttf');
+    /* src: url('/dist/Lato/Lato-BlackItalic.ttf');
+    src: url('/dist/Lato/Lato-Bold.ttf'); */
+    } 
+@font-face {
+    font-family: mFont2;
+    src: url('/dist/Roboto_Slab/static/RobotoSlab-Black.ttf');
+    /* src: url('/dist/Lato/Lato-BlackItalic.ttf');
+    src: url('/dist/Lato/Lato-Bold.ttf'); */
+}
+@font-face {
+    font-family: mFont2Medium;
+    src: url('/dist/Roboto_Slab/static/RobotoSlab-Medium.ttf');
+    /* src: url('/dist/Lato/Lato-BlackItalic.ttf');
+    src: url('/dist/Lato/Lato-Bold.ttf'); */
+}
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        /* height: auto; */
+        
+      }
+      .latoRegularTextBase {
+        font-family:mFontRegular;
+        font-size: 16px;
+       
+        line-height: 30px;
+    }
+    .latoRegularTableNav {
+        font-family:mFontRegular;
+        font-size: 16px;
+       
+        line-height: 20px;
+    }
+      .LatoThinBigBody2{
+        font-family:mFontThin;
+        font-size: 18px;
+       
+        line-height: 30px;
+    }
+      .LatoSubPageThinTile{
+        font-family:mFontThin;
+        font-size: 48px;
+        line-height:80px ;
+      }
+      .LatoRegularCardmenu{
+        font-family:mFontRegular;
+        font-size: 16px;
+  
+        line-height:24px ;
+    }
+    .LatoThinCardmenu{
+        font-family:mFontThin;
+        font-size: 16px;
+  
+        line-height:24px ;
+    }
+    .LatoThinSubHeading{
+        font-family:mFontThin;
+        font-size: 40px;
+        line-height: 56px;
+    }
+    .LatoRegularSubHeading{
+        font-family:mFontRegular;
+        font-size: 40px;
+        line-height: 56px;
+    }
+    .LatoThinSubHeadingContent{
+        font-family:mFontThin;
+        font-size: 18px;
+        line-height: 24px;
+    }
+      .LatoThinHeading{
+        font-family:mFontThin;
+        font-size: 48px;
+        line-height: 80px;
+      }
+    .LatoSubPagetitle{
+        font-family:mFont;
+        font-size: 48px;
+        font-weight: 300;
+        line-height: 80px;
+    }
+    .latoTextSmall {
+        font-family:mFont;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .latoTextBase {
+        font-family:mFont;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+    .latoRegularTextBase {
+        font-family:mFontRegular;
+        font-size: 16px;
+        /* font-weight: 400; */
+        line-height: 30px;
+    }
+    .LatoMainNavMenu{
+        font-family:mFont;
+        font-size: 16px;
+        font-weight:400 ;
+    }
+    .LatoMainNavMenuRespond{
+        font-family:mFont;
+        font-size: 14px;
+        font-weight:400 ;
+        line-height: 30px;
+    }
+    .LatoButton{
+        font-family:mFont;
+        font-size: 16px;
+        font-weight:500 ;
+        line-height: 20px;
+    }
+    .LatoHeading{
+        font-family:mFont;
+        font-size: 58px;
+        font-weight:500 ;
+    }
+    /* .LatoHeadingSwiper{
+        font-family:mFont;
+        font-size: 70px;
+        font-weight:500 ;
+    } */
+    .LatoMainHeading{
+        font-family:mFont;
+        font-size: 40px;
+        font-weight:300 ;
+        line-height: 56px;
+    }
+    .LatoBigBody{
+        font-family:mFont;
+        font-size: 18px;
+        font-weight:400 ;
+        line-height: 24px;
+    }
+    .LatoBigBody2{
+        font-family:mFont;
+        font-size: 18px;
+        font-weight:lighter ;
+        line-height: 30px;
+    }
+    .LatoHeading2{
+        font-family:mFont;
+        font-size: 40px;
+        font-weight:400 ;
+        line-height: 56px;
+
+    }
+    .LatoTextTitle{
+        font-family:mFont;
+        font-size: 20px;
+        font-weight:500 ;
+    }
+    .robotoNum{
+        font-family:mFont2Medium;
+        font-size: 24px;
+        /* font-weight:200; */
+        line-height: 56px;
+    }
+    .LatoSemiBoldText{
+        font-family:mFont;
+        font-size: 24px;
+        font-weight:600;
+    }
+    .LatoMedium{
+        font-family:mFont;
+        font-size: 32px;
+        font-weight:600 ;
+        line-height: 32px;
+    }
+    .LatoOverline{
+        font-family:mFont;
+        font-size: 10px;
+        font-weight:500 ;
+        line-height:16px ;
+    }
+    .LatoAccountWidthdrawals{
+        font-family:mFont;
+        font-size: 14px;
+        font-weight:600 ;
+        line-height:30px ;
+    }
+
+    .LatoMediumTitle{
+        font-family:mFont;
+        font-size: 28px;
+        font-weight:200;
+        line-height:42px ;
+    }
+    .LatoThinTitle{
+        font-family:mFontThin;
+        font-size: 28px;
+        font-weight:200;
+        line-height:42px ;
+    }
+   
+    .LatoSmall{
+        font-family:mFont;
+        font-size: 14px;
+        font-weight:normal;
+        line-height:20px ;
+    }
+    .LatoThinSmall{
+        font-family:mFontThin;
+        font-size: 14px;
+        line-height:20px ;
+    }
+    .LatoRegularSmall{
+        font-family:mFontRegular;
+        font-size: 14px;
+        line-height:20px ;
+    }
+    .LatoCardmenu{
+        font-family:mFont;
+        font-size: 16px;
+        font-weight:400;
+        line-height:24px ;
+    }
+    .LatoPhone{
+        font-family:mFont;
+        font-size: 28px;
+        /* font-weight:bold; */
+        line-height:42px ;
+    }
+    .LatoTableText{
+        font-family:mFontRegular;
+        font-size: 24px;
+
+        line-height:32px ;
+    }
+    .LatoSubtitle{
+        font-family:mFont;
+        font-size: 14px;
+        font-weight:500;
+        line-height:22px ;
+    }
+    .LatoglossaryTitle{
+        font-family:mFontRegular;
+        font-size: 20px;
+        /* font-weight:400; */
+        line-height:32px ;
+    }
+    .LatogMarginSmallHeading{
+        font-family:mFontRegular;
+        font-size: 22px;
+        /* font-weight:400; */
+        line-height:32px ;
+    }
+    .LatoCaptial{
+        font-family:mFont;
+        font-size: 12px;
+        font-weight:500;
+        line-height:20px ;
+    }
+    .LatojobInfo{
+        font-family:mFont;
+        font-size: 14px;
+        font-weight:500;
+        line-height:24px ;
+    }
+    .header{
+        position:"sticky";
+        top:50;
+        background-color:"transparent"
+      }
+      .header:hover{
+        background:#070B0F;
+        transition: all 1s;
+      }
+      .header{
+        position: absolute;
+        left: 0;
+        /* overflow-x: auto; */
+        width: 100%;
+        z-index: 10;
+        background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.1));
+        transition: all 1s;
+      }
+      .header > .top {
+      height: 30px;
+      line-height: 30px;
+      
+      }
+      .header > .top .container .typeList div {
+        color: white;
+      }
+      .navinfo{
+        display: none;
+        width: 100%;
+      }
+      .navContainer{
+        z-index: 11111;
+        background-color:transparent
+      }
+.navActive{
+    border-bottom: rgba(255, 191, 0, 1) solid 3px;
+    /* font-size:larger; */
+    /* animation: fadeInLeft ease-in-out 1s; */
+    transition: border-bottom 1s;
+}
+#sticky-wrapper, .navbar {
+    z-index: 999
+}
+.navbar {
+    position: relative;
+}
+.banner {
+    background-image: url(../images/hero-banner.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.CryptoBanner{
+    background-image: url(../images/TitleBg.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bulkBanner{
+    background-image: url(../images/bulkBG.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.currentBanner{
+    background-image: url(../images/currentBG.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.mamBanner{
+    background-image: url(../images/MAMbg.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sectionbg{
+    background-image: url(../images/shoppingmall2.webp);
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    height: 400px;
+}
+.section_title {
+    display: block;
+    background: url(../images/line.png) center center no-repeat;
+    width: 100%;
+}
+.icon_certificate_bg {
+	width: 105px;
+	height: 79px;
+	background-image: url(../images/cetification_bg.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+.gridboxSize{
+   width: 100%;
+    height: 100%;
+}
+.pBox{
+    padding:20px 0;
+    height: 96px;
+}
+.gridLayout{
+grid-template-areas: 
+    'first second'
+    'main main'
+    'third forth'
+    
+}
+.gridLayout_header1{
+    grid-area: first;
+}
+.gridLayout_header2{
+    grid-area: second;
+}
+.gridLayout_main{
+    grid-area: main;
+}
+.gridLayout_footer1{
+    grid-area: third;
+}
+.gridLayout_footer2{
+    grid-area: forth;
+}
+.touchon{
+    background: rgb(7 22 51);
+    color: white;
+    width: full;
+    height: full;
+}
+.showtime{
+    background-color: rgba(111, 106, 106, 0.2);
+}
+.LatoProductTitle{
+    font-family:mFont;
+    font-size: 40px;
+    font-weight:500 ;
+}
+.LatoProductBase{
+    font-family:mFont;
+    font-size: 20px;
+    font-weight:200 ;
+}
+.LatoProductThin{
+    font-family:mFont;
+    font-size: 30px;
+    font-weight:100;
+}
+.tabItemContainerli {
+    cursor: pointer;
+    text-decoration: none;
+    color: #071633;
+
+}
+.tabItemCurrent{
+    color:#071633 !important;
+    width: 12rem;
+
+}
+.tabBodyItem>p {
+    /* font: 13px "微软雅黑", Arial, Helvetica, sans-serif; */
+    text-align: center;
+    margin-top: 30px;
+}
+.nav_right{
+    background: url('./images/shoppingmallbg.webp') no-repeat ;
+    background-size: cover;
+}
+.slidersize{
+height: 300px;
+}
+.scrollNav{
+    transition: all 1s ;
+    position:fixed;
+    left:0;
+    top:0;
+    width:"100%";
+    background-color:black;
+    padding-left:15%;
+    padding-right:15%
+}
+.dataList{
+    transform: translateX(50px);
+  }
+.cumputerMt4{
+transform: translateX(-50px);
+animation: slideIn 5s ;
+}
+@keyframes slideIn {
+    0%{
+        transform: translateX(-300px);
+   }
+   100%{
+    transform: translateX(-50px);
+   }
+}
+.phoneMt4{
+    /* right: -50%; */
+    transform:translate(170px,-180px);
+    animation: phoneSlideIn 5s ;
+    }
+    @keyframes phoneSlideIn {
+        0%{
+            transform:translate(300px,-180px);
+            
+       }
+       100%{
+        transform: translateX(170px,-180px);
+    
+       }
+    }
+  @media screen  and (min-width :680px) and (max-width: 1023px) {
+    .LatoRegularSubHeading{
+        font-family:mFontRegular;
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .navWrap{
+        height: 50px;
+    }
+    .LatoHeading2{
+        font-family:mFont;
+        font-size: 35px;
+        font-weight:400 ;
+        line-height: 56px;
+    }
+    .LatoSemiBoldText{
+        font-family:mFont;
+        font-size: 18px;
+        font-weight:600;
+    }
+    .LatoSubPageThinTile{
+        font-family:mFontThin;
+        font-size: 38px;
+        line-height:80px ;
+    }
+  }
+@media screen  and (max-width: 679px) {
+    /* .navWrap{
+        height: 40px;
+    } */
+    .LatoRegularSubHeading{
+        font-family:mFontRegular;
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .LatoSmall{
+        font-family:mFont;
+        font-size: 12px;
+        font-weight:normal;
+        line-height:12px ;
+    }
+    .subNavitem{
+        margin-right: 10px;
+    }
+  .LatoTextTitle{
+    font-family:mFont;
+        font-size: 12px;
+        font-weight:500 ;
+  }
+    .LatoHeading{
+        font-family:mFont;
+        font-size: 38px;
+        font-weight:500;
+        line-height: normal;
+    }
+    .LatoMainNavMenu{
+        font-family:mFont;
+        font-size: 10px;
+        font-weight:400 ;
+    }
+    .robotoNum{
+        font-family:mFont2;
+        font-size: 8px;
+        font-weight:500 ;
+    }
+    .dataList{
+        transform: translateX(5px);
+      }
+      .LatoHeading2{
+        font-family:mFont;
+        font-size: 25px;
+        font-weight:400 ;
+        line-height: 40px;
+      }
+      .latoTextBase{
+        font-family:mFont;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+      }
+      .LatoMainNavMenuRespond{
+        font-family:mFont;
+        font-size: 12px;
+        font-weight:400 ;
+        line-height: 20px;
+    }
+    .LatoCardmenu{
+        font-family:mFont;
+        font-size: 14px;
+        font-weight:400;
+        line-height:20px ;
+    }
+   .LatoCaptial{
+    font-family:mFont;
+    font-size: 10px;
+    font-weight:500;
+    line-height:10px ;
+   }
+   .sidebarClass {
+    /* text-align: right; */
+    bottom: 0;
+    background-color: rgb(252, 251, 251);
+    /* right: 0; */
+    top: 0px;
+    /* background-color: rgba(213, 22, 213, 0.1); */
+    position: fixed;    /* 先给个定位，侧边栏一般是相对于浏览器定位 */
+    right: -300px;    /* 侧边栏有多宽，就-多少，相当于先藏在视窗外边*/
+    width: 600px;
+    /* height: calc(100vh - 2.5rem);  */
+    height: 100vh  ;  /* 减去底部导航栏的高度 */
+    z-index: 1001;    /* 设置一个超大的数字覆盖所有元素 */
+    transition: right 1s;    /* 最关键的一步！利用transition实现过渡效果*/
+}
+.addWidth { 
+    right:-800px;   
+    background-color: rgb(252, 251, 251);
+    transition: right 1s;
+}
+.LatoProductBase{
+    font-family:mFont;
+    font-size: 16px;
+    font-weight:200 ;
+}
+.LatoProductThin
+{
+    font-family:mFont;
+    font-size: 20px;
+    font-weight:lighter
+}
+.LatoProductTitle{
+    font-family:mFont;
+    font-size: 30px;
+    font-weight:500 ;
+}
+.LatoSemiBoldText{
+    font-family:mFont;
+        font-size: 20px;
+        font-weight:600;
+}
+.circleSwiper-slide{
+    width: 20%;
+}
+.videobanner{
+    height: 800px;
+}
+  }
+.phoneProductExplore{
+    padding: 1rem 0 1rem 0;
+}
+.LatoSubPageThinTile{
+    font-family:mFontThin;
+    font-size: 35px;
+    line-height:80px ;
+}
+@media screen and (max-width: 1024px) {
+    .LatoMainNavMenu{
+        font-family:mFont;
+        font-size: 15px;
+        font-weight:400 ;
+    }
+    .robotoNum{
+        font-family:mFont2;
+        font-size: 20px;
+        font-weight:500 ;
+    }
+    .dataList{
+        transform: translateX(20px);
+      }
+      /* .LatoHeading2{
+        font-family:mFont;
+        font-size: 35px;
+        font-weight:400 ;
+        line-height: 50px;
+      } */
+      .latoTextBase{
+        font-family:mFont;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+      }
+      .LatoTextTitle{
+        font-family:mFont;
+        font-size: 18px;
+        font-weight:500 ;
+    }
+  }
+  @media screen and (max-width: 429px) {
+    .LatoSmall{
+        font-family:mFont;
+        font-size: 8px;
+        font-weight:normal;
+        line-height:12px ;
+    }
+  }
+  @media screen and (min-width: 429px) {
+    .navWrap{
+        height: 53px;
+    }
+    .LatoSubPageThinTile{
+        font-family:mFontThin;
+        font-size: 30px;
+        line-height:80px ;
+    }
+    .phoneProductExplore{
+        padding: 2rem 0 2rem 0;
+    }
+    
+  }
+  .fixFooter{
+    position: fixed;
+    top: 93%;
+    height: 100px;
+    background: white;
+    width: 100%;
+    z-index: 1000;
+  }
+  .header:hover{
+    background:#070B0F;
+    /* transition: all 1s; */
+  }
+  .header{
+    position: absolute;
+    left: 0;
+   
+    /* overflow-x: auto; */
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0));
+    transition: all 1s;
+  }
+  .header > .top {
+  height: 30px;
+  line-height: 30px;
+  
+  }
+  .timeFlagContainer img{
+    display: block;
+  }
+  
+  /* .header > .top .containerNav .typeList div {
+    color: white;
+  } */
+  .navinfo{
+    display: none;
+    /* position: absolute; */
+    /* left: 0px; */
+    width: 100%;
+  }
+  .navContainer{
+    z-index: 11111;
+    /* padding: 5px 9% 0px 9%; */
+    /* left:0; */
+    /* top:45px; */
+    /* width:100%; */
+    background-color:transparent
+  }
+  .overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 8;
+    display:none;
+    filter:alpha(opacity=60);
+    background-color: #777;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+}
+.navBox{
+    z-index: 10;
+  }
+  .detailshidden{
+    list-style: none;
+    max-width: 1000px;
+    
+    }
+    .detailshidden ::after {
+        content: '';
+        position: relative;
+        width: 0.8em; 
+        height: 0.8em;
+        margin: 0 20px 0 0;
+        background: url('/dist/images/blackdownarrow.png') no-repeat;
+        background-size: 100% 100%;
+        transition: transform 0.2s;
+        float: right;
+        margin-top: 0.4em;
+    }
+    .detailsHidden:not([open]) .detailshidden ::after {
+        margin-top: 0.3em;
+        transform: rotate(3.142rad);
+        transition: all 1s;
+        
+    }
+    .detailsHidden:not([open]) .detailshidden  {
+       background-color: #f8f1f122;
+       color:#071633;
+       transition: all 1s;
+    }
+    .detailsHidden .detailshidden  {
+      background-color: #f6f4f1;
+       color:#071633;
+       transition: all 1s;
+    }
+    .detailsHidden + dl {
+        max-height: 0;
+        transition: max-height .25s;
+        overflow: hidden;
+    }
+    [open] + dl {
+        max-height: 800px;
+    }
+    .sidebarClass {
+    /* text-align: right; */
+    bottom: 0;
+    background-color: rgb(252, 251, 251);
+
+    /* right: 0; */
+    top: 0px;
+    /* background-color: rgba(213, 22, 213, 0.1); */
+    position: fixed;    /* 先给个定位，侧边栏一般是相对于浏览器定位 */
+    right: -300px;    /* 侧边栏有多宽，就-多少，相当于先藏在视窗外边*/
+    width: 300px;
+    /* height: calc(100vh - 2.5rem);  */
+height: 100vh  ;  /* 减去底部导航栏的高度 */
+    z-index: 1001;    /* 设置一个超大的数字覆盖所有元素 */
+    transition: right 1s;    /* 最关键的一步！利用transition实现过渡效果*/
+}
+/* 利用transition：width改变就会启动过渡效果 */
+.addWidth { 
+    right: 0px;    /*设置为侧边栏宽度的2倍 */
+    background-color: rgb(252, 251, 251);
+transition: right 1s;
+}
+.navTextColor:hover{
+    color: #e5a838;
+    }
+.tableMargin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.phoneTableMargin{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+@media (min-width: 320px){
+    .container{
+        max-width:320px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media (min-width: 640px){
+    .container{
+        max-width:640px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media (min-width: 768px){
+    .container{
+        max-width:768px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+}
+@media (min-width: 900px){
+    .container{
+        max-width:900px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media (min-width: 1080px){
+    .container{
+        max-width:1080px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media (min-width: 1090px){
+    .container{
+        max-width:1090px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media (min-width: 1120px){
+    .container{
+        max-width:1120px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        max-width:1200px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media (min-width: 1600px){
+    .container{
+        max-width:1400px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+@media  (max-width: 768px){
+    .fixFooter{
+        position: fixed;
+    top: 90%;
+    height: 100px;
+    background: white;
+    width: 100%;
+    z-index: 1000;
+    }
+    .LatoThinSubHeading{
+        font-family:mFontThin;
+        font-size: 30px;
+        line-height: 56px;
+    }
+    form.example button {
+        border-radius: 5px;
+        /* float: left; */
+        width: 20%;
+        /* height: 10%; */
+        padding: 8px;
+        background: #f0a834;
+        color: white;
+        font-size: 15px;
+        position:absolute;
+        top:20%;
+        left:68%;
+        /* transform: translate(255px,-44px); */
+        /* border: 1px solid grey; */
+        border-left: none;
+        cursor: pointer;
+      }
+    form.example input[type=text]{
+        border-radius: 8px;
+        padding: 15px;
+        font-size: 17px;
+        /* border: 1px solid grey; */
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+    }
+    .latoRegularTableNav {
+        font-family:mFontRegular;
+        font-size: 12px;
+       
+        line-height: 20px;
+    }
+    .LatoThinHeading{
+        font-family:mFontThin;
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .LatoMainHeading{
+        font-family:mFont;
+        font-size: 30px;
+        font-weight:300 ;
+        line-height: 50px;
+    }
+}
+@media  (max-width: 1200px){
+    .LatojobInfo{
+        font-family:mFont;
+        font-size: 10px;
+        font-weight:500;
+        line-height:24px ;
+    }
+    .LatoRegularCardmenu{
+        font-family:mFontRegular;
+        font-size: 12px;
+  
+        line-height:24px ;
+    }
+}
+@media  (max-width: 900px){
+    .tableMargin {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width:485px){
+    .searchBarPhone{
+        height: 35px;;
+        border-radius: 18px;
+        transform: translateX(5%);
+        background: #EFEFF0;
+        border: 1px solid #EFEFF0;
+        box-shadow: 0 0 3px #EFEFF0 inset;
+        }
+    .LatojobInfo{
+        font-family:mFont;
+        font-size: 8px;
+        line-height:10px ;
+    }
+    .LatoRegularCardmenu{
+        font-family:mFontRegular;
+        font-size: 8px;
+  
+        line-height:10px ;
+    }
+    .phoneTableMargin{
+        margin-top: 17px;
+        margin-bottom: 17px;
+    }
+    .LatoThinBigBody2{
+        font-family:mFontThin;
+        font-size: 14px;
+       
+        line-height: 30px;
+    }
+   
+}
+@media (max-width:640px){
+    .timeFlagContainer img{
+        display: none;
+      }
+    .LatoThinBigBody2{
+        font-family:mFontThin;
+        font-size: 12px;
+       
+        line-height: 30px;
+    }
+    
+    .LatoSubtitle{
+        font-family:mFont;
+        font-size: 12px;
+        font-weight:500;
+        line-height:22px ;
+    }
+}
+@media (max-width:1024px) {
+    .item::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 3px;
+        left: 0;
+        top: 95px;
+        background-image: linear-gradient(to right, rgb(238, 174, 38) 0%, rgb(238, 174, 38) 50%, transparent 50%);
+        background-size: 30px ;
+        background-repeat: repeat-x;
+        z-index: -1;
+    
+}
+.latoRegularTextBase {
+    font-family:mFontRegular;
+    font-size: 14px;
+   
+    line-height: 20px;
+}
+}
+

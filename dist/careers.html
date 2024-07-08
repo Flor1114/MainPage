@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>careers</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+
+.header:hover{
+  background:#070B0F;
+  /* transition: all 1s; */
+}
+.header{
+  position: absolute;
+  left: 0;
+ 
+  /* overflow-x: auto; */
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0));
+  transition: all 1s;
+}
+.header > .top {
+height: 30px;
+line-height: 30px;
+
+}
+
+.header > .top .container .typeList div {
+  color: white;
+}
+.navinfo{
+  display: none;
+  width: 100%;
+}
+.navContainer{
+  z-index: 11111;
+  background-color:transparent
+}
+        .try:hover{
+    color: orange;
+        }
+        .videobanner{
+        width: 100%;
+        position: relative;
+        /* background-image: url('./images/rangebg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat; */
+        height: auto;
+        }
+        .subNavitem{
+            margin-right: 20px;
+        }
+        .subpageFooterBg{
+            width: 100%;
+        position: relative;
+        background-image: url('./images/subfootbg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat;
+
+        }
+        .navFix {
+            position: fixed;
+            top: 73px;
+            height: 60px;
+            padding-top: 10px;
+            z-index: 3;
+            width: 100%;
+            /* transform: all 1s; */
+            background-color: white;
+
+        }
+
+    .videoGetStart{
+  
+  border-radius: 5px;
+  text-align: center;
+  left: 45%;
+  top: 400px;
+  
+  background: linear-gradient(to right,#373838, #7b7c7c, #7b7c7c,transparent, transparent);
+  background-size: 400%;
+  transition: background-position 1s; 
+
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.liActive{
+    color: rgb(255, 170, 0);
+}
+.featureListStyle{
+    list-style: none;
+    list-style-position: inside;
+}
+
+.featureListStyle li:before{
+    content: "\2022";
+    color: #e5a838;
+    font-size:25px;
+    display: inline-block;  
+    transform: translate(-10px,3px);
+    
+}
+.lineContainer {
+    position: relative;
+}  
+.item {
+  width: 1000px;
+}     
+.item::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    left: 0;
+    top: 115px;
+    background-image: linear-gradient(to right, rgb(238, 174, 38) 0%, rgb(238, 174, 38) 50%, transparent 50%);
+    background-size: 30px ;
+    background-repeat: repeat-x;
+    z-index: -1;
+        
+}
+.detailshidden{
+list-style: none;
+max-width: 1000px;
+
+}
+.detailshidden ::after {
+    content: '';
+    position: relative;
+    width: 0.8em; 
+    height: 0.8em;
+    margin: 0 20px 0 0;
+    background: url('./images/blackdownarrow.png') no-repeat;
+    background-size: 100% 100%;
+    transition: transform 0.2s;
+    float: right;
+    margin-top: 0.4em;
+}
+.detailsHidden:not([open]) .detailshidden ::after {
+    margin-top: 0.3em;
+    transform: rotate(3.142rad);
+    transition: all 1s;
+    
+}
+.detailsHidden:not([open]) .detailshidden  {
+   background-color: #f8f1f122;
+   color:#071633;
+   transition: all 1s;
+}
+.detailsHidden .detailshidden  {
+  background-color: #f6f4f1;
+   color:#071633;
+   transition: all 1s;
+}
+.detailsHidden + dl {
+    max-height: 0;
+    transition: max-height .25s;
+    overflow: hidden;
+}
+[open] + dl {
+    max-height: 800px;
+}
+.stepIconContainer div img{ 
+  z-index: 4;
+}
+.sidebarClass {
+		/* text-align: right; */
+		bottom: 0;
+		background-color: rgb(252, 251, 251);
+
+		/* right: 0; */
+		top: 0px;
+		/* background-color: rgba(213, 22, 213, 0.1); */
+		position: fixed;    /* 先给个定位，侧边栏一般是相对于浏览器定位 */
+		right: -300px;    /* 侧边栏有多宽，就-多少，相当于先藏在视窗外边*/
+		width: 300px;
+		/* height: calc(100vh - 2.5rem);  */
+    height: 100vh  ;  /* 减去底部导航栏的高度 */
+		z-index: 1001;    /* 设置一个超大的数字覆盖所有元素 */
+		transition: right 1s;    /* 最关键的一步！利用transition实现过渡效果*/
+	}
+	/* 利用transition：width改变就会启动过渡效果 */
+	.addWidth { 
+		right: 0px;    /*设置为侧边栏宽度的2倍 */
+		background-color: rgb(252, 251, 251);
+    transition: right 1s;
+	}
+  .overlay {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 8;
+		display:none;
+		filter:alpha(opacity=60);
+		background-color: #777;
+		opacity: 0.5;
+		-moz-opacity: 0.5;
+	}
+  .navBox{
+    z-index: 10;
+  }
+  .readNowUnderline{
+    width:110px;
+    border-bottom: 2px solid  #e5a838;
+    transition: all 1s;
+  }
+  .blackarrow{
+    visibility:hidden ;
+    margin-left: 5px;
+    /* transition: all 1s; */
+  }
+  .readMoreBox:hover .blackarrow{
+    display:flex;
+    visibility:visible ;
+    /* transition:all 1s; */
+    /* margin-left: 10px; */
+  }
+  .readMoreBox:hover .readNowUnderline{
+    width: 120px;
+    /* width: 150px; */
+    transition: all 1s;
+  }
+  .featureBg1{
+    background: url('./images/featurepostbg1.png') no-repeat;
+    background-size: cover;
+    height: 400px;
+    
+    /* height: auto;
+    width: 100%; */
+  }
+  .featureBg2{
+    background: url('./images/featurepost2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 5% 0 5%;
+    /* height:800px */
+  }
+legend {
+color:#333;
+padding:5px 10px;
+/* font-weight:800;  */
+/*background:white;*/
+} 
+fieldset.test {
+    padding:10px;
+    margin:10px;
+    width:100%;
+    color:#333; 
+    border-radius: 8px;
+    border:#D9D9D9 solid 1px;
+} 
+.fName{
+    border:none;
+    outline:medium
+}
+
+.selectBox{
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+.select{
+  width: 100%;
+  min-width: 25ch;
+  max-width: 40ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 1em 1em;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgba(24, 23, 23, 0.206);
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+}
+.selectBox::-ms-expand {
+  display: none;
+}
+
+.selectBox,.select:after {
+  grid-area: select;
+}
+:root {
+  --select-border: rgba(119, 119, 119, 0.202);
+  --select-focus: rgba(204, 201, 201, 0.061);
+  --select-arrow: var(--select-border);
+}
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+.select:after {
+  justify-self: end;
+}
+/*手风琴*/
+/* 打开和关闭手风琴面板的样式 */
+.accordion {
+  background-color: rgba(255, 255, 255, 0.205);
+  /* color: rgb(251, 250, 250); */
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+ 
+/* 设置点击和鼠标移到选项上面时（悬停）的样式 */
+.accordionActive, .accordion:hover {
+  background-color: rgba(204, 204, 204, 0.255);
+  /* color:black ; */
+}
+ 
+/* 为手风琴面板设计样式。 默认隐藏 */
+.panel {
+  padding: 0 18px;
+  background-color: transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/* 设置 +、- 标志 */
+.accordion:after {
+  content: '';
+  background-image:url('./images/detailsbut.png');  
+  /* Unicode 字符 + 号 */
+  background-size: 100%; 
+  display: inline-block; 
+  margin-right: 2px; 
+  vertical-align: -3px; 
+  height: 38px; 
+  width: 100px; 
+  /* content: ""; */
+} 
+ .accordionActive:after { 
+  /* content: url('./images/dropdownbut.png');  Unicode 字符 - 号 */
+  content: '';
+  background-image:url('./images/dropdownbut.png');  
+  /* Unicode 字符 + 号 */
+  background-size: 100%; 
+  display: inline-block; 
+  margin-right: 2px; 
+  vertical-align: -3px; 
+  height: 40px; 
+  width: 80px; 
+
+  
+}
+@media (max-width:640px) and (min-width:488px){
+  .accordion:after {
+  content: '';
+  background-image:url('./images/detailsbut.png');  
+  /* Unicode 字符 + 号 */
+  background-size: 100%; 
+  display: inline-block; 
+  margin-right: 0px; 
+  vertical-align: -3px; 
+  height: 29px; 
+  width: 100px; 
+  /* content: ""; */
+}
+
+}
+@media  (max-width:487px){
+  .accordion:after {
+  content: '';
+  background-image:url('./images/detailsbut.png');  
+  /* Unicode 字符 + 号 */
+  background-size: 100%; 
+  display: inline-block; 
+  margin-right: 0px; 
+  vertical-align: -3px; 
+  height: 34px; 
+  width: 100px; 
+  /* content: ""; */
+}
+}
+</style>    
+<body>
+<!--头部菜单开始-->
+<header class="header pt-5">
+  <div class="xl:max-w-screen-xl lg:max-w-screen-lg mx-10 sm:mx-auto max-w-screen-sm md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="container lg:flex hidden max-w-screen-lg xl:max-w-screen-xl mx-auto flex-row justify-between items-center">
+          <div class="latoTextSmall  text-white flex flex-row loginList">
+              <p><a class="hover:text-gray-500 text-white mr-5" href="###">Patner</a></p>
+              <p><a class="hover:text-gray-500 text-white" href="###">PRO</a></p>
+          </div>
+          <div class="flex latoTextSmall  items-center justify-center flex-row text-center text-white typeList ">
+              <div>
+                <a class="hover:text-gray-500 text-white" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">Support</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="hover:text-gray-500 text-white" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="./index.html"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex hidden navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid-cols-2 grid lg:grid hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid-cols-2 grid lg:hidden grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 phoneNav LatoButton text-black " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 navlist lg:block hidden">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5 ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="sidebarClass lg:hidden block">
+        <div class=" flex flex-col">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="m-5 float-right ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col my-10 items-center justify-center">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+    <!--头部菜单结束-->
+    <!--banner-->
+<div class="w-full">
+  <div class="container text-black pb-20 pt-52">
+      <div>
+          <ul class="menu menu-horizontal LatoSubtitle">
+              <li >HOME > </li>
+              <li> MORE > </li>
+              <li> CAREERS </li>
+          </ul>
+      </div>
+      <p class=" LatoSubPageThinTile my-5">Careers</p>
+      <p class="LatoThinSubHeadingContent">We use multiple liquidity providers from Tier 1 Banks and institutions to give you competitive quotes on a wide range of instruments.</p>
+  </div>
+</div>
+    <!--子导航-->
+<div id="subNavContainer" class=" subNavContainer relative pt-8">
+  <div id="navWrap" class="navWrap border-b-[1px]  border-t-[1px] h-[50px] mb-5">
+    <ul class=" flex-row flex subNav justify-center LatoSmall items-center">
+        <li class="subNavitem mt-3 liActive"><a href="">BOUNS</a> </li>
+        <li class="subNavitem mt-3"><a href="#forex">GIFT REWARDS</a></li>
+        <li class="subNavitem mt-3 "><a href="#shares">DEPOSIT REWARDS</a></li>
+        <!-- <li class="subNavitem  mt-3 "><a href="#shares">DISCLOSURE DOCUMENTS</a></li> -->
+    </ul>
+    </div>
+</div>
+<!--our positions-->
+<div class="py-20 w-full">
+  <div class="container flex items-center justify-between flex-wrap flex-row">
+      <div class="select">
+          <select class="selectBox">
+              <option value ="Any">Any Department</option>
+              <option value ="Support">Support</option>
+              <option value ="Marketing">Marketing</option>
+              <option value="Finance">Finance</option>
+              <option value="IT">IT</option>
+              <option value="Compliance">Compliance</option>
+          </select>
+      </div>
+      <div class="select my-3">
+          <select class="selectBox">
+              <option value ="Any">Any Location</option>
+              <option value ="Support">Sydeny</option>
+              <option value ="Marketing">Melbourne</option>
+          </select>
+      </div>
+      <button class="bg-yellow-500 rounded-md">
+          <p class="mx-10 my-3 ">FIND</p>
+      </button>
+  </div>  
+</div>
+<div class="w-full">
+  <div class="container">
+    <button class="accordion justify-between items-center rounded-md flex flex-row">
+      <div class="flex flex-col">
+        <p class="LatoThinBigBody2">Forex CFD Sales/Account Executive</p>
+        <p class="LatoCaptial">Sydney <span class="LatoCaptial text-[#838CA8]">• Full Time</span> </p>
+      </div>
+      <div class="sm:block hidden justify-self-end xl:translate-x-[250px] lg:translate-x-[180px] md:translate-x-[80px] translate-x-[30px]">
+        <p class="LatoSmall text-[#838CA8]">Sales department</p>
+      </div>
+    </button>
+    <div class="border-b-[1px] panel ">
+      <div>
+        <p class="LatoCardmenu my-5">Your Role</p>
+        <p class="LatojobInfo mb-5 text-[#595F71]">BCR now has exciting opportunities for reliable, ambitious, and self-motivated salespeople to be part of team while the Company is undergoing a major global expansion. If you are truly passionate for Sales or Finance, this role could be for you.</p>
+        <p class="LatojobInfo text-[#595F71]">For the right candidate, you will have:</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Strong written and verbal communication skills in English and Mandarin
+          </li>
+          <li>
+            Excellent interpersonal and communication skills
+          </li>
+          <li>
+            Approx. 2-3 months Internship period
+          </li>
+          <li>
+            At least 2 days per week of availability
+          </li>
+          <li>
+            Willingness to learn professional skills/knowledge in the FX market
+          </li>
+          <li>
+            Enthusiasm in the financial market
+          </li>
+          <li>
+            Sales experience is an advantage
+          </li>
+        </ul>
+
+        <p class="LatoCardmenu my-5">Key Responsibilities</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Assist client’s needs with enhanced skills and knowledge
+          </li>
+          <li>
+            Correspond with current clients on a daily basis for additional needs and create referrals
+          </li>
+          <li>
+            Keep up-to-date with the financial markets and current affairs
+          </li>
+          <li>
+            Learn trading techniques including fundamental and technical analysis
+          </li>
+          <li>
+            Create and support company's branding and marketing strategy
+          </li>
+          <li>
+            Write daily trading report about the forex trend
+          </li>
+        </ul>
+
+        <p class="LatoCardmenu my-5">What you get in return:</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Potential full-time/part-time opportunities with competitive base salary.
+          </li>
+          <li>
+            Attractive uncapped commission.
+          </li>
+          <li>
+            Work in an industry that is booming – massive earning potential.
+          </li>
+          <li>
+            A well-presented working experience to be included in your CV.
+          </li>
+          <li>
+            Assistance of building-up your desired career in the financial market.
+          </li>
+          <li>
+            Overseas travel opportunity
+          </li>
+          <li>
+            Darling Harbour location with an enjoyable work environment
+          </li>
+        </ul>
+        <button class="bg-[#1E2833] text-white rounded-md my-5"><p class="mx-5 my-2 LatoCaptial">APPLY NOW</p></button>
+      </div>
+    
+  </div>
+  <button class="accordion justify-between items-center rounded-md flex flex-row">
+    <div class="flex flex-col">
+      <p class="LatoThinBigBody2">Forex CFD Sales/Account Executive</p>
+      <p class="LatoCaptial">Sydney <span class="LatoCaptial text-[#838CA8]">• Full Time</span> </p>
+    </div>
+    <div class="sm:block hidden justify-self-end xl:translate-x-[250px] lg:translate-x-[180px] md:translate-x-[80px] translate-x-[30px]">
+      <p class="LatoSmall text-[#838CA8]">Sales department</p>
+    </div>
+  </button>
+  <div class="border-b-[1px] panel ">
+      <div>
+        <p class="LatoCardmenu my-5">Your Role</p>
+        <p class="LatojobInfo mb-5 text-[#595F71]">BCR now has exciting opportunities for reliable, ambitious, and self-motivated salespeople to be part of team while the Company is undergoing a major global expansion. If you are truly passionate for Sales or Finance, this role could be for you.</p>
+        <p class="LatojobInfo text-[#595F71]">For the right candidate, you will have:</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Strong written and verbal communication skills in English and Mandarin
+          </li>
+          <li>
+            Excellent interpersonal and communication skills
+          </li>
+          <li>
+            Approx. 2-3 months Internship period
+          </li>
+          <li>
+            At least 2 days per week of availability
+          </li>
+          <li>
+            Willingness to learn professional skills/knowledge in the FX market
+          </li>
+          <li>
+            Enthusiasm in the financial market
+          </li>
+          <li>
+            Sales experience is an advantage
+          </li>
+        </ul>
+
+        <p class="LatoCardmenu my-5">Key Responsibilities</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Assist client’s needs with enhanced skills and knowledge
+          </li>
+          <li>
+            Correspond with current clients on a daily basis for additional needs and create referrals
+          </li>
+          <li>
+            Keep up-to-date with the financial markets and current affairs
+          </li>
+          <li>
+            Learn trading techniques including fundamental and technical analysis
+          </li>
+          <li>
+            Create and support company's branding and marketing strategy
+          </li>
+          <li>
+            Write daily trading report about the forex trend
+          </li>
+        </ul>
+
+        <p class="LatoCardmenu my-5">What you get in return:</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Potential full-time/part-time opportunities with competitive base salary.
+          </li>
+          <li>
+            Attractive uncapped commission.
+          </li>
+          <li>
+            Work in an industry that is booming – massive earning potential.
+          </li>
+          <li>
+            A well-presented working experience to be included in your CV.
+          </li>
+          <li>
+            Assistance of building-up your desired career in the financial market.
+          </li>
+          <li>
+            Overseas travel opportunity
+          </li>
+          <li>
+            Darling Harbour location with an enjoyable work environment
+          </li>
+        </ul>
+        <button class="bg-[#1E2833] text-white rounded-md my-5"><p class="mx-5 my-2 LatoCaptial">APPLY NOW</p></button>
+      </div>
+    
+  </div>
+  <button class="accordion justify-between items-center rounded-md flex flex-row">
+    <div class="flex flex-col">
+      <p class="LatoThinBigBody2">Forex CFD Sales/Account Executive</p>
+      <p class="LatoCaptial">Sydney <span class="LatoCaptial text-[#838CA8]">• Full Time</span> </p>
+    </div>
+    <div class="sm:block hidden justify-self-end xl:translate-x-[250px] lg:translate-x-[180px] md:translate-x-[80px] translate-x-[30px]">
+      <p class="LatoSmall text-[#838CA8]">Marketing department</p>
+    </div>
+  </button>
+    <div class="border-b-[1px] panel ">
+      <div>
+        <p class="LatoCardmenu my-5">Your Role</p>
+        <p class="LatojobInfo mb-5 text-[#595F71]">BCR now has exciting opportunities for reliable, ambitious, and self-motivated salespeople to be part of team while the Company is undergoing a major global expansion. If you are truly passionate for Sales or Finance, this role could be for you.</p>
+        <p class="LatojobInfo text-[#595F71]">For the right candidate, you will have:</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Competitive remuneration based on experience
+          </li>
+          <li>
+            Sydney based top-class office working environment
+          </li>
+          <li>
+            Overseas travel opportunity
+          </li>
+          <li>
+            At least 2 days per week of availability
+          </li>
+          <li>
+            Willingness to learn professional skills/knowledge in the FX market
+          </li>
+          <li>
+            Enthusiasm in the financial market
+          </li>
+          <li>
+            Sales experience is an advantage
+          </li>
+        </ul>
+
+        <p class="LatoCardmenu my-5">Key Responsibilities</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Assist client’s needs with enhanced skills and knowledge
+          </li>
+          <li>
+            Correspond with current clients on a daily basis for additional needs and create referrals
+          </li>
+          <li>
+            Keep up-to-date with the financial markets and current affairs
+          </li>
+          <li>
+            Learn trading techniques including fundamental and technical analysis
+          </li>
+          <li>
+            Create and support company's branding and marketing strategy
+          </li>
+          <li>
+            Write daily trading report about the forex trend
+          </li>
+        </ul>
+
+        <p class="LatoCardmenu my-5">What you get in return:</p>
+        <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+          <li>
+            Potential full-time/part-time opportunities with competitive base salary.
+          </li>
+          <li>
+            Attractive uncapped commission.
+          </li>
+          <li>
+            Work in an industry that is booming – massive earning potential.
+          </li>
+          <li>
+            A well-presented working experience to be included in your CV.
+          </li>
+          <li>
+            Assistance of building-up your desired career in the financial market.
+          </li>
+          <li>
+            Overseas travel opportunity
+          </li>
+          <li>
+            Darling Harbour location with an enjoyable work environment
+          </li>
+        </ul>
+        <button class="bg-[#1E2833] text-white rounded-md my-5"><p class="mx-5 my-2 LatoCaptial">APPLY NOW</p></button>
+      </div>
+    
+  </div>
+  <button class="accordion justify-between items-center rounded-md flex flex-row">
+    <div class="flex flex-col">
+      <p class="LatoThinBigBody2">Forex CFD Sales/Account Executive</p>
+      <p class="LatoCaptial">Sydney <span class="LatoCaptial text-[#838CA8]">• Full Time</span> </p>
+    </div>
+    <div class="sm:block hidden justify-self-end xl:translate-x-[250px] lg:translate-x-[180px] md:translate-x-[80px] translate-x-[30px]">
+      <p class="LatoSmall text-[#838CA8]">Sales department</p>
+    </div>
+  </button>
+  <div class="border-b-[1px] panel ">
+    <div>
+      <p class="LatoCardmenu my-5">Your Role</p>
+      <p class="LatojobInfo mb-5 text-[#595F71]">BCR now has exciting opportunities for reliable, ambitious, and self-motivated salespeople to be part of team while the Company is undergoing a major global expansion. If you are truly passionate for Sales or Finance, this role could be for you.</p>
+      <p class="LatojobInfo text-[#595F71]">For the right candidate, you will have:</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Competitive remuneration based on experience
+        </li>
+        <li>
+          Truly UNCAPPED COMMISSION potential
+        </li>
+        <li>
+          Sydney CBD location with WORK HARD, PLAY HARD culture
+        </li>
+        <li>
+          Overseas travel opportunity
+        </li>
+        <li>
+          Ongoing training and support
+        </li>
+      </ul>
+
+      <p class="LatoCardmenu my-5">Key Responsibilities</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Work towards specific KPI's (monthly sales target)
+        </li>
+        <li>
+          Ability to identify and generate client pipelines on your own
+        </li>
+        <li>
+          Convert prospective warm leads into new clients and communicate our company's products and benefits effectively
+        </li>
+        <li>
+          Assist clients needs with enhanced skills and knowledge
+        </li>
+        <li>
+          Ability to work under pressure
+        </li>
+      </ul>
+
+      <p class="LatoCardmenu my-5">Requirements and Skills</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Strong written and verbal communication skills in English
+        </li>
+        <li>
+          Native Vietnamese Speaker
+        </li>
+        <li>
+          A sales focused attitude
+        </li>
+        <li>
+          Independence and discipline; a self-motivated starter who works autonomously to map out your own day
+        <li>
+          CFD/Forex sales experience will be a plus but not essential
+        </li>
+        <li>
+          Experience of using MT4 platforms will be a plus but not essential
+        </li>
+        <li>
+          Preferably RG146 qualified
+        </li>
+        <li>
+          Graduates are welcome
+        </li>
+      </ul>
+      <button class="bg-[#1E2833] text-white rounded-md my-5"><p class="mx-5 my-2 LatoCaptial">APPLY NOW</p></button>
+    </div>
+
+  </div>
+  <button class="accordion justify-between items-center rounded-md flex flex-row">
+    <div class="flex flex-col">
+      <p class="LatoThinBigBody2">Forex CFD Sales/Account Executive</p>
+      <p class="LatoCaptial">Sydney <span class="LatoCaptial text-[#838CA8]">• Full Time</span> </p>
+    </div>
+    <div class="sm:block hidden justify-self-end xl:translate-x-[250px] lg:translate-x-[180px] md:translate-x-[80px] translate-x-[30px]">
+      <p class="LatoSmall text-[#838CA8]">Sales department</p>
+    </div>
+  </button>
+  <div class="border-b-[1px] panel ">
+    <div>
+      <p class="LatoCardmenu my-5">Your Role</p>
+      <p class="LatojobInfo mb-5 text-[#595F71]">BCR now has exciting opportunities for reliable, ambitious, and self-motivated salespeople to be part of team while the Company is undergoing a major global expansion. If you are truly passionate for Sales or Finance, this role could be for you.</p>
+      <p class="LatojobInfo text-[#595F71]">For the right candidate, you will have:</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Competitive remuneration based on experience
+        </li>
+        <li>
+          Truly UNCAPPED COMMISSION potential
+        </li>
+        <li>
+          Sydney CBD location with WORK HARD, PLAY HARD culture
+        </li>
+        <li>
+          Overseas travel opportunity
+        </li>
+        <li>
+          Ongoing training and support
+        </li>
+      </ul>
+
+      <p class="LatoCardmenu my-5">Key Responsibilities</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Work towards specific KPI's (monthly sales target)
+        </li>
+        <li>
+          Ability to identify and generate client pipelines on your own
+        </li>
+        <li>
+          Convert prospective warm leads into new clients and communicate our company's products and benefits effectively
+        </li>
+        <li>
+          Assist clients needs with enhanced skills and knowledge
+        </li>
+        <li>
+          Ability to work under pressure
+        </li>
+      </ul>
+
+      <p class="LatoCardmenu my-5">Requirements and Skills</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Strong written and verbal communication skills in English
+        </li>
+        <li>
+          Native Vietnamese Speaker
+        </li>
+        <li>
+          A sales focused attitude
+        </li>
+        <li>
+          Independence and discipline; a self-motivated starter who works autonomously to map out your own day
+        <li>
+          CFD/Forex sales experience will be a plus but not essential
+        </li>
+        <li>
+          Experience of using MT4 platforms will be a plus but not essential
+        </li>
+        <li>
+          Preferably RG146 qualified
+        </li>
+        <li>
+          Graduates are welcome
+        </li>
+      </ul>
+      <button class="bg-[#1E2833] text-white rounded-md my-5"><p class="mx-5 my-2 LatoCaptial">APPLY NOW</p></button>
+    </div>
+
+  </div>
+  <button class="accordion justify-between items-center rounded-md flex flex-row">
+    <div class="flex flex-col">
+      <p class="LatoThinBigBody2">Forex CFD Sales/Account Executive</p>
+      <p class="LatoCaptial">Sydney <span class="LatoCaptial text-[#838CA8]">• Full Time</span> </p>
+    </div>
+    <div class="sm:block hidden justify-self-end xl:translate-x-[250px] lg:translate-x-[180px] md:translate-x-[80px] translate-x-[30px]">
+      <p class="LatoSmall text-[#838CA8]">Sales department</p>
+    </div>
+  </button>
+  <div class="border-b-[1px] panel ">
+    <div>
+      <p class="LatoCardmenu my-5">Your Role</p>
+      <p class="LatojobInfo mb-5 text-[#595F71]">SEM (Search Engine Marketing) Specialist will contribute to the planning, creation, execution, and evaluation of integrated marketing campaigns for both domestic and international lead generation.
+        In addition to data analysis, SEM is also required to optimise keyword searches and coordinate with other departments to achieve the company's overall marketing objectives.</p>
+      <p class="LatojobInfo text-[#595F71]">Job description</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Execute tests, collect and analyse data, identify trends and insights in order to achieve maximum ROI in paid search campaigns
+        </li>
+        <li>
+          Research and analyze competitor advertising links
+        </li>
+        <li>
+          Perform ongoing paid keyword discovery, expansion and optimization
+        </li>
+        <li>
+          Optimize copy and landing pages for paid search engine marketing campaigns
+        </li>
+        <li>
+          Track, report and analyze website and campaigns analytics
+        </li>
+        <li>
+          Perform ongoing organic or paid keyword discovery, expansion and optimization
+        </li>
+        <li>
+          Work with content specialists to implement keywords, optimize web content and social media, and create new content pieces
+        </li>
+      </ul>
+
+      <p class="LatoCardmenu my-5">Requirements and Skills</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Prior experience running SEM & SMM campaigns
+        </li>
+        <li>
+          At least one-year digital marketing experience
+        </li>
+        <li>
+          Strong understanding of Google and Facebook Ads
+        </li>
+        <li>
+          Experience in Forex, Trading and CDFs industry is highly preferred
+        </li>
+        <li>
+          Analytical skills and experience generating SEM reports
+        </li>
+        <li>
+          Excellent written and spoken English
+        </li>
+        <li>
+          Experience with Google Marketing Platform including (Analytics, Data Studio and etc)
+        </li>
+      </ul>
+
+      <p class="LatoCardmenu my-5">Requirements and Skills</p>
+      <ul class="list-disc list-inside LatojobInfo text-[#595F71]">
+        <li>
+          Strong written and verbal communication skills in English
+        </li>
+        <li>
+          Native Vietnamese Speaker
+        </li>
+        <li>
+          A sales focused attitude
+        </li>
+        <li>
+          Independence and discipline; a self-motivated starter who works autonomously to map out your own day
+        <li>
+          CFD/Forex sales experience will be a plus but not essential
+        </li>
+        <li>
+          Experience of using MT4 platforms will be a plus but not essential
+        </li>
+        <li>
+          Preferably RG146 qualified
+        </li>
+        <li>
+          Graduates are welcome
+        </li>
+      </ul>
+      <button class="bg-[#1E2833] text-white rounded-md my-5"><p class="mx-5 my-2 LatoCaptial">APPLY NOW</p></button>
+    </div>
+
+  </div>
+    
+      
+  </div>
+</div>
+<div class="pt-32 pb-20 w-full">
+  <div class="container justify-between items-center flex-col flex sm:flex-row">
+    <div class="sm:basis-2/3 basis-1 mr-0 mr-10">
+      <p class="LatoCaptial">OUR TEAM</p>
+      <h1 class="LatoThinSubHeading my-5">Where We Work</h1>
+      <p class="sm:w-[70%] w-[100%] LatoThinBigBody2">MoneyLion is headquartered in New York City, with offices in Sioux Falls, and Kuala Lumpur, Malaysia, and we also support remote team members around the globe.</p>
+    </div>
+    <div class="grid grid-cols-2 gap-x-10 gap-y-10 sm:basis-1/3 basis-1 justify-center items-center">
+      <img  src="./images/sydney.png" alt="">
+      <img src="./images/melbourne.png" alt="">
+      <img  src="./images/newyork.png" alt="">
+      <img src="./images/around.png" alt="">
+    </div>
+  </div>
+</div>
+<!--perk & benefits-->
+<div class="pb-32 ">
+  <div class="max-w-screen-xl mx-auto">
+    <p class="text-center LatoCaptial">WORKING AT BCR</p>
+    <h1 class="text-center mb-10 mt-5 LatoThinSubHeading">Perks & Benefits</h1>
+    <div class="flex flex-row justify-between mt-20 items-start">
+      <div class="flex flex-col justify-center items-center">
+        <img class="w-[50%]" src="./images/solidarityicon.png" alt="">
+        <p class="w-[50%] LatoRegularCardmenu text-center mt-3">Solidarity & Mutual Aid</p>
+      </div>
+      <div class="flex flex-col justify-center items-center ">
+        <img class="w-[50%]" src="./images/joyfulicon.png" alt="">
+        <p class="w-[50%] LatoRegularCardmenu text-center mt-3">Joyful environment</p>
+      </div><div class="flex flex-col justify-center items-center">
+        <img class="w-[50%]" src="./images/meeticon.png" alt="">
+        <p class="w-[50%]  LatoRegularCardmenu text-center mt-3">Meet New People</p>
+      </div><div class="flex flex-col justify-center items-center">
+        <img class="w-[50%]" src="./images/flexibilityicon.png" alt="">
+        <p class="w-[50%] LatoRegularCardmenu text-center mt-3">Flexibility & Family</p>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img class="w-[50%]" src="./images/peopleicon.png" alt="">
+        <p class="w-[50%] LatoRegularCardmenu text-center mt-3">People Capability</p>
+
+    </div>
+  </div>
+  <div class="flex flex-row text-[#393D48] justify-center items-center max-w-screen-md mx-auto mt-16">
+    <div class="flex flex-col justify-center items-center">
+      <img class="w-[50%]" src="./images/healthicon.png" alt="">
+      <p class="w-[70%] LatoRegularCardmenu text-center mt-3">Health &Financial Wellbeing</p>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+      <img class="w-[50%]" src="./images/inclusiveicon.png" alt="">
+      <p class="w-[50%] LatoRegularCardmenu text-center mt-3">Inclusive Communities</p>
+    </div><div class="flex flex-col justify-center items-center">
+      <img class="w-[50%]" src="./images/accessicon.png" alt="">
+      <p class="w-[50%] LatoRegularCardmenu text-center mt-3">Access to  Community</p>
+    </div><div class="flex flex-col justify-center items-center">
+      <img class="w-[50%]" src="./images/rewardsicon.png" alt="">
+      <p class="w-[50%] LatoRegularCardmenu text-center mt-3">Rewards &  Recognition</p>
+    </div>
+    
+  </div>
+</div>
+</div>
+  <!--join us-->
+  <div class="subpageFooterBg">
+    <div class="flex flex-col items-center justify-center max-w-screen-xl py-20 mx-auto text-white">
+        <h1 class="mb-10 text-center text-white text-7xl">Join us as a journey</h1>
+        <p class="mb-10">Sign up in minutes and start doing money right.</p>
+        <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+    </div>
+</div>
+<!--footer-->
+<div class="bg-[#070B0F]">
+<div class="flex flex-col max-w-screen-xl mx-auto">
+<div class="border-b-[1px]">
+  <div class="grid grid-cols-2 m-5">
+    <img src="./images/logonew.png" alt="">
+    <div class="flex flex-row text-white justify-self-end">
+      <button class="LatoTextTitle">Ready to get started?</button>
+      <button  class="ml-3 text-white latoRegularTableNav rounded-lg bg-[#FFD400]"><p class="m-3">get start</p> </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div class="flex flex-col items-center justify-between m-5 text-white md:flex-row">
+      <div class="flex flex-col hidden md:block">
+        <p>Subscribe to our newsletter</p>
+        <div class="flex flex-row mt-10">
+          <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+          <button><img src="./images/Submit.png"></button>
+        </div>
+      </div>
+      <div class="md:basis-[60%] basis-1 gap-x-24  md:gap-x-32  grid grid-cols-3">
+        <div>
+          <h1 class="text-yellow-500">Services</h1>
+          <p class="mt-5">Email Marketing</p>
+          <p  class="mt-5">Campaigns</p>
+          <p  class="mt-5">Branding</p>
+          <p  class="mt-5">Offline</p>
+        </div>
+        <div>
+         <h1 class="text-yellow-500">About</h1> 
+         <p  class="mt-5">Our Story</p>
+         <p  class="mt-5">Benefits</p>
+         <p  class="mt-5">Team</p>
+         <p  class="mt-5">Careers</p>
+        </div>
+        <div>
+          <h1 class="text-yellow-500">Help</h1>
+          <p  class="mt-5">FAQs</p>
+          <p  class="mt-5">Contact Us</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="max-w-screen-xl mx-auto">
+    <div class="flex flex-col items-center justify-between m-5 md:flex-row">
+      <div class="grid grid-cols-2 text-white gap-x-10 md:gap-x-16">
+        <p>Terms & Conditions</p>
+        <p>privacy Policy</p>
+      </div>
+      <div class="grid grid-cols-3 my-10 gap-x-10 md:my-0">
+        <img src="./images/Path.png" alt="">
+        <img src="./images/twitter.png" alt="">
+        <img src="./images/instagram.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="fixFooter bg-[#EFEFF0] w-full LatoCaptial">
+  <div class="container m-5 md:flex hidden flex-row justify-around items-center ">
+    <div class="flex felx-row items-center">
+      <p>Excellent</p>
+      <img class="mx-5 w-[15%] h-[15%]" src="./images/footerstars.png" alt="">
+      <p>4.9 out of 5 based on 666 reviews</p>
+      <img class="w-[2%] mx-5 h-[2%]" src="./images/onestar.png" alt="">
+      <p>Trustpilot</p>
+    </div>
+    <div class="flex flex-row  justify-center items-center">
+      <button class="bg-yellow-500 rounded-md">
+        <p class=" LatoCaptial mx-3 my-2">OPEN AN ACOCUNT</p>
+      </button>
+      <button class="bg-yellow-500 ml-5 rounded-md">
+        <div class="flex mx-3 my-2 flex-row justify-center items-center">
+          <img class="w-[10%] hidden sm:block mr-2" src="./images/blacktalkicon.png" alt="">
+          <p class="LatoCaptial">24/5 Support</p>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="container m-5 md:hidden block ">
+   
+    <div class="flex flex-row  justify-center items-center">
+      <button class="bg-yellow-500 rounded-md">
+        <p class=" LatoThinCardmenu mx-10 my-2">OPEN AN ACOCUNT</p>
+      </button>
+      
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/same.js"></script>
+<script src='nav.js'></script>
+<script>
+    $(document).ready(function () {
+    var navHeight = $("#subNavContainer").offset().top;
+    var navFix = $("#navWrap");
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > navHeight) {
+            navFix.addClass("navFix");
+        }
+        else {
+            navFix.removeClass("navFix");
+        }
+    })
+  
+})
+/* 点击按钮，下拉菜单在 显示/隐藏 之间切换 */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+//手风琴
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+    this.classList.toggle("accordionActive");
+    
+    // document.getElementById("detailsBut").hidden = true;
+    // document.getElementById("dropdownButn").hidden = false;
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      
+    } 
+  });
+}
+</script>
+</html>

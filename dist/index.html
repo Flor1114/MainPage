@@ -1,0 +1,3347 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"></meta>
+  <link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/demo.css">
+  <link rel="stylesheet" href="./swiper/css/swiper.css">
+  <link rel="stylesheet" href="./swiper/css/swiper.min.css">  
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" >
+  <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
+</head>
+<style>
+.swipervideo-box{
+  height: calc(100vh + 144px) ;
+}
+.subpageFooterBg{
+  width: 100%;
+  position: relative;
+  background-image: url('./images/footer.png');
+  background-size:cover;
+  background-position: center;
+  background-repeat:no-repeat;
+}
+.dataList{
+  transform: translateX(50px);
+}
+.dataContainer{
+  width:100vw;
+  overflow: hidden;
+  border-top: 2px solid;
+  border-image: linear-gradient(-110deg, rgba(255, 255, 255, 0.00) 0%, #fefefe 40%, rgba(255, 255, 255, 0.00) 99%) 2 2 2 2;
+}
+.tradedData{
+  border-top: 2px solid;
+  /* z-index: 10; */
+  border-image: linear-gradient(-110deg, rgba(255, 255, 255, 0.00) 0%, #fefefe 52%, rgba(255, 255, 255, 0.00) 100%) 2 2 2 2;
+}
+.establishContent{
+  transform:translateY(300px);
+}
+.itemsTable{
+  transform: translateY(800px);
+  width: 600px;
+}
+.phoneItemsTable{
+  margin: 0 10% 0 10%;
+}
+.try:hover{
+  color: orange;
+}
+.explore{
+  width: 170px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition:all 0.2s;
+  opacity: 1;
+}
+.explore:hover {
+  border: 1px solid;
+  border-color: rgb(231, 225, 225,1);
+  border-radius: 10px;
+  height: 39px;
+  width: 180px;
+}
+.explore img{
+  margin-left: 10px;
+  transition:all 0.1s;
+}
+.explore:hover img{
+  margin-left: 15px;
+}
+.hideImg{
+  display: none;
+}
+.dataUl li{
+  float:right;
+}
+.textSize
+{
+  font-size: 18px;
+  transition: font-size 1s;
+}
+.active{
+  color: #eaa629;
+  border-bottom: #eaa629 3px solid;
+  transition: color 0.3s;
+}
+.tableActive{
+  color: #eaa629;
+  transition: color 0.3s;
+}
+body {
+  margin:0;
+  touch-action:none;
+}
+.coverlayerPosition{
+  transform: translateY(290px);
+}
+.coverlayer{
+  height: 180px;
+  border-radius:0 0 32px 32px;
+  background:linear-gradient(to right, rgb(45, 45, 45), rgb(207, 200, 200)) ;
+  transform:translateY(-180px);
+  overflow: hidden;
+  transition: all 1s;
+}
+.coverLayText{
+color: white;
+transition: all 0.1s;
+height:210px;
+overflow: hidden;
+transform: translateY(-50px);
+}
+.coverlayer:hover .coverLayText{
+  color: black;
+  height:auto;
+  transform: translateY(0px);
+  transition: all 0.1s;
+}
+.coverContainer:hover .coverlayer{
+  height: 550px;
+  width: 100%;
+  border-radius: 32px;
+  opacity: 0.8;
+  background: rgb(190, 187, 187);
+  transform:translateY(-550px);
+  transition: all 1s;
+  overflow: hidden;
+}
+.coverContainer:hover .hoverHiddenBtn{
+  transition: display 1s;
+  background-color: rgb(3, 3, 65);
+  opacity: 1;
+  transition:all 0.1s ;
+  margin-top: 40px;
+}
+.coverContainer{
+  height: 550px;
+  width: 100%;
+  overflow: hidden;
+}
+.coverContainer:hover{
+  height: 550px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 32px;
+  transition: all 0.1s;
+}
+.smallPhoneBlur{
+  transition:all 1s;
+  border-radius: 8px;
+  filter: blur(5px);
+}
+#blurBg{
+  transition:all 1s;
+  height: 550px;
+  width: 100%;
+  border-radius: 32px;
+}
+#phoneBlur{
+  transition:all 1s;
+  height: 550px;
+  border-radius: 32px;
+  width: 100%;
+}
+#moneyBlur{
+  transition:all 1s;
+  height: 550px;
+  border-radius: 32px;
+  width: 100%;
+}
+.coverContainer:hover #blurBg{
+  filter: blur(15px);
+  /* height: 590px; */
+  overflow: hidden;
+  transition:all 0.1s;
+  border-radius: 32px;
+}
+.coverContainer:hover #phoneBlur{
+  filter: blur(15px);
+  /* height: 590px; */
+  overflow: hidden;
+  transition:all 0.1s;
+  border-radius: 32px;
+}
+.coverContainer:hover #moneyBlur{
+  filter: blur(15px);
+  /* height: 590px; */
+  overflow: hidden;
+  transition:all 0.1s;
+  border-radius: 32px;
+}
+.hoverHiddenBtn{
+  transition: display 1s ;
+  background-color: rgb(3, 3, 65);
+  opacity: 0;
+  transition:opacity 0.1s ;
+}
+.readMoreHoverBox{
+  margin-top:2.5rem ;
+}
+.readMoreHover:hover{
+  margin-left: 10px;
+  transition: margin-left 0.5s;
+}
+.readMoreHover{
+  transition: margin-left 0.5s;
+}
+.rewardPosition{
+  transform: translateY(200px);
+}
+
+.video-box{
+  background-color:#070B0F;
+  position: relative;
+}
+
+.video-box .video-background {
+  width: 100%;
+  object-fit:fill;
+}
+.video-box .phonevideo-background {
+  width: 100%;
+  /* object-fit:fill; */
+  height:800px;
+}
+.video-box .videoGetStart{
+  position: absolute;
+  z-index: 3;
+  border-radius: 5px;
+  text-align: center;
+  left: 45%;
+  top: 400px;
+  background: linear-gradient(to right,#3A5F85, #161E25,transparent,  transparent);
+  background-size: 200%;
+  transition: background-position 1s; 
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.computerVideo {
+mix-blend-mode: screen;
+transform:translateX(-1000px) 
+}
+.toolsPosition{
+  transform:translateY(300px) 
+}
+.videoText{
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  left: 45%;
+  top: 200px;
+  color: white;
+}
+.phoneVideoText{
+  /* position: absolute; */
+  z-index: 3;
+  text-align: center;
+  left: 0;
+  top: 5%;
+  color: white;
+}
+#my-pagination-clickable{
+    position: absolute;
+    bottom: 170px;
+    left:50%;
+    transform: translate(-50%,0);
+  }
+ .mytable-pagination-clickable{
+  position: absolute;
+  left:90%;
+  top: 20%;
+  z-index: 3;
+}
+.myPhoneCircle-pagination-clickable{
+  position: absolute;
+  left:20%;
+  top: 50%;
+  z-index: 3;
+}
+.myPhoneTable-pagination-clickable{
+  position: absolute;
+
+  margin-left: 50%;
+  top: 96%;
+  z-index: 3;
+}
+.myCoverLayer-pagination-clickable{
+  position: absolute;
+  margin-left: 50%;
+  top:95%;
+  z-index: 3;
+}
+.table-swiper{
+  height: 500px;
+  width: 900px;
+}
+.phoneTable-swiper{
+  height: 500px;
+  width: 100%;
+}
+.sectionbg{
+  height: calc(100vh + 144px) ;
+}
+.swiper-slide video {
+-o-object-fit: cover;
+ object-fit: cover;
+ width: 100vw;
+ height: 100vh;
+ z-index: 0;
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+video {
+ mix-blend-mode: screen;
+}
+.my-bullet-active{ 
+    background: #faf9f9; 
+    opacity: 1; 
+} 
+.swiper-pagination-bullet{ 
+    width: 100px;
+     height: 5px;
+     background: #fafdfb; 
+     border-radius: 0.1rem;
+} 
+ .table-swiper .swiper-pagination-bullet {
+     width: 8px;
+     height: 8px;
+     background: #fafdfb; 
+     border-radius: 100%;
+}
+.table-swiper .my-bullet-active {
+  background: #f9f7f7; 
+  opacity: 1
+  }
+  .phoneTable-swiper .swiper-pagination-bullet{
+      width: 10px;
+     height: 10px;
+     background: #fbfbfb; 
+     border-radius: 100%;
+     
+  }
+.detailshidden{
+list-style: none;
+max-width: 1000px;
+
+}
+.detailshidden ::after {
+    content: '';
+    position: relative;
+    width: 0.8em; 
+    height: 0.8em;
+    margin: 0 20px 0 0;
+    background: url('./images/blackdownarrow.png') no-repeat;
+    background-size: 100% 100%;
+    transition: transform 0.2s;
+    float: right;
+    margin-top: 0.4em;
+}
+.detailsHidden:not([open]) .detailshidden ::after {
+    margin-top: 0.3em;
+    transform: rotate(3.142rad);
+    transition: all 1s;
+    
+}
+.detailsHidden:not([open]) .detailshidden  {
+   background-color: #f8f1f122;
+   color:#071633;
+   transition: all 1s;
+}
+.detailsHidden .detailshidden  {
+  background-color: #f6f4f1;
+   color:#071633;
+   transition: all 1s;
+}
+.detailsHidden + dl {
+    max-height: 0;
+    transition: max-height .25s;
+    overflow: hidden;
+}
+[open] + dl {
+    max-height: 800px;
+}
+.sidebarClass {
+		/* text-align: right; */
+		bottom: 0;
+		background-color: rgb(252, 251, 251);
+		/* right: 0; */
+		top: 0px;
+		/* background-color: rgba(213, 22, 213, 0.1); */
+		position: fixed;    /* 先给个定位，侧边栏一般是相对于浏览器定位 */
+		right: -300px;    /* 侧边栏有多宽，就-多少，相当于先藏在视窗外边*/
+		width: 300px;
+		/* height: calc(100vh - 2.5rem);  */
+    height: 100vh  ;  /* 减去底部导航栏的高度 */
+		z-index: 1001;    /* 设置一个超大的数字覆盖所有元素 */
+		transition: right 1s;    /* 最关键的一步！利用transition实现过渡效果*/
+	}
+	/* 利用transition：width改变就会启动过渡效果 */
+	.addWidth { 
+		right: 0px;    /*设置为侧边栏宽度的2倍 */
+		background-color: rgb(252, 251, 251);
+    transition: right 1s;
+	}
+  .swiper_Leftbtn{
+      transform: translateX(-100px);
+  }
+.swiper_Rightbtn{
+    transform: translateX(80px);
+  }
+.smallPhoneContainer{
+  display: none;
+}
+  .circleSwiper-slide{
+  width: 40%!important;
+    /* height: 50% !important */
+}
+.productSwiper{
+  border-radius: 14px;
+ 
+  box-shadow:rgba(198, 198, 198, 0.558) 0px 0px 5px
+}
+/*手风琴*/
+/* 打开和关闭手风琴面板的样式 */
+.accordion {
+  background-color: rgba(255, 255, 255, 0.205);
+  color: rgb(251, 250, 250);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+ 
+/* 设置点击和鼠标移到选项上面时（悬停）的样式 */
+.accordionActive, .accordion:hover {
+  background-color: #ccc;
+  color:black ;
+}
+/* 为手风琴面板设计样式。 默认隐藏 */
+.panel {
+  padding: 0 18px;
+  background-color: transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/* 设置 +、- 标志 */
+.accordion:after {
+  content: '\002B';  /* Unicode 字符 + 号 */
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.accordionActive:after { 
+  content: "\2212";  /* Unicode 字符 - 号 */
+}
+.ipadToolsbg{
+  background: url('./images/QR.png') no-repeat ;
+    background-size:contain;
+}
+.phoneCoverContainer{
+  display: none;
+  width: 90%;
+  height:450px;
+}
+.phoneCover-swiper .swiper-pagination-bullet {
+     width: 8px;
+     height: 8px;
+     background: #fafdfb; 
+     border-radius: 100%;
+}
+@media screen and (min-width:980px) and (max-width:1280px) {
+  .videoText{
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  left: 0%;
+  top: 180px;
+  color: white;
+  }
+}
+@media screen and (min-width:750px) and (max-width:979px) {
+  .videoText{
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  left: 0%;
+  top: 100px;
+  margin:0 10% 0 10% ;
+  color: white;
+  }
+.videoText h1{
+ text-align: center;
+  }
+}
+@media screen and (min-width:750px)  {
+  .phoneVideoText{
+    display: none;
+  }
+  .phoneVideoText{
+    display: none;
+  }
+  .videoText{
+  display: block;
+  }
+  .video-background{
+    display: block;
+  }
+}
+@media screen and (max-width:749px)  {
+  .videoText{
+  display: none;
+  }
+  .video-background{
+    display: none;
+  }
+  .phoneVideoText{
+    display: block;
+  }
+  .phonevideo-background{
+    display: block;
+  }
+}
+@media screen and (max-width:749px)  {
+  .videoText{
+  display: none;
+  }
+  .video-background{
+    display: none;
+  }
+  .phoneVideoText{
+    display: block;
+  }
+  .phonevideo-background{
+    display: block;
+  }
+}
+
+@media screen and (min-width:865px) and (max-width:1134px) {
+  .coverContainer{
+  height: 410px
+  }
+  .coverContainer:hover{
+  height: 410px
+  /* overflow-y: hidden; */
+}
+.coverlayer{
+  height: 410px;
+  border-radius:0 0 32px 32px;
+  background:linear-gradient(to right, rgb(45, 45, 45), rgb(207, 200, 200)) ;
+  /* opacity: 0.9; */
+  transform:translateY(-330px);
+  overflow: hidden;
+  transition: all 1s;
+}
+}
+@media screen and (max-width:749px) and (min-width:640px){
+  .phoneCoverContainer{
+height: 510px;
+  }
+
+  .phoneCoverContainer .coverContainer{
+  height: 400px
+  }
+  .phoneCoverContainer .coverContainer:hover{
+  height: 400px
+  /* overflow-y: hidden; */
+}
+.coverlayer:hover .marketNews{
+  display: none;
+}
+.coverlayer:hover .coverLayText{
+  color: black;
+  font-size: 10px;
+  height:auto;
+  transform: translateY(220px);
+  transition: all 0.1s;
+}
+.phoneCoverContainer .coverlayer{
+  height: 200px;
+  border-radius:0 0 32px 32px;
+  background:linear-gradient(to right, rgb(45, 45, 45), rgb(207, 200, 200)) ;
+  /* opacity: 0.9; */
+  transform:translateY(-220px);
+  overflow: hidden;
+  transition: all 1s;
+  /* display: none; */
+}
+.marketDetails{
+  display: none;
+}
+.coverlayer:hover .readMoreHoverBox{
+  margin-top: 0px;
+
+  /* transform: translateY(-200px); */
+}
+.coverlayer:hover .marketDetails{
+  display: block;
+}
+.hoverHiddenBtn{
+  display: none
+}
+}
+@media screen and (min-width:750px){
+  .phoneCoverContainer .coverContainer{
+  height: 300px
+  }
+  .phoneCoverContainer .coverContainer:hover{
+  height: 300px
+  /* overflow-y: hidden; */
+}
+.phoneCoverContainer .coverlayer{
+  height: 300px;
+  border-radius:0 0 32px 32px;
+  background:linear-gradient(to right, rgb(45, 45, 45), rgb(207, 200, 200)) ;
+  /* opacity: 0.9; */
+  transform:translateY(-400px);
+  overflow: hidden;
+  transition: all 1s;
+}
+}
+@media screen and (max-width:864px){
+  .computerCoverContainer{
+    display: none;
+  }
+  .phoneCoverContainer{
+    display: block;
+  }
+
+}
+@media screen and (max-width:639px){
+  .tradedData{
+    border-top: none;
+  }
+  .computerCoverContainer{
+    display: none;
+  }
+  .ipadComputerCover{
+    display: none;
+  }
+.smallPhoneContainer{
+  display: block;
+}
+.sectionbg{
+  height:100vh
+}
+.swipervideo-box{
+    height: 100vh;
+  }
+}
+.smallPhoneSize{
+  height: 110px;
+}
+.smallPhoneReadmore{
+  background-color: rgba(255, 255, 255, 0.207);
+  position: absolute;
+  color:black;
+  border-radius: 8px;
+  top: 50%;
+  left: 0%;
+  z-index: 4;
+  display: none;
+  transition: all 2s;
+  box-shadow: #1a252f;
+}
+.smallPhoneReadmorePhone{
+  background-color: rgba(255, 255, 255, 0.207);
+  position: absolute;
+  color:black;
+  border-radius: 8px;
+  top: 30%;
+  /* top: 20%; */
+  left: 5%;
+  z-index: 4;
+  display: none;
+  transition: all 2s;
+  box-shadow: #1a252f;
+}
+.smallPhoneReadmoreMoney{
+  background-color: rgba(255, 255, 255, 0.207);
+  position: absolute;
+  color:black;
+  border-radius: 8px;
+  top: 30%;
+  /* top: 20%; */
+  left: 5%;
+  z-index: 4;
+  display: none;
+  transition: all 2s;
+  box-shadow: #1a252f;
+}
+.explorePosition{
+  max-height: 250px;
+  transform: translate(20px,-50px);
+  border-radius: 10px;
+  z-index: 1;
+}
+.foldingAngle{
+	background:
+		linear-gradient(to left bottom, transparent 50%, rgb(62, 61, 61) 0) no-repeat 100% 0 / 1.4em 1.4em,
+	    linear-gradient(-135deg, transparent 1em, rgb(43, 42, 42) 0);
+}
+.exploreBut{
+  z-index: 2;
+  transform: translate(-40%,160%);
+}
+/* #AnglePosition{
+  transform: translateY(0px);
+
+} */
+.animateAnglePosition{
+  z-index: 2;
+  animation: flowup 2s
+}
+@keyframes flowup {
+  0%{
+        transform: translateY(190px);
+
+   }
+   100%{
+    transform: translateY(0px);
+
+   }
+
+}
+@media screen and ( max-width: 559px) {
+  .exploreBut{
+  transform: translate(-10%,300%);
+}}
+.circlebg{
+  background-image: url('./images/indexcirclebg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 700px;
+}
+</style>
+<body>
+<!--头部菜单开始-->
+<header class="pt-5 header">
+  <div class="max-w-screen-sm mx-10 xl:max-w-screen-xl lg:max-w-screen-lg sm:mx-auto md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="container flex-row items-center justify-between hidden max-w-screen-lg mx-auto lg:flex xl:max-w-screen-xl">
+          <div class="flex flex-row text-white latoTextSmall loginList">
+              <p><a class="mr-5 text-white hover:text-gray-500" href="###">Patner</a></p>
+              <p><a class="text-white hover:text-gray-500" href="###">PRO</a></p>
+          </div>
+          <div class="flex flex-row items-center justify-center text-center text-white latoTextSmall typeList ">
+              <div>
+                <a class="text-white hover:text-gray-500" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="text-white hover:text-gray-500" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="text-white hover:text-gray-500" href="###">Support</a>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="text-white hover:text-gray-500" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="#"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="hidden lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid hidden grid-cols-2 lg:grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid grid-cols-2 lg:hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 text-black phoneNav LatoButton " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 hidden navlist lg:block">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./ Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="block sidebarClass lg:hidden">
+        <div class="flex flex-col ">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="float-right m-5 ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col items-center justify-center my-10">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+  <!--头部菜单结束-->
+  <!-- 斑斓图区开始 -->
+<div class="swiper-container videobanner swipervideo-box">
+  <div class="relative swiper-wrapper">
+      <div class="swiper-slide sectionbg">
+        <video id="myVideo" class="video-js vjs-big-play-centered vjs-fluid " style="width:100%;height:100%" muted loop autoplay data-setup='{}'>
+          <source src="./play/playlist.m3u8" type="application/x-mpegURL"></source>
+        </video>
+          <div class="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center m-auto ">
+            
+            <div class="text-center text-white">
+              <p class="LatoHeading">When you want to </p>
+              <p class="LatoHeading"> do money 
+                <span id="Typed" class="text-yellow-500 LatoHeading" ></span></p>
+              <p class="LatoHeading">Think BCR</p>
+            </div>
+            <div class="grid grid-cols-3 mx-5 mt-10 mb-5 text-white sm:mx-0 sm:gap-x-10 gap-x-5">
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[20px] h-[20px]" src="./images/Check circle.png" alt="">
+                <p class="LatoMainNavMenu">Easy to use</p>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[20px] h-[20px]" src="./images/Check circle.png" alt="">
+
+                <p class="LatoMainNavMenu">Fast speed</p>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[20px] h-[20px]" src="./images/Check circle.png" alt="">
+
+                <p class="text-center LatoMainNavMenu">Hight Security</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center justify-center my-10 text-white">
+              <button class=" my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+              <p class="LatoMainNavMenu">or</p>
+              
+              <button class="try LatoMainNavMenu">Try Demo Account</button>
+            </div>
+          </div>
+          <div class="absolute  hidden left-[50%] top-[100%] translate-y-[-100%] translate-x-[-50%] sm:block dataContainer">
+            <div class="grid items-start justify-around grid-cols-7 py-5 text-center text-white dataList">
+              <div class="flex flex-col items-center justify-center">
+                <p class="robotoNum dataTitle">100+</p>
+                <p class="dataInfo LatoMainNavMenu">Products</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+                <p class="robotoNum dataTitle">8+</p>
+                <p class="dataInfo LatoMainNavMenu">Products</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+                <p class="robotoNum dataTitle">400:1</p>
+                <p class="dataInfo LatoMainNavMenu">Products</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+                <p class="robotoNum dataTitle">$300</p>
+                <p class="dataInfo LatoMainNavMenu">Products</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+                <p class="robotoNum dataTitle">6</p>
+                <p class="dataInfo LatoMainNavMenu">Products</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+                <p class="robotoNum dataTitle">0.13s</p>
+                <p class="dataInfo LatoMainNavMenu">Products</p>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+                <p class="robotoNum dataTitle">100%</p>
+                <p class="dataInfo LatoMainNavMenu">Fund Secure</p>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <div class="swiper-slide sectionbg" >
+        <video id="myVideoEarth" class="video-js vjs-big-play-centered vjs-fluid " style="width:100%;height:100%" muted loop autoplay data-setup='{}'>
+          <source src="./earth/playlist.m3u8" type="application/x-mpegURL"></source>
+        </video>
+        <div class="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center max-w-screen-xl m-auto mx-auto">
+          <div class="flex flex-col items-center justify-center ">
+            <h1 class="w-3/4 mb-10 text-center text-white LatoHeading">Our services are all around the world.</h1>
+            <p class="latoTextBase text-[#B8BDCD] mx-10 text-center">risu commodo id turpis pharertra elementum Pulvinar</p>
+          </div>
+          <div class=" translate-y-[50px] flex flex-col items-center justify-center  text-white">
+            <button class=" my-3 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+            <p class="LatoMainNavMenu">or</p>
+            
+            <button class="try LatoMainNavMenu">Try Demo Account</button>
+          </div>
+        </div>
+
+        <div class="sm:block hidden absolute left-[50%] top-[100%] translate-y-[-100%] translate-x-[-50%] dataContainer">
+          <div class="grid items-start justify-around grid-cols-7 py-5 text-center text-white dataList">
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">100+</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">8+</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">400:1</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">$300</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">6</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">0.13s</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">100%</p>
+              <p class="dataInfo LatoMainNavMenu">Fund Secure</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="swiper-slide sectionbg" >
+        <video id="myVideoSydney" class="video-js vjs-big-play-centered vjs-fluid " style="width:100%;height:100%" muted loop autoplay data-setup='{}'>
+          <source src="./sydneyplay/playlist.m3u8" type="application/x-mpegURL"></source>
+        </video>
+        <div class="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center max-w-screen-xl m-auto mx-auto">
+          <div class="flex flex-col items-center justify-center ">
+            <h1 class="w-3/4 mb-10 text-center text-white LatoHeading">Our services are all around the world.</h1>
+            <p class="latoTextBase text-[#B8BDCD] mx-10 text-center">risu commodo id turpis pharertra elementum Pulvinar</p>
+          </div>
+          <div class=" translate-y-[50px] flex flex-col items-center justify-center  text-white">
+            <button class=" my-3 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+            <p class="LatoMainNavMenu">or</p>
+            
+            <button class="try LatoMainNavMenu">Try Demo Account</button>
+          </div>
+        </div>
+        <div class="sm:block hidden absolute left-[50%] top-[100%] translate-y-[-100%] translate-x-[-50%] dataContainer">
+          <div class="grid items-start justify-around grid-cols-7 py-5 text-center text-white dataList">
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">100+</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">8+</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">400:1</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">$300</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">6</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">0.13s</p>
+              <p class="dataInfo LatoMainNavMenu">Products</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="robotoNum dataTitle">100%</p>
+              <p class="dataInfo LatoMainNavMenu">Fund Secure</p>
+            </div>
+          </div>
+        </div>
+    </div> 
+  </div>
+  <div id="my-pagination-clickable" class="hidden sm:block swiper-pagination my-pagination-clickable"></div>
+  
+</div>
+<!--斑斓图区结束-->
+<!--datasection begin-->
+<div class="bg-[#070B0F] sm:pt-20 pt-0 tradedData">
+  <div class="max-w-screen-sm mx-auto md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+    <div class="flex flex-col items-center justify-center xl:flex-row">
+      <div class="hidden xl:block swiper-container table-swiper ">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="itemsTable bg-gradient-to-r from-white/[0.6] via-white/[0.4] to-white/[0.2] basis-1/2 drop-shadow-md rounded-xl">
+              <div class="border-b-[1px]">
+                <ul class="grid items-center grid-cols-5 text-center text-gray-200 dataUl">
+                  <li class="ml-5 active">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Popular</p>
+                    </div>
+                  </li>
+                  <li >
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">ASK</p>
+                    </div>
+                    
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">NYSE</p>
+                    </div>
+                  
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">MASDAQ</p>
+                    </div>
+                    
+                  </li>
+                  <li class="mr-5">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">LSE</p>
+                    </div>
+                  </li>
+                </ul>
+                
+              </div>
+              <div class="flex flex-col mt-5">
+                <div class="border-b-[1px]">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">EURUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">USDJPY</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">GBPUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">US500</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">JPN225</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">XPTUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide ">
+            <div class="itemsTable bg-gradient-to-r from-white/[0.6] via-white/[0.4] to-white/[0.2] basis-1/2 drop-shadow-md rounded-xl">
+              <div class="border-b-[1px]">
+                <ul class="grid items-center grid-cols-5 text-center text-gray-200 dataUl">
+                  <li class="ml-5 active">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Popular</p>
+                    </div>
+                  </li>
+                  <li >
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">FX</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Indices</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Cryptos</p>
+                    </div>
+                    
+                  </li>
+                  <li class="mr-5">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Metals</p>
+                    </div>
+                  </li>
+                </ul>
+                
+              </div>
+              <div class="flex flex-col mt-5">
+                <div class="border-b-[1px]">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">EURUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">USDJPY</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">GBPUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">US500</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">JPN225</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">XPTUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="swipertable-pagination"></div>
+
+      </div>
+      <div class="flex-col items-start hidden mx-10 mb-5 text-white sm:flex sm:mb-14 basis-1 lg:basis-1/2">
+        <h2 class="mb-10 LatoRegularSubHeading ">Explore Opportunities on 1000+ Products</h2>
+        <p class="latoTextBase">rade our extensive product line, including CFDs on Forex, commodities, cryptocurrencies, stocks, ETFs and more. Low trading costs, fast execution and 24/7 support. This is the best trading choice. </p>
+        <div class="mt-10 -ml-5 explore">
+          <div class="flex flex-row items-center ml-5">
+            <button class="mt-2 LatoButton">Explore more </button>
+            <img class="mt-2 " src="./images/whitearrow.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="hidden xl:hidden sm:block swiper-container phoneTable-swiper ">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="phoneItemsTable bg-gradient-to-r from-white/[0.6] via-white/[0.4] to-white/[0.2] basis-1/2 drop-shadow-md rounded-xl">
+              <div class="border-b-[1px]">
+                <ul class="grid items-center grid-cols-5 text-center text-gray-200 dataUl">
+                  <li class="ml-5 active">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Popular</p>
+                    </div>
+                  </li>
+                  <li >
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">ASK</p>
+                    </div>
+                    
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">NYSE</p>
+                    </div>
+                  
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">MASDAQ</p>
+                    </div>
+                    
+                  </li>
+                  <li class="mr-5">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">LSE</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col mt-5">
+                <div class="border-b-[1px]">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">EURUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">USDJPY</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">GBPUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">US500</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">JPN225</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">XPTUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="swiper-slide ">
+            <div class="phoneItemsTable bg-gradient-to-r from-white/[0.6] via-white/[0.4] to-white/[0.2] basis-1/2 drop-shadow-md rounded-xl">
+              <div class="border-b-[1px]">
+                <ul class="grid items-center grid-cols-5 text-center text-gray-200 dataUl">
+                  <li class="ml-5 active">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond ">Popular</p>
+                    </div>
+                  </li>
+                  <li >
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">FX</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Indices</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Cryptos</p>
+                    </div>
+                    
+                  </li>
+                  <li class="mr-5">
+                    <div class="m-5">
+                      <p class="h-6 LatoMainNavMenuRespond">Metals</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col mt-5">
+                <div class="border-b-[1px]">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">EURUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">USDJPY</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">GBPUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">US500</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-b-[1px] mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">JPN225</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <div class="grid items-start justify-center grid-cols-5 mx-5 mb-5 text-center">
+                    <div class="text-white LatoCardmenu">XPTUSD</div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span>
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> bid</span> </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                      <span class="LatoCaptial text-white mt-[5px]"> Ask</span> 
+                    </div>
+                    <div  class="text-center text-white LatoCardmenu">
+                      0.1
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                      <button class="mr-2 text-black duration-300 bg-green-400 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">BUY</p></button>
+                      <button class="text-white duration-300 bg-red-500 rounded-md LatoCaptial hover:ease-in hover:bg-black hover:text-white"><p class="mx-2 my-1">SELL</p></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiperPhoneTable-pagination"></div>
+      </div>
+      <div id="AnglePosition" class="flex flex-row items-start text-white sm:hidden sm:mx-0 sm:mb-14 basis-1 lg:basis-1/2">
+        <div class="bg-gray-500 explorePosition foldingAngle " >
+          <h2 class="p-2 LatoHeading2">Explore Opportunities on 1000+ Products</h2>
+          <p class="mx-5 latoTextBase">rade our extensive product line, including CFDs on Forex, commodities, cryptocurrencies, stocks, ETFs and more. Low trading costs, fast execution and 24/7 support. This is the best trading choice. </p>
+        
+        </div>
+
+        <!-- <p class="latoTextBase">rade our extensive product line, including CFDs on Forex, commodities, cryptocurrencies, stocks, ETFs and more. Low trading costs, fast execution and 24/7 support. This is the best trading choice. </p> -->
+        <div class=" exploreBut rounded-md bg-gray-500/[0.5]">
+          <div class="flex flex-row items-center ">
+            <button class="py-1 mx-2 text-left text-yellow-500 LatoButton">Explore more </button>
+            <!-- <img class="mt-2 " src="./images/whitearrow.png" alt=""> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block xl:hidden sm:hidden">
+      <button class="accordion">Runoob 1</button>
+        <div class="border-b-[1px] panel ">
+            <div class="border-b-[1px]">
+              <ul class="grid items-center grid-cols-5 text-center text-gray-200 phoneDataUl">
+                <li class="tableActive">
+                  <p class="py-2 LatoMainNavMenuRespond">Popular</p>
+                </li>
+                <li >
+                  <p class="LatoMainNavMenuRespond">ASK</p>
+                </li>
+                <li>
+                    <p class="LatoMainNavMenuRespond">NYSE</p>
+                </li>
+                <li>
+                  <div>
+                    <p class="LatoMainNavMenuRespond">MASDAQ</p>
+                  </div>
+                  
+                </li>
+                <li>
+                    <p class=" LatoMainNavMenuRespond">LSE</p>
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col mt-5">
+              <div class="border-b-[1px]">
+                <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                  <div class="text-white LatoCardmenu">EURUSD</div>
+                  <div class="flex flex-row items-center justify-center">
+                    <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="text-white LatoCaptial "> Ask</span> 
+                  </div>
+                  <div  class="text-center text-white LatoCardmenu">
+                    0.1
+                  </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                    <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-[1px] mt-5">
+                <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                  <div class="text-white LatoCardmenu">USDJPY</div>
+                  <div class="flex flex-row items-center justify-center">
+                    <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="text-white LatoCaptial"> Ask</span> 
+                  </div>
+                  <div  class="text-center text-white LatoCardmenu">
+                    0.1
+                  </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                    <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-[1px] mt-5">
+                <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                  <div class="text-white LatoCardmenu">GBPUSD</div>
+                  <div class="flex flex-row items-center justify-center">
+                    <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="text-white LatoCaptial"> Ask</span> 
+                  </div>
+                  <div  class="text-center text-white LatoCardmenu">
+                    0.1
+                  </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                    <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-[1px] mt-5">
+                <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                  <div class="text-white LatoCardmenu">US500</div>
+                  <div class="flex flex-row items-center justify-center">
+                    <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="LatoCaptial text-white ]"> Ask</span> 
+                  </div>
+                  <div  class="text-center text-white LatoCardmenu">
+                    0.1
+                  </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                    <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-[1px] mt-5">
+                <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                  <div class="text-white LatoCardmenu">JPN225</div>
+                  <div class="flex flex-row items-center justify-center">
+                    <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="text-white LatoCaptial"> Ask</span> 
+                  </div>
+                  <div  class="text-center text-white LatoCardmenu">
+                    0.1
+                  </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                    <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5">
+                <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                  <div class="text-white LatoCardmenu">XPTUSD</div>
+                  <div class="flex flex-row items-center justify-center">
+                    <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                    <span class="text-white LatoCaptial"> Ask</span> 
+                  </div>
+                  <div  class="text-center text-white LatoCardmenu">
+                    0.1
+                  </div>
+                  <div class="flex flex-row items-center justify-center">
+                    <button class="mr-2 text-green-500 LatoCaptial">BUY</button>
+                    <button class="text-red-500 LatoCaptial">SELL</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+          <button class="accordion">Runoob 2</button>
+          <div class="panel">
+          <div class="">
+            <ul class="grid items-center grid-cols-5 text-center text-gray-200 phoneDataUl">
+              <li class="tableActive">
+                <p class="py-2 LatoMainNavMenuRespond">Popular</p>
+              </li>
+              <li >
+                <p class="LatoMainNavMenuRespond">ASK</p>
+              </li>
+              <li>
+                <p class="LatoMainNavMenuRespond">NYSE</p>
+              </li>
+              <li>
+                <div>
+                  <p class="LatoMainNavMenuRespond">MASDAQ</p>
+                </div>
+                
+              </li>
+              <li>
+                
+                  <p class=" LatoMainNavMenuRespond">LSE</p>
+                
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col mt-5">
+            <div class="border-b-[1px]">
+              <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                <div class="text-white LatoCardmenu">EURUSD</div>
+                <div class="flex flex-row items-center justify-center">
+                  <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                <div class="flex flex-row items-center justify-center">
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="text-white LatoCaptial "> Ask</span> 
+                </div>
+                <div  class="text-center text-white LatoCardmenu">
+                  0.1
+                </div>
+                <div class="flex flex-row items-center justify-center">
+                  <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                  <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                </div>
+              </div>
+            </div>
+            <div class="border-b-[1px] mt-5">
+              <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                <div class="text-white LatoCardmenu">USDJPY</div>
+                <div class="flex flex-row items-center justify-center">
+                  <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                <div class="flex flex-row items-center justify-center">
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="text-white LatoCaptial"> Ask</span> 
+                </div>
+                <div  class="text-center text-white LatoCardmenu">
+                  0.1
+                </div>
+                <div class="flex flex-row items-center justify-center">
+                  <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                  <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                </div>
+              </div>
+            </div>
+            <div class="border-b-[1px] mt-5">
+              <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                <div class="text-white LatoCardmenu">GBPUSD</div>
+                <div class="flex flex-row items-center justify-center">
+                  <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                <div class="flex flex-row items-center justify-center">
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="text-white LatoCaptial"> Ask</span> 
+                </div>
+                <div  class="text-center text-white LatoCardmenu">
+                  0.1
+                </div>
+                <div class="flex flex-row items-center justify-center">
+                  <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                  <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                </div>
+              </div>
+            </div>
+            <div class="border-b-[1px] mt-5">
+              <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                <div class="text-white LatoCardmenu">US500</div>
+                <div class="flex flex-row items-center justify-center">
+                  <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                <div class="flex flex-row items-center justify-center">
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="LatoCaptial text-white ]"> Ask</span> 
+                </div>
+                <div  class="text-center text-white LatoCardmenu">
+                  0.1
+                </div>
+                <div class="flex flex-row items-center justify-center">
+                  <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                  <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                </div>
+              </div>
+            </div>
+            <div class="border-b-[1px] mt-5">
+              <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                <div class="text-white LatoCardmenu">JPN225</div>
+                <div class="flex flex-row items-center justify-center">
+                  <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                <div class="flex flex-row items-center justify-center">
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="text-white LatoCaptial"> Ask</span> 
+                </div>
+                <div  class="text-center text-white LatoCardmenu">
+                  0.1
+                </div>
+                <div class="flex flex-row items-center justify-center">
+                  <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                  <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5">
+              <div class="grid items-start justify-center grid-cols-5 mb-5 text-center">
+                <div class="text-white LatoCardmenu">XPTUSD</div>
+                <div class="flex flex-row items-center justify-center">
+                  <!-- <span class="mr-1"><img src="./images/stockreddown.png" alt=""></span> -->
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="mr-1 text-white LatoCaptial"> bid</span> </div>
+                <div class="flex flex-row items-center justify-center">
+                  <span class="mr-1 text-red-500 LatoCardmenu">1.04684</span>
+                  <span class="text-white LatoCaptial"> Ask</span> 
+                </div>
+                <div  class="text-center text-white LatoCardmenu">
+                  0.1
+                </div>
+                <div class="flex flex-row items-center justify-center">
+                  <button class="mr-2 text-green-500 duration-300 LatoCaptial hover:ease-in">BUY</button>
+                  <button class="text-red-500 duration-300 LatoCaptial hover:ease-in">SELL</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+    </div>
+</div>
+<!-- slideshow START -->
+<div class="hidden circlebg xl:block">
+    <section  class="slideshow ">
+      <div id="dashScroll" class="dashedCircle">
+        
+      </div>
+      <!-- slideshow:navigation START -->
+      <!-- -------------------------------------------------------- -->
+      <ul id="navigationC" class="navigationC">
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item activeC">
+          <span class="rotate-holder"></span>
+          <span class="background-holder firstBackground" style="background-image: url(./images/bitcoin.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/fx.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/gold.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/index.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/paterol.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/shares.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+        <!-- -------------------------------------------------------- -->
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/bitcoin.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/fx.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/gold.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/index.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/paterol.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigationC-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(./images/shares.png);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+      </ul>
+      <!-- slideshow:navigation END -->
+
+      <!-- -------------------------------------------------------- -->
+
+      <!-- slideshow:details START -->
+      <div class="detail">
+        <!-- slideshow:details START -->
+        <div class="detail-item activeC">
+          <div class="headline">
+            <!-- 美图1 -->
+            <img src="./images/commodities.png" alt="">
+          </div>
+          <!-- div class="background" style="background-image: url(images/img-1.jpeg)"></div -->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/metalscard.png" alt="">
+          </div>
+          <!--div class="background" style="background-image: url(images/img-2.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/commodities.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-3.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/metalscard.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-4.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/commodities.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-5.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/metalscard.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-6.jpeg);"></div--> 
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/commodities.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-7.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/metalscard.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-8.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/commodities.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-9.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/metalscard.png" alt="">
+          </div>
+          <!--div class="background" style="background-image: url(images/img-9.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">
+            <img src="./images/commodities.png" alt="">
+
+          </div>
+          <!--div class="background" style="background-image: url(images/img-9.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+            
+            <div class="headline">
+              <img src="./images/metalscard.png" alt="">
+            </div>
+          <!--div class="background" style="background-image: url(images/img-9.jpeg);"></div-->
+        </div>
+        <!-- slideshow:details END -->
+      </div>
+      <!-- slideshow:details END -->
+    </section>
+    <div class="control">
+        <a href="javascript:void(0);" class="up"><img src="./images/up.png" alt=""></a><!--顺时针-->
+        <a href="javascript:void(0);" class="down"><img src="./images/down.png" alt=""></a><!--逆时针-->
+    </div>
+    <input  type="hidden" id="cur_slide" value="0">
+    <div class="text-white pt-40 ml-[5%] 2xl:ml-[15%]">
+      <div>  
+        <h1 class="mb-10 LatoHeading2">Our Products</h1>
+        <p class="2xl:w-[45%] w-[30%] text-left latoTextBase">Risus commodo id odio turpis pharetra dhjsw whjd hjde  cbj  cbh hhd elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+
+        <div class="mt-10 -ml-5 explore">
+          <div class="flex flex-row ml-5">
+            <button class="z-10 mt-2 LatoButton">Explore more </button>
+            <img class="mt-2" src="./images/whitearrow.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="bg-[#070B0F] xl:hidden md:block hidden pt-20">
+  <div class="flex flex-col items-center justify-center mx-32 ">
+    <div class="text-white">
+        <h1 class="mb-10 LatoHeading2">Our Products</h1>
+        <p class="text-left latoTextBase">
+             Risus commodo id odio turpis pharetra dhjsw whjd hjde  cbj  cbh hhd elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros
+             Risus commodo id odio turpis pharetra dhjsw whjd hjde  cbj  cbh hhd elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros
+             Risus commodo id odio turpis pharetra dhjsw whjd hjde  cbj  cbh hhd elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros
+        </p>  
+        <div class="mt-10 -ml-5 explore">
+          <div class="flex flex-row ml-5">
+            <button class="z-10 mt-2 LatoButton">Explore more </button>
+            <img class="mt-2 " src="./images/whitearrow.png" alt="">
+          </div>
+        </div>
+    </div>
+   <div class="relative xl:w-[80%] w-[90%] mt-20">
+    <div class="phoneCircle-swiper xl:w-[90%] w-[95%] overflow-hidden">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide ">
+          <div class=" text-white  bg-white/[0.2] drop-shadow-md rounded-xl">
+            <div class="flex flex-col p-5">
+              <img class="w-[30%]" src="./images/biton.png" alt="">
+              <p class="LatoTextTitle">Metal</p>
+              <p class="LatoMainNavMenuRespond">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+              <a href=""><img class="w-[8%] mt-5" src="./images/rightWhiteArrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="   text-white  bg-white/[0.2] drop-shadow-md rounded-xl">
+            <div class="flex flex-col p-5">
+              <img class="w-[30%]" src="./images/biton.png" alt="">
+              <p class="LatoTextTitle">Metal</p>
+              <p class="LatoMainNavMenuRespond">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+              <a href=""><img class="w-[8%] mt-5" src="./images/rightWhiteArrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="  text-white  bg-white/[0.2] drop-shadow-md rounded-xl">
+            <div class="flex flex-col p-5">
+              <img class="w-[30%]" src="./images/biton.png" alt="">
+              <p class=" LatoTextTitle">Metal</p>
+              <p class="LatoMainNavMenuRespond">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+              <a href=""><img class="w-[8%] mt-5" src="./images/rightWhiteArrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="  text-white  bg-white/[0.2] drop-shadow-md rounded-xl">
+            <div class="flex flex-col p-5">
+              <img class="w-[30%]" src="./images/biton.png" alt="">
+              <p class="LatoTextTitle">Metal</p>
+              <p class=" LatoMainNavMenuRespond">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+              <a href=""><img class="w-[8%] mt-5" src="./images/rightWhiteArrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="  text-white  bg-white/[0.2] drop-shadow-md rounded-xl">
+            <div class="flex flex-col p-5">
+              <img class="w-[30%]" src="./images/biton.png" alt="">
+              <p class="LatoTextTitle">Metal</p>
+              <p class=" LatoMainNavMenuRespond">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+              <a href=""><img class="w-[8%] mt-5" src="./images/rightWhiteArrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="  text-white  bg-white/[0.2] drop-shadow-md rounded-xl">
+            <div class="flex flex-col p-5">
+              <img class="w-[30%]" src="./images/biton.png" alt="">
+              <p class="LatoTextTitle">Metal</p>
+              <p class=" LatoMainNavMenuRespond">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+              <a href=""><img class="w-[8%] mt-5" src="./images/rightWhiteArrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="  text-white  bg-white/[0.2] drop-shadow-md rounded-xl">
+            <div class="flex flex-col p-5">
+              <img class="w-[30%]  " src="./images/biton.png" alt="">
+              <p class=" LatoTextTitle">Metal</p>
+              <p class=" LatoMainNavMenuRespond">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros </p>
+              <a href=""><img class="w-[8%] mt-5" src="./images/rightWhiteArrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-prev swiper_Leftbtn"></div>
+    <div class="swiper-button-next swiper_Rightbtn"></div>
+  </div>
+  </div>
+</div>
+<div class="bg-[#070B0F] md:hidden block pl-3 pb-10">
+  <div class="items-center justify-center">
+    <div class="relative  w-[100%] ">
+      <div class="pt-5 overflow-hidden smallPhoneCircle-swiper">
+        <div class="flex flex-row swiper-wrapper">
+          <div class="swiper-slide productSwiper">
+            <div class=" text-white flex flex-row bg-white/[0.1] rounded-xl">
+              <div class="flex flex-col items-center justify-center ml-2 sm:ml-0 basis-1/2">
+                <p class="LatoProductBase">Just In </p>
+                <h1 class="my-2 LatoProductTitle">BCR </h1>
+                <p class="my-2 sm:my-5 LatoProductThin">Our Product</p>
+                <div class="flex flex-row">
+                  <button class="z-10 mt-2 LatoButton">Explore More </button>
+                  <!-- <img class="mt-2 " src="./images/whitearrow.png" alt=""> -->
+                </div>
+              </div>
+              <div class="mx-0 my-2 basis-1/2 sm:m-5">
+                <div class="flex flex-col m-5 text-black">
+                  <img class="w-[100%] h-[140px] sm:h-[250px]" src="./images/metaltrading.jpg" alt="">
+                  <p class="mt-3 text-center text-white LatoSemiBoldText">Metal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide productSwiper circleSwiper-slide">
+            <div class=" text-white flex flex-row bg-white/[0.1] rounded-xl">
+              <div class="m-2 sm:m-5">
+                <div class="flex flex-col m-5 text-black">
+                  <img class="w-[100%] h-[140px] sm:h-[250px]" src="./images/metaltrading.jpg" alt="">
+                  <p class="mt-3 text-center text-white LatoSemiBoldText">Metal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide productSwiper circleSwiper-slide">
+            <div class=" text-white flex flex-row bg-white/[0.1] rounded-xl">
+              <div class="m-2 sm:m-5">
+                <div class="flex flex-col m-5 text-black">
+                  <img class="w-[100%] h-[140px] sm:h-[250px]" src="./images/metaltrading.jpg" alt="">
+                  <p class="mt-3 text-center text-white LatoSemiBoldText">Metal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide productSwiper circleSwiper-slide">
+            <div class=" text-white flex flex-row bg-white/[0.1] rounded-xl">
+              <div class="m-2 sm:m-5">
+                <div class="flex flex-col m-5 text-black">
+                  <img class="w-[100%] h-[140px] sm:h-[250px]" src="./images/metaltrading.jpg" alt="">
+                  <p class="mt-3 text-center text-white LatoSemiBoldText">Metal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide productSwiper circleSwiper-slide">
+            <div class=" text-white flex flex-row bg-white/[0.1] rounded-xl">
+              <div class="m-2 sm:m-5">
+                <div class="flex flex-col m-5 text-black">
+                  <img class="w-[100%] h-[140px] sm:h-[250px]" src="./images/metaltrading.jpg" alt="">
+                  <p class="mt-3 text-center text-white LatoSemiBoldText">Metal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide productSwiper circleSwiper-slide">
+            <div class=" text-white flex flex-row bg-white/[0.1] rounded-xl">
+              <div class="m-2 sm:m-5">
+                <div class="flex flex-col m-5 text-black">
+                  <img class="w-[100%] h-[140px] sm:h-[250px]" src="./images/metaltrading.jpg" alt="">
+                  <p class="mt-3 text-center text-white LatoSemiBoldText">Metal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide productSwiper circleSwiper-slide">
+            <div class=" text-white flex flex-row bg-white/[0.1] rounded-xl">
+              <div class="m-2 sm:m-5">
+                <div class="flex flex-col m-5 text-black">
+                  <img class="w-[100%] h-[140px] sm:h-[250px]" src="./images/metaltrading.jpg" alt="">
+                  <p class="mt-3 text-center text-white LatoSemiBoldText">Metal</p>
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide productSwiper circleSwiper-slide">
+            <div class=" text-white bg-white/[0.1] rounded-xl">
+              <div class=" text-center flex flex-col items-center justify-center items-center pb-[2rem] pt-[1.8rem] sm:pb-[7rem] sm:pt-[6.7rem] ">
+                <p class="LatoSemiBoldText">Discover the more </p>
+                
+                <h1 class="my-4 text-xl sm:text-3xl font-extralight">Our Product</h1>
+              
+                <div class=" phoneProductExplore">
+                  <button class="z-10 LatoButton">Explore Now </button>
+                  <!-- <img class="mt-2 " src="./images/whitearrow.png" alt=""> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--whybcr-->
+<div class="bg-[#070B0F] md:mx-0 px-10 sm:block hidden pt-[80px]  lg:pt-[300px]">
+  <div class="flex flex-col items-start justify-center max-w-screen-sm mx-auto lg:max-w-screen-xl lg:flex-row">
+    <div class="text-white basis-2/3">
+      <div class="flex flex-col ">  
+        <div class="flex flex-col">
+          <h1 class="mb-10 LatoHeading2">Trade on the go. Anywhere, anytime.</h1>
+        </div>
+        <p class="w-2/3 text-left latoTextBase">Stay in the know with our app and desktop client. </p>
+
+        <div class="md:w-[75%] w-full my-10">
+          <video class="computerVideo" loop="loop" autoplay="autoplay" muted>
+            <source src="./images/display004.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col hidden md:block basis-1/3">
+      <img class="lg:w-full w-[70%]" src="./images/QR.png" alt="">
+      <div class="grid items-center justify-center grid-cols-4 mt-10 toolsPosition grid-row-2">
+        <img class="lg:w-[65%] w-[50%] " src="./images/mt4.png" alt="">
+        <img class="lg:w-[65%] w-[50%] " src="./images/mt5.png" alt="">
+        <img class="lg:w-full w-[70%] " src="./images/webtrader.png" alt="">
+        <img class="lg:w-[65%] w-[50%] " src="./images/mam.png" alt="">
+        <img class="lg:w-[65%] w-[50%] " src="./images/windows.png" alt="">
+        <img class="lg:w-[65%] w-[50%] " src="./images/android.png" alt="">
+        <img class="lg:w-[65%] w-[50%] " src="./images/macos.png" alt="">
+      </div>
+      <div class="mt-10 explore">
+        <div class="flex flex-row ml-5">
+          <button class="mt-2 text-white LatoButton">Explore more </button>
+          <img class="mt-2 " src="./images/whitearrow.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col block md:hidden ">
+      <div class="flex flex-row items-center justify-center mx-44 toolsPosition">
+        <img class="w-[35%] " src="./images/mt4.png" alt="">
+        <img class="w-[35%] " src="./images/mt5.png" alt="">
+        <img class="w-[35%] " src="./images/webtrader.png" alt="">
+        <img class="w-[35%] " src="./images/mam.png" alt="">
+        <img class="w-[35%] " src="./images/windows.png" alt="">
+        <img class="w-[35%] " src="./images/android.png" alt="">
+        <img class="w-[35%]" src="./images/macos.png" alt="">
+      </div>
+      <img class="w-[50%] ml-10" src="./images/QR.png" alt="">
+      <div class="-translate-y-[80px] translate-x-[400px] explore">
+        <div class="flex flex-row w-full ml-5">
+          <button class="mt-2 text-white LatoButton">Explore more </button>
+          <img class="mt-2 " src="./images/whitearrow.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="overflow-hidden bg-[#070B0F] md:mx-0 px-10 sm:hidden block pt-[20px] h-[780px]">
+  <div class="flex flex-col items-center justify-center max-w-screen-sm mx-auto ">
+    <div class="text-white">
+      <div class="">  
+        <div class="flex flex-col">
+          <h1 class="mb-10 text-left LatoHeading2">Trade on the go. Anywhere, anytime.</h1>
+        </div>
+      <div class="">
+        <img id="cumputerMt4" class="" src="./images/phonemt4.webp" alt="">
+        <img id="phoneMt4" class=" w-[50%] translate-x-[170px] -translate-y-[180px]  "  src="./images/androidmt4.png" alt="">
+
+      </div>
+        <!-- <div class="">
+          <video class="computerVideo" loop="loop" autoplay="autoplay" muted>
+          <source src="./images/display004.mp4" type="video/mp4">
+          </video>
+        </div> -->
+      </div>
+    </div>
+    <div class="flex flex-col phoneToolsPosition">
+      <img src="./images/QR.png" alt="">
+      <div class="grid items-center justify-center grid-cols-3">
+        <img class="w-[70%]" src="./images/windows.png" alt="">
+        <img class="w-[70%]" src="./images/android.png" alt="">
+        <img class="w-[70%]" src="./images/macos.png" alt="">
+      </div>
+      <div  class="grid items-center justify-between grid-cols-4 grid-row-2">
+        <img class="w-[70%]" src="./images/mt4.png" alt="">
+        <img class="w-[70%]" src="./images/mt5.png" alt="">
+        <img class="w-[70%]" src="./images/webtrader.png" alt="">
+        <img class="w-[70%]" src="./images/mam.png" alt="">
+      </div>
+      <div class=" explore">
+        <div class="flex flex-row ml-5">
+          <button class="mt-2 text-white LatoButton">Explore more </button>
+          <img class="mt-2 " src="./images/whitearrow.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--established cfd-->
+<div class="video-box">
+  <video class="video-background " preload="auto" loop playsinline autoplay tabindex="-1" muted="muted">
+    <source src="./images/333333333333333333333.mp4" type="video/mp4">
+  </video>
+  <!-- <video class="phonevideo-background " preload="auto" loop playsinline autoplay tabindex="-1" muted="muted">
+    <source src="./images/333333333333333333333.mp4" type="video/mp4">
+  </video> -->
+  <div class="flex flex-col mx-10 overflow-hidden videoText 2xl:mx-36">
+    <h1 class="text-left LatoHeading2">Established CFD Peovider</h1>
+    <div class="grid establishContent items-start justify-around grid-cols-2 mt-10 text-left gap-x-10 gap-y-[24px] grid-row-2">
+      <div class="flex flex-col ">
+        <h2 class="2xl:w-[50%] w-[80%] LatoTextTitle ">LICENSED AND REGULATED</h2>
+        <p class="2xl:w-[80%] w-full latoTextBase">BCR strives to follow all regulatrory requirements scince 2008</p>
+      </div>
+      <div class="flex flex-col">
+        <h2 class="2xl:w-[50%] w-[80%] LatoTextTitle">SEGREGATED CLIENT MONTY ACCOUNTS</h2>
+        <p class="2xl:w-[80%] w-full latoTextBase">All client money is held in separately from Company Money in a Client Money Account</p>
+      </div>
+      <div class="flex flex-col">
+        <h2 class="2xl:w-[50%] w-[80%] LatoTextTitle">TECHNOLOGY</h2>
+        <p class="2xl:w-[80%] w-full latoTextBase">Trade over 100+ CFD on the popularly MetaTrade 4 platform used by the most professional and experienced traders</p>
+      </div>
+      <div class="flex flex-col">
+        <h2 class="2xl:w-[50%] w-[80%] LatoTextTitle">CLENT ORIENTED</h2>
+        <p class="2xl:w-[80%] w-full latoTextBase">We care about our clients regardless of the size of their account. Our talented professionals are standing by 24/5 to support you.</p>
+      </div>
+    </div>
+  </div>
+  <div class="phoneVideoText bg-[#070B0F] flex flex-col justify-center items-center py-10 text-center">
+  <h1 class="mb-8 LatoHeading2 r">Established CFD Peovider</h1>
+  <div class="grid grid-cols-2 mx-5 grid-row-2 gap-x-5 gap-y-5">
+    <div class="bg-white/[0.2] rounded-xl">
+      <div class="flex flex-col m-5">
+        <h2 class=" LatoTextTitle">LICENSED AND REGULATED</h2>
+        <p class="latoTextBase">BCR strives to follow all regulatrory requirements scince 2008</p>
+      </div>
+    </div>
+    <div class="bg-white/[0.2] rounded-xl">
+      <div class="flex flex-col m-5">
+        <h2 class=" LatoTextTitle">LICENSED AND REGULATED</h2>
+        <p class="latoTextBase">BCR strives to follow all regulatrory requirements scince 2008</p>
+      </div>
+    </div>
+
+    <div class="bg-white/[0.2] rounded-xl">
+      <div class="flex flex-col m-5">
+        <h2 class=" LatoTextTitle">LICENSED AND REGULATED</h2>
+        <p class=" latoTextBase">BCR strives to follow all regulatrory requirements scince 2008</p>
+      </div>
+    </div>
+    <div class="bg-white/[0.2] rounded-xl">
+      <div class="flex flex-col m-5">
+        <h2 class="LatoTextTitle ">LICENSED AND REGULATED</h2>
+        <p class=" latoTextBase">BCR strives to follow all regulatrory requirements scince 2008</p>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+  
+  
+</div>
+<!-- 遮罩层DIV -->
+<!--coverlayer-->
+<div class="bg-[#070B0F] overflow-hidden">
+  <div class="flex flex-col items-center justify-center max-w-screen-xl py-10 mx-auto text-white ipadComputerCover">
+    <div>
+      <p class="LatoTextTitle">Market news & Analysis</p>
+    </div>
+    <div class="mt-5">
+      <h1 class="LatoHeading2">Be the first to get information</h1>
+    </div>
+    <div class="grid items-center justify-between grid-cols-3 mx-10 mt-20 computerCoverContainer coverlayerPosition xl:mx-0 gap-x-10 lg:gap-x-20 2xl:gap-x-40">
+        <div class="coverContainer">
+          <img id="blurBg" src="./images/coinbg.png" alt="">
+          <div class="coverlayer">
+            <div class="w-12 mb-10 ml-10 text-center translate-y-5 bg-blue-900 hoverHiddenBtn rounded-xl">
+              <button class="text-white ">EUR</button>
+            </div>
+            <div>
+              <div class="flex flex-col justify-center m-5 text-center text-black coverLayText" >
+                <p class="mb-2 LatoSemiBoldText">Market news & Analysis</p>
+                <p class="text-left LatoMainNavMenu">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros  </p>
+              <div class="mt-10">
+                <div class="flex flex-row items-center readMoreHover">
+                  <button class="mt-2 font-bold text-left readMoreHover ">read more </button>
+                  <img class="mt-2 " src="./images/rightArrow.png" alt="">
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="coverContainer">
+        <img id="phoneBlur" src="./images/phonebg.png" alt="">
+        <div class="coverlayer ">
+          <div class="w-12 mb-10 ml-10 text-center translate-y-5 bg-blue-900 hoverHiddenBtn rounded-xl">
+            <button class="text-white ">EUR</button>
+          </div>
+          <div>
+            <div>
+              <div class="flex flex-col justify-center m-5 text-center text-black coverLayText" >
+                <p class="mb-2 LatoSemiBoldText">Market news & Analysis</p>
+                <p class="text-left LatoMainNavMenu">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros  </p>
+              <div class="mt-10 ">
+                <div class="flex flex-row items-center readMoreHover">
+                  <button class="mt-2 font-bold text-left readMoreHover ">read more </button>
+                  <img class="mt-2 " src="./images/rightArrow.png" alt="">
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="coverContainer">
+        <img id="moneyBlur" src="./images/dollorbg.png" alt="">
+        <div class="coverlayer">
+          <div class="w-12 mb-10 ml-10 text-center translate-y-5 bg-blue-900 hoverHiddenBtn rounded-xl">
+            <button class="text-white ">EUR</button>
+          </div>
+          <div>
+            <div>
+              <div class="flex flex-col justify-center m-5 text-center text-black coverLayText" >
+                <p class="mb-2 LatoSemiBoldText">Market news & Analysis</p>
+                <p class="text-left LatoMainNavMenu">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros  </p>
+              <div class="mt-10">
+                <div class="flex flex-row items-center readMoreHover">
+                  <button class="mt-2 font-bold text-left readMoreHover ">read more </button>
+                  <img class="mt-2 " src="./images/rightArrow.png" alt="">
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative overflow-hidden phoneCoverContainer mx-30">
+      <div class="mt-20">
+        <div class="phoneCover-swiper ">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide ">
+              <div class="coverContainer">
+                <img id="blurBg" src="./images/coinbg.png" alt="">
+                <div class="coverlayer">
+                  <div class="w-12 mb-10 ml-10 text-center translate-y-5 bg-blue-900 hoverHiddenBtn rounded-xl">
+                    <button class="text-white ">EUR</button>
+                  </div>
+                  <div>
+                    <div class="flex flex-col justify-center m-5 text-center text-black coverLayText" >
+                      <p class="mb-2 LatoSemiBoldText marketNews">Market news & Analysis</p>
+                      <p class="text-left marketDetails LatoMainNavMenu">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros  </p>
+                    <div class="readMoreHoverBox">
+                      <div class="flex flex-row items-center readMoreHover">
+                        <button class="mt-2 font-bold text-left readMoreHover ">read more </button>
+                        <img class="mt-2 " src="./images/rightArrow.png" alt="">
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide ">
+              <div class="coverContainer">
+                <img id="blurBg" src="./images/coinbg.png" alt="">
+                <div class="coverlayer">
+                  <div class="w-12 mb-10 ml-10 text-center translate-y-5 bg-blue-900 hoverHiddenBtn rounded-xl">
+                    <button class="text-white ">EUR</button>
+                  </div>
+                  <div>
+                    <div class="flex flex-col justify-center m-5 text-center text-black coverLayText" >
+                      <p class="mb-2 LatoSemiBoldText marketNews">Market news & Analysis</p>
+                      <p class="text-left marketDetails LatoMainNavMenu">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros  </p>
+                    <div class="readMoreHoverBox">
+                      <div class="flex flex-row items-center readMoreHover">
+                        <button class="mt-2 font-bold text-left readMoreHover ">read more </button>
+                        <img class="mt-2 " src="./images/rightArrow.png" alt="">
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide ">
+              <div class="coverContainer">
+                <img id="blurBg" src="./images/coinbg.png" alt="">
+                <div class="coverlayer">
+                  <div class="w-12 mb-10 ml-10 text-center translate-y-5 bg-blue-900 hoverHiddenBtn rounded-xl">
+                    <button class="text-white ">EUR</button>
+                  </div>
+                  <div>
+                    <div class="flex flex-col justify-center m-5 text-center text-black coverLayText" >
+                      <p class="mb-2 LatoSemiBoldText marketNews">Market news & Analysis</p>
+                      <p class="text-left marketDetails LatoMainNavMenu">Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros  </p>
+                    <div class="readMoreHoverBox">
+                      <div class="flex flex-row items-center readMoreHover">
+                        <button class="mt-2 font-bold text-left readMoreHover ">read more </button>
+                        <img class="mt-2 " src="./images/rightArrow.png" alt="">
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="swiperCoverLayer-pagination"></div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="mt-10 explore">
+      <div class="flex flex-row items-center ml-3 ">
+        <button class="mt-2 LatoButton">View all articles </button>
+        <img class="mt-2 " src="./images/whitearrow.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="mb-20 smallPhoneContainer mt-15">
+    <div class="flex flex-row items-start justify-center mx-10">
+      
+      <div class="basis-[60%] relative smallphoneChangebg">
+        <img class="w-[100%] blurbg" src="./images/coinbg.png" alt="">
+        <button class="flex flex-row items-center justify-center smallPhoneReadmore">
+          <p class="mx-5 LatoHeading2">READ MORE</p>
+          <!-- <img class="w-1/4 mx-5 h-1/4" src="./images/more.png" alt=""> -->
+        </botton>
+      </div>
+      <div class="flex flex-col basis-[40%] justify-center ">
+        <div class="relative smallphoneChangebgSecond">
+          <img class="w-[100%]" src="./images/phonebg.png" alt="">
+          <button class="flex flex-row items-center justify-center smallPhoneReadmorePhone">
+            <p class="mx-5 LatoHeading2">READ MORE</p>
+            <!-- <img class="w-1/4 mx-5 h-1/4" src="./images/more.png" alt=""> -->
+          </botton>
+        </div>
+        <div class="relative smallphoneChangebgThrid">
+        <img class="w-[100%] smallPhoneSize" src="./images/dollorbg.png" alt="">
+        <button class="flex flex-row items-center justify-center smallPhoneReadmoreMoney">
+          <p class="mx-5 LatoHeading2">READ MORE</p>
+          <!-- <img class="w-1/4 mx-5 h-1/4" src="./images/more.png" alt=""> -->
+        </botton>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</div>
+<!--reward-->
+<div class="hidden lg:block bg-[#070B0F] pt-10 overflow-hidden">
+  <div class="flex flex-col items-center max-w-screen-xl mx-auto">
+    <div class="text-center text-white ">
+      <h1 class="LatoHeading">Forex Trading Expertise</h1>
+    </div>
+    <div class="flex flex-row items-center justify-center my-24 rewardPosition">
+      <img class="w-1/5 h-1/5" src="./images/reward1.png" alt="">
+      <img class="w-1/5 -translate-y-20 h-1/5" src="./images/reward2.png" alt="">
+      <img class="w-1/5 h-1/5" src="./images/reward3.png" alt="">
+      <img class="w-1/5 -translate-y-20 h-1/5" src="./images/reward4.png" alt="">
+      <img class="w-1/5 h-1/5" src="./images/reward5.png" alt="">
+
+    </div>
+    <div>
+
+    </div>
+  </div>
+</div>
+<!--join us-->
+<!--join us-->
+<div class="subpageFooterBg">
+    <div class="flex flex-col items-center justify-center max-w-screen-xl py-20 mx-auto text-white">
+        <h1 class="mb-10 text-center text-white text-7xl">Join us as a journey</h1>
+        <p class="mb-10">Sign up in minutes and start doing money right.</p>
+        <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+    </div>
+</div>
+<!--footer-->
+<div class="bg-[#070B0F]">
+  <div class="flex flex-col max-w-screen-xl mx-auto">
+    <div class="border-b-[1px]">
+      <div class="grid grid-cols-2 m-5">
+        <img src="./images/logonew.png" alt="">
+        <div class="flex flex-row text-white justify-self-end">
+          <button class="LatoTextTitle">Ready to get started?</button>
+          <button  class="ml-3 text-white btn btn-warning">get start</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="flex flex-col items-center justify-between m-5 text-white md:flex-row">
+          <div class="flex flex-col hidden md:block">
+            <p>Subscribe to our newsletter</p>
+            <div class="flex flex-row mt-10">
+              <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+              <button><img src="./images/Submit.png"></button>
+            </div>
+          </div>
+          <div class="md:basis-[60%] basis-1 gap-x-24  md:gap-x-32  grid grid-cols-3">
+            <div>
+              <h1 class="text-yellow-500">Services</h1>
+              <p class="mt-5">Email Marketing</p>
+              <p  class="mt-5">Campaigns</p>
+              <p  class="mt-5">Branding</p>
+              <p  class="mt-5">Offline</p>
+            </div>
+            <div>
+             <h1 class="text-yellow-500">About</h1> 
+             <p  class="mt-5">Our Story</p>
+             <p  class="mt-5">Benefits</p>
+             <p  class="mt-5">Team</p>
+             <p  class="mt-5">Careers</p>
+            </div>
+            <div>
+              <h1 class="text-yellow-500">Help</h1>
+              <p  class="mt-5">FAQs</p>
+              <p  class="mt-5">Contact Us</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="max-w-screen-xl mx-auto">
+        <div class="flex flex-col items-center justify-between m-5 md:flex-row">
+          <div class="grid grid-cols-2 text-white gap-x-10 md:gap-x-16">
+            <p>Terms & Conditions</p>
+            <p>privacy Policy</p>
+          </div>
+          <div class="grid grid-cols-3 my-10 gap-x-10 md:my-0">
+            <img src="./images/Path.png" alt="">
+            <img src="./images/twitter.png" alt="">
+            <img src="./images/instagram.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <script src="./js/type.js"></script> -->
+<script src="./swiper/js/swiper.min.js"></script>
+<script src="./swiper/js/swiper.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/CSSPlugin.min.js"></script>
+<script src="js/TextPlugin.min.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/same.js"></script>
+  <script>
+    //吸顶
+    $(function(){
+        $(window).scroll(function(){
+          if($(window).scrollTop()>250 && $(window).width()>680){
+              $("#dashScroll").addClass("navigationDashaminate")
+              $("#navigationC").addClass("navigationCaminate")
+
+             }
+             else{
+              $("#dashScroll").removeClass("navigationDashaminate")
+              $("#navigationC").removeClass("navigationCaminate")
+
+             }
+             if($(window).scrollTop()>100){
+              $("#AnglePosition").addClass("animateAnglePosition")
+             }
+             else{
+              $("#AnglePosition").removeClass("animateAnglePosition")
+             }
+             
+             if($(window).scrollTop()>350){
+              $("#cumputerMt4").addClass("cumputerMt4")
+              $("#phoneMt4").addClass("phoneMt4")
+             }
+             if($(window).scrollTop()>500){
+              $(".phoneToolsPosition").css({"transition":"all 4s", "transform":"translateY(-150px)"})
+             }
+             else{
+             
+              $(".phoneToolsPosition").css({"transition":"all 4s", "transform":"translateY(100px)"})
+
+             }
+             if($(window).scrollTop()>850){
+              $(".computerVideo").css({"transition":"all 7s", "transform":"translateX(0)"})
+              $(".toolsPosition").css({"transition":"all 6s", "transform":"translateY(0px)"})
+             }
+             else{
+              $(".computerVideo").css({"transition":"all 7s","transform":"translateX(-1000px)"})
+              $(".toolsPosition").css({"transition":"all 6s", "transform":"translateY(300px)"})
+
+             }
+             if($(window).scrollTop()>1000){
+              $(".establishContent").css({"transition":"all 8s", "transform": "translateY(0px)"})
+             }else{
+              $(".establishContent").css({"transition":"all 5s", "transform": "translateY(500px)"})
+             }
+             if($(window).scrollTop()>2300){
+              $(".coverlayerPosition").css({"transition":"all 6s", "transform": "translateY(0px)"})
+             }else{
+              $(".coverlayerPosition").css({"transition":"all 6s", "transform": "translateY(300px)"})
+             }
+             if($(window).scrollTop()>3500){
+              $(".rewardPosition").css({"transition":"all 6s", "transform": "translateY(0px)"})
+             }else{
+              $(".rewardPosition").css({"transition":"all 2s", "transform": "translateY(200px)"})
+             }
+        });
+    });
+    $(function(){
+      $(".dataUl li").mouseenter(function(){
+        $(this).addClass("textSize")
+      })
+      $(".dataUl li").mouseleave(function(){
+        $(this).removeClass("textSize")
+    });
+      $(".dataUl li").click(function(){
+        if($(this).hasClass("textSize")){
+          $(this).removeClass("textSize")
+          $(this).addClass("active").siblings().removeClass("active")
+        }
+      })
+      })  
+    $(function(){
+      $(".phoneDataUl li").mouseenter(function(){
+        $(this).addClass("textSize")
+      })
+      $(".phoneDataUl li").mouseleave(function(){
+        $(this).removeClass("textSize")
+    });
+      $(".phoneDataUl li").click(function(){
+        if($(this).hasClass("textSize")){
+          $(this).removeClass("textSize")
+          $(this).addClass("tableActive").siblings().removeClass("tableActive")
+        }
+      })
+      }) 
+      var typed = new Typed("#Typed", {
+      strings: ["easier","right"],
+      // startDelay: 0,
+      loopCount: Infinity,
+      backDelay: 0,
+      typeSpeed: 70,
+      loop: true,
+      backSpeed: 50
+      })
+    var swipertable = new Swiper('.table-swiper',{
+      direction: 'vertical',
+      speed:8000,
+      // autoplay:{
+      //   delay:8000,
+      //   disableonInteraction:false
+      // },
+        loop:true,
+        pagination: {
+          el: '.swipertable-pagination',
+          clickable: true,
+          
+          clickableClass:'mytable-pagination-clickable',
+          bulletClass :'swiper-pagination-bullet',
+          //激活样式
+          bulletActiveClass: 'my-bullet-active',
+        }
+    })
+   
+    var mySwiper = new Swiper('.phoneCover-swiper ', {
+      direction: 'horizontal',
+      slidesPerView: 2.4,
+      centeredSlides: false,
+      speed:5000,
+      autoplay:{
+        delay:5000,
+      },
+      
+      spaceBetween:20,
+      pagination: {
+          el: '.swiperCoverLayer-pagination',
+          clickable: true,
+          
+          clickableClass:'myCoverLayer-pagination-clickable',
+          bulletClass :'swiper-pagination-bullet',
+          //激活样式
+          bulletActiveClass: 'my-bullet-active',
+        }
+})
+    var mySwiper = new Swiper('.phoneCircle-swiper', {
+      direction: 'horizontal',
+      slidesPerView: 3,
+      centeredSlides: false,
+      speed:5000,
+      autoplay:{
+        delay:5000,
+      },
+      
+      spaceBetween:20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+})
+var mySwiper = new Swiper('.smallPhoneCircle-swiper', {
+      direction: 'horizontal',
+      slidesPerView: 1.5,
+      centeredSlides: false,
+      spaceBetween:20,
+})
+    // var swipertable = new Swiper('.phoneCircle-swiper',{
+    //   direction: 'horizontal',
+    //   speed:5000,
+    //   autoplay:{
+    //     delay:5000,
+    //   },
+    //     loop:true,
+        // pagination: {
+        //   el: '.swiperPhoneCircle-pagination',
+        //   clickable: true,
+          
+        //   clickableClass:'myPhoneCircle-pagination-clickable',
+        //   bulletClass :'swiper-pagination-bullet',
+        //   //激活样式
+        //   bulletActiveClass: 'my-bullet-active',
+        // },
+        // 如果需要前进后退按钮
+    //     navigation: {
+    //         nextEl: '.swiper-button-next .sw-car-next',
+    //         prevEl: '.swiper-button-prev .sw-car-prev',
+    //     }
+    // })
+    var swipertable = new Swiper('.phoneTable-swiper',{
+      direction: 'horizontal',
+      speed:5000,
+      autoplay:{
+        delay:5000,
+        // disableonInteraction:false
+      },
+        loop:true,
+        pagination: {
+          el: '.swiperPhoneTable-pagination',
+          clickable: true,
+          
+          clickableClass:'myPhoneTable-pagination-clickable',
+          bulletClass :'swiper-pagination-bullet',
+          //激活样式
+          bulletActiveClass: 'my-bullet-active',
+        }
+    })
+    
+      var swipervideo = new Swiper('.swipervideo-box', {
+        direction: 'horizontal',
+        speed:8000,
+        autoplay:{
+          disableOnInteraction: false,
+            // delay:5000,
+        },
+        loop:true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            
+            clickableClass:'my-pagination-clickable',
+            bulletClass :'swiper-pagination-bullet',
+            //激活样式
+            bulletActiveClass: 'my-bullet-active',
+        }
+    })
+//手风琴
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+    this.classList.toggle("accordionActive");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+//phoneClick to blur
+$(".smallphoneChangebg ").click(function(){
+  $('.smallphoneChangebg .blurbg').addClass("smallPhoneBlur");
+  $('.smallphoneChangebg .smallPhoneReadmore').show()
+  $('.smallphoneChangebgSecond img').removeClass("smallPhoneBlur");
+  $('.smallphoneChangebgSecond .smallPhoneReadmorePhone').hide()
+  $('.smallphoneChangebgThrid .smallPhoneReadmoreMoney').hide()
+  $('.smallphoneChangebgThrid img').removeClass("smallPhoneBlur");
+
+})
+$(".smallphoneChangebgSecond ").click(function(){
+  $('.smallphoneChangebg .blurbg').removeClass("smallPhoneBlur");
+  $('.smallphoneChangebg .smallPhoneReadmore').hide()
+  $('.smallphoneChangebgSecond .smallPhoneReadmorePhone').show()
+  $('.smallphoneChangebgSecond img').addClass("smallPhoneBlur");
+  $('.smallphoneChangebgThrid img').removeClass("smallPhoneBlur");
+  $('.smallphoneChangebgThrid .smallPhoneReadmoreMoney').hide()
+  // $('.smallphoneChangebgSecond ').addClass("smallPhoneBlur");
+
+})
+$(".smallphoneChangebgThrid ").click(function(){
+  $('.smallphoneChangebg .blurbg').removeClass("smallPhoneBlur");
+  $('.smallphoneChangebg .smallPhoneReadmore').hide()
+  $('.smallphoneChangebgSecond img').removeClass("smallPhoneBlur");
+  $('.smallphoneChangebgSecond .smallPhoneReadmorePhone').hide()
+  $('.smallphoneChangebgThrid .smallPhoneReadmoreMoney').show()
+  $('.smallphoneChangebgThrid img').addClass("smallPhoneBlur");
+
+
+})
+
+    </script>
+  </body>
+</html>

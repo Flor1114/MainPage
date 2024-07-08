@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spreads,commission&swap</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/font/font.css">
+
+</head>
+<style>
+    
+        .try:hover{
+    color: orange;
+        }
+        .videobanner{
+        width: 100%;
+        position: relative;
+       
+        /* background-image: url('./images/rangebg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat;
+        height: auto; */
+        }
+        .subNavitem{
+            margin-right: 20px;
+        }
+        /* .active{
+            color: rgb(244, 165, 6);
+        } */
+        .subpageFooterBg{
+        width: 100%;
+        /* position: relative; */
+        background-image: url('./images/subfootbg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat;
+
+        }
+        .navFix {
+            position: fixed;
+            top: 73px;
+            height: 60px;
+            padding-top: 10px;
+            /* left: 32%; */
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+            /* border-bottom: 1px solid #e3e3e3; */
+            z-index: 3;
+            width: 100%;
+            /* transform: all 1s; */
+            background-color: white;
+
+        }
+
+    .videoGetStart{
+  
+  border-radius: 5px;
+  text-align: center;
+  left: 45%;
+  top: 400px;
+  /* background: linear-gradient(to bottom right,#3A6085,#161725); */
+  background: linear-gradient(to right,#373838, #7b7c7c, #7b7c7c,transparent, transparent);
+  background-size: 200%;
+  transition: background-position 1s; 
+
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.liActive{
+    color: rgb(255, 170, 0);
+}
+.box{
+    width: 100%;
+    height: 200px;
+    /* border: 3px solid black; */
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.boxUl{
+    width: 4750px;
+    list-style: none;
+    animation: run 30s linear infinite;
+}
+
+.boxUl li{
+    width: 250px;
+    height: 160px;
+    float: left;
+
+}
+ @keyframes run {
+    to{
+        transform:translateX(-2250px);
+    }
+}
+.boxUl:hover {
+	animation-play-state:paused
+}
+.spreadsActive{
+  border-bottom: rgb(248, 176, 31) solid 3px;
+  color: rgb(248, 176, 31);
+}
+.search {
+height: 35px;;
+border-radius: 18px;
+transform: translateX(35%);
+background: #EFEFF0;
+border: 1px solid #EFEFF0;
+box-shadow: 0 0 3px #EFEFF0 inset;
+}
+.scrollHidden{
+  /* margin-right: calc(100% - 100vw); */
+    width: 100%;
+    height: 450px;
+    margin-bottom: 100px;
+    overflow: hidden;
+
+    
+    /* overflow-y: overlay; */
+}
+.scrollHidden:hover {
+    overflow: overlay;
+}
+.scrollHidden .scorllContainer div p{
+ margin: 20px;
+
+}
+.scorllMin div p{
+  margin:20px 0 20px 14px
+}
+.scrollHidden .scorllContainer div{
+  border-bottom:rgb(229, 229, 231,0.5) 1px solid;
+}
+.scorllMin div{
+  border-bottom:rgb(229, 229, 231,0.5) 1px solid;
+}
+.scorllMinSecond div p{
+  margin:20px 0px 20px 0px
+}
+
+.scorllMinSecond div{
+  border-bottom:rgb(229, 229, 231,0.5) 1px solid;
+
+}
+.swapBox{
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+</style>
+<body>
+    
+<!--头部菜单开始-->
+<header class="header pt-5">
+  <div class="xl:max-w-screen-xl lg:max-w-screen-lg mx-10 sm:mx-auto max-w-screen-sm md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="container lg:flex hidden max-w-screen-lg xl:max-w-screen-xl mx-auto flex-row justify-between items-center">
+          <div class="latoTextSmall  text-white flex flex-row loginList">
+              <p><a class="hover:text-gray-500 text-white mr-5" href="###">Patner</a></p>
+              <p><a class="hover:text-gray-500 text-white" href="###">PRO</a></p>
+          </div>
+          <div class="flex latoTextSmall  items-center justify-center flex-row text-center text-white typeList ">
+              <div>
+                <a class="hover:text-gray-500 text-white" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">Support</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="hover:text-gray-500 text-white" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="./index.html"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex hidden navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid-cols-2 grid lg:grid hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid-cols-2 grid lg:hidden grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 phoneNav LatoButton text-black " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 navlist lg:block hidden">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5 ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="sidebarClass lg:hidden block">
+        <div class=" flex flex-col">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="m-5 float-right ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col my-10 items-center justify-center">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+    <!--头部菜单结束-->
+    <!--banner-->
+    <div class="w-full">
+        <div class="container text-black pb-10 pt-52">
+            <div class="mb-10">
+                <ul class="menu menu-horizontal LatoSubtitle">
+                    <li class="mr-2">HOME > </li>
+                    <li class="mr-2"> TRADING > </li>
+                    <li> Spreads, Commission and Swap </li>
+                </ul>
+            </div>
+            <h1 class="LatoSubPageThinTile mb-5">Spreads, Commission and Swap</h1>
+            <p class="mr-2 LatoThinSubHeadingContent">We use multiple liquidity providers from Tier 1 Banks and institutions to give you competitive quotes on a wide range of instruments.</p>
+        </div>
+    </div>
+    <!--子导航-->
+    <div id="subNavContainer" class="subNavContainer relative pt-8">
+        <div id="navWrap" class="navWrap border-b-[1px] border-t-[1px] h-[50px] mb-5">
+        <ul class=" flex-row flex subNav justify-center LatoSmall items-center">
+            <li class="subNavitem liActive mt-3"><a href="">SPREADS, COMMISSION & SWAP</a> </li>
+            <li class="subNavitem mt-3"><a href="#forex"> MARGIN & LEVERAGE</a></li>
+            <li class="subNavitem mt-3"><a href="#shares">TRADING HOURS</a></li>
+        </ul>
+    </div>
+    </div>
+    <!--forex-->
+    <div class="pt-40 pb-40 w-full">
+        <!-- <a name="forex" style="position: relative;top: -200px;"></a> -->
+        <div  class="container mb-20 flex flex-col justify-center items-center">
+           <div class="flex flex-row justify-center items-center">
+            <div class="basis-[30%] flex  flex-col">
+                <div class="flex flex-row">
+                    <img class="w-[30%]" src="./images/moneyandpeople.png" alt="">
+                    <img class="w-[23%] ml-10 h-[23%]" src="./images/handandpercent.png" alt="">
+                </div>
+                
+                <img class="w-[18%] ml-28" src="./images/cycle.png" alt="">
+            </div>
+            <div class="basis-[70%]">
+                <div class="flex flex-col">
+                    <h1 class="LatoThinSubHeading">Spreads, Commission and Swap</h1>
+                    <p class="LatoThinBigBody2 my-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
+                    <p class="LatoThinBigBody2 my-2" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. </p>
+                    <p class="LatoThinBigBody2">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+<!--explore more-->
+<!--spreads-->
+<!--spreads-->
+<div class="sm:block hidden bg-[#FAFAFA] pt-10 w-full">
+  <div class="container flex flex-col">
+    <h1 class="LatoThinSubHeading">Spreads</h1>
+    <div class="flex flex-row justify-between items-center mt-10">
+      <div class="grid grid-cols-3 spreadnNavUl font-normal gap-x-10 text-[#838CA8] text-2xl">
+        <p id="nav1" class="px-6 py-5 latoRegularTableNav">Maijors</p>
+        <p id="nav2" class="px-6 py-5 latoRegularTableNav ">Minors</p>
+        <p id="nav3" class="px-6 py-5 latoRegularTableNav ">Exotics</p>
+      </div>
+      <div class="flex flex-row justify-around items-center text-[#838CA8] text-right">
+        <div class="text-right translate-x-[50px] md:translate-x-[80px] latoRegularTableNav"><p>Search by Symbol</p></div>
+        <div class="flex flex-row justify-center items-center">
+          <input type="text" class="search text-right" >
+          <button class="searchbar z-10 w-[9%] translate-x-[30px] md:translate-x-[35px]">
+              <img  src="./images/Searchicon.png" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col infoTable">
+      <div class="bg-[#E5E5E7] rounded-t-xl">
+        <div class="grid m-5 grid-cols-5 font-bold text-xl">
+          <div>
+            <h2 class="LatoCardmenu">Product</h2>
+          </div>
+          <div>
+            <h2 class="LatoCardmenu">Alpha Account</h2>
+          </div>
+          <div>
+            <h2></h2>
+          </div>
+          <div>
+            <h2 class="LatoCardmenu">Standard Account</h2>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#E5E5E7]/[0.5] ">
+        <div class="grid m-5 grid-cols-5 LatoCaptial text-[#595F71]">
+          <div>
+            <h2>SYMBOL</h2>
+          </div>
+          <div>
+            <h2 >MIN</h2>
+          </div>
+          <div>
+            <h2>TRANDING COST</h2>
+          </div>
+          <div>
+            <h2>MIN</h2>
+          </div>
+          <div>
+            <h2 >TRADING COST</h2>
+          </div>
+        </div>
+      </div>
+      <div class="infoContainer">
+        <div id="maijors1" class="scrollHidden scrollHiddenFirst grid grid-cols-5 bg-white">
+          <div  class="flex LatoSmall flex-col scorllContainer">
+            <div><p>AUDUSD</p></div>
+            <div><P>EURUSD</P></div>
+            <div><P>GBPUSD</P></div>
+            <div><P>USDCAD</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+          </div>
+          <div  class="flex flex-col scorllMin LatoSmall">
+            <div><p>0.0+</p></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+          </div>
+          <div class="flex flex-col scorllMin LatoSmall">
+            <div><p>6 USD</p></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+          </div>
+          <div class="flex flex-col scorllMinSecond LatoSmall">
+            <div><p>1.7</p></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+          </div>
+          <div class="flex flex-col scorllMinSecond LatoSmall">
+            <div><p>0 USD</p></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+          </div>
+        </div>
+        <div id="minors2" class="scrollHidden grid grid-cols-5 bg-white">
+          <div class="flex flex-col LatoSmall scorllContainer">
+            <div><p>AUDUSD</p></div>
+            <div><P>EURUSD</P></div>
+            <div><P>GBPUSD</P></div>
+            <div><P>USDCAD</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+          </div>
+          <div  class="flex LatoSmall flex-col scorllMin">
+            <div><p>0.0+</p></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMin">
+            <div><p>6 USD</p></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>1.7</p></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>0 USD</p></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+          </div>
+        </div>
+        <div id="exotics3" class="scrollHidden grid grid-cols-5 bg-white">
+          <div class="flex flex-col LatoSmall scorllContainer">
+            <div><p>AUDUSD</p></div>
+            <div><P>EURUSD</P></div>
+            <div><P>GBPUSD</P></div>
+            <div><P>USDCAD</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+          </div>
+          <div  class="flex LatoSmall flex-col scorllMin">
+            <div><p>0.0+</p></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMin">
+            <div><p>6 USD</p></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>1.7</p></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>0 USD</p></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+          </div>
+
+        
+        </div>
+      </div>
+    </div>
+    <div class="-translate-y-[80px]  text-[#838CA8]">
+      <a class="underline decoration-1 underline-offset-8 text-yellow-500" href="">Click here for full details on all Forex pairs</a>
+  </div>
+  </div>
+</div>
+
+
+
+<div class="sm:hidden block bg-[#FAFAFA] pt-10 ">
+  <div class=" flex flex-col">
+    <h1 class="LatoThinSubHeading mx-10">Spreads</h1>
+    <div class="flex flex-row justify-between items-center mt-10">
+      <div class="grid grid-cols-3 spreadnNavUl font-normal gap-x-10 text-[#838CA8] text-2xl">
+        <p id="phoneNav1" class="px-6 py-5 latoRegularTableNav">Maijors</p>
+        <p id="phoneNav2" class="px-6 py-5 latoRegularTableNav ">Minors</p>
+        <p id="phoneNav3" class="px-6 py-5 latoRegularTableNav ">Exotics</p>
+      </div>
+      <div class="flex flex-row justify-around items-center text-[#838CA8] text-right">
+        <div class="flex flex-row justify-center items-center">
+          <input type="text" class="searchBarPhone w-[50%] text-right" >
+          <button class="searchbar z-10 w-[9%] translate-x-[-10px] md:translate-x-[35px]">
+              <img  src="./images/Searchicon.png" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col infoTable">
+      <div class="bg-[#E5E5E7] rounded-t-xl">
+        <div class="grid m-5 grid-cols-5 font-bold text-xl">
+          <div>
+            <h2 class="LatoCardmenu">Product</h2>
+          </div>
+          <div>
+            <h2 class="LatoCardmenu">Alpha Account</h2>
+          </div>
+          <div>
+            <h2></h2>
+          </div>
+          <div>
+            <h2 class="LatoCardmenu">Standard Account</h2>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#E5E5E7]/[0.5] ">
+        <div class="grid m-5 grid-cols-5 LatoCaptial text-[#595F71]">
+          <div>
+            <h2>SYMBOL</h2>
+          </div>
+          <div>
+            <h2 >MIN</h2>
+          </div>
+          <div>
+            <h2>TRANDING COST</h2>
+          </div>
+          <div>
+            <h2>MIN</h2>
+          </div>
+          <div>
+            <h2 >TRADING COST</h2>
+          </div>
+        </div>
+      </div>
+      <div class="infoContainerPhone">
+        <div id="maijorsPhone1" class="scrollHidden scrollHiddenFirst grid grid-cols-5 bg-white">
+          <div  class="flex LatoSmall flex-col scorllContainer">
+            <div><p>AUDUSD</p></div>
+            <div><P>EURUSD</P></div>
+            <div><P>GBPUSD</P></div>
+            <div><P>USDCAD</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+          </div>
+          <div  class="flex flex-col scorllMin LatoSmall">
+            <div><p>0.0+</p></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+          </div>
+          <div class="flex flex-col scorllMin LatoSmall">
+            <div><p>6 USD</p></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+          </div>
+          <div class="flex flex-col scorllMinSecond LatoSmall">
+            <div><p>1.7</p></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+          </div>
+          <div class="flex flex-col scorllMinSecond LatoSmall">
+            <div><p>0 USD</p></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+          </div>
+        </div>
+        <div id="maijorsPhone2" class="scrollHidden grid grid-cols-5 bg-white">
+          <div class="flex flex-col LatoSmall scorllContainer">
+            <div><p>AUDUSD</p></div>
+            <div><P>EURUSD</P></div>
+            <div><P>GBPUSD</P></div>
+            <div><P>USDCAD</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+          </div>
+          <div  class="flex LatoSmall flex-col scorllMin">
+            <div><p>0.0+</p></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMin">
+            <div><p>6 USD</p></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>1.7</p></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>0 USD</p></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+          </div>
+        </div>
+        <div id="maijorsPhone3" class="scrollHidden grid grid-cols-5 bg-white">
+          <div class="flex flex-col LatoSmall scorllContainer">
+            <div><p>AUDUSD</p></div>
+            <div><P>EURUSD</P></div>
+            <div><P>GBPUSD</P></div>
+            <div><P>USDCAD</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+            <div><P>USDJPY</P></div>
+          </div>
+          <div  class="flex LatoSmall flex-col scorllMin">
+            <div><p>0.0+</p></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+            <div><P>0.0+</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMin">
+            <div><p>6 USD</p></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+            <div><P>6 USD</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>1.7</p></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+            <div><P>1.7</P></div>
+          </div>
+          <div class="flex LatoSmall flex-col scorllMinSecond">
+            <div><p>0 USD</p></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+            <div><P>0 USD</P></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="-translate-y-[80px] mx-5 text-[#838CA8]">
+      <a class="underline decoration-1 underline-offset-8 text-yellow-500" href="">Click here for full details on all Forex pairs</a>
+  </div>
+  </div>
+</div>
+  
+    
+    
+    
+    
+    
+  
+
+      
+
+
+  <!--swap-->
+  <div class="py-20">
+    <div class="max-w-screen-xl mx-auto">
+        <div class="flex flex-col">
+            <div>
+                <h1 class="LatoThinSubHeading my-5">Swap</h1>
+                <p class=" LatogMarginSmallHeading my-5">Swap rate</p>
+                <p class="LatoThinBigBody2">The Swap is the interest paid or earned for holding a position overnight. Each investment product has an interest rate associated with it, and every trade involves two different interest rates. The Swap can add a significant extra cost or profit to your trade. The trading platform automatically calculates Swaps for you.
+                    22:00 GMT(+1) is considered to be the beginning and the end of a trading day. Any positions which are still open at 22:00 GMT(+1) are subject to rollover. Rollover is the process of the settlement of an open position overnight.
+                    There is no settlement on Saturdays and Sundays when the markets are closed, but banks still calculate interest on any position held over the weekend. For this reason, a 3-day swap applies on Wednesdays or Fridays.
+                </p>
+            </div>
+            
+            <div class="my-10">
+                <h2 class="LatogMarginSmallHeading my-5">BCR Swap Rate</h2>
+                <p class="LatoThinBigBody2">BCR offers a transparent Swap Rate based on current interest rate. To view BCR Swap Rates, please log in to your MT4 account.e</p>
+            </div>
+            <div>
+                <h2 class="LatogMarginSmallHeading my-5">SWAP-FREE ACCOUNTS</h2>
+                <p class="LatoThinBigBody2">Swap-Free Accounts incur no swaps or interest charges on overnight positions. Instead, the account holder is charged an administration fee that is deducted from the balance of the account.
+                    If a Swap-Free Account holds positions after the end of the Friday trading day, then a fee will be deducted from the balance of the account. Please note, some products may be subject to adjustment fees without notice.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!--tableswap-->
+<div>
+    <div class="max-w-screen-xl mx-auto">
+        <div class="border-b-[2px] swapBox border-[#EFEFF0]">
+            <div class="grid-cols-4 LatoCardmenu grid bg-[#393D48] text-white text-center items-center border-b-yellow-500 border-b-2 rounded-t-lg">
+                <div class="boder-r-white border-r-2">
+                    <p class="m-5 ">SYMBOL</p>
+                </div>
+                <div class="boder-r-white border-r-2">
+                    <p class="m-5">CHARGE</p>
+                </div>
+                <div class="boder-r-white border-r-2">
+                    <p class="m-5">SYMBOL</p>
+                </div>
+                <div>
+                    <p class="m-5">SYMBOL</p>
+                </div>
+            </div>
+            <div class=" grid-cols-4 grid  text-center items-center scrollHidden">
+                <div class="flex flex-col LatojobInfo border-l-[1px]  border-[#EFEFF0]">
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">AUDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCAD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">NZDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDJPY</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                </div>
+    
+                <div class="flex flex-col LatoRegularCardmenu  border-l-[1px] border-r-[1px]  border-[#EFEFF0]">
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">AUDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCAD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">NZDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDJPY</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                </div>
+    
+    
+    
+                <div class="flex flex-col LatoRegularCardmenu border-r-[1px] border-[#EFEFF0]">
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">AUDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCAD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">NZDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDJPY</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                </div>
+    
+    
+                <div class="flex flex-col LatoRegularCardmenu border-r-[1px]  border-[#EFEFF0]">
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">AUDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCAD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">EURCHF</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">NZDUSD</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">USDJPY</p>
+                    </div>
+                    <div class="border-b-[#EFEFF0] border-b-[1px]">
+                        <p class="m-5">GBPUSD</p>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+        
+    </div>
+</div>
+ <!--join us-->
+ <div class="subpageFooterBg">
+  <div class="flex flex-col items-center justify-center max-w-screen-xl py-20 mx-auto text-white">
+      <h1 class="mb-10 text-center text-white text-7xl">Join us as a journey</h1>
+      <p class="mb-10">Sign up in minutes and start doing money right.</p>
+      <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+  </div>
+</div>
+<!--footer-->
+<div class="bg-[#070B0F]">
+<div class="flex flex-col max-w-screen-xl mx-auto">
+<div class="border-b-[1px]">
+<div class="grid grid-cols-2 m-5">
+  <img src="./images/logonew.png" alt="">
+  <div class="flex flex-row text-white justify-self-end">
+    <button class="LatoTextTitle">Ready to get started?</button>
+    <button  class="ml-3 text-white latoRegularTableNav rounded-lg bg-[#FFD400]"><p class="m-3">get start</p> </button>
+  </div>
+</div>
+</div>
+<div>
+<div>
+  <div class="flex flex-col items-center justify-between m-5 text-white md:flex-row">
+    <div class="flex flex-col hidden md:block">
+      <p>Subscribe to our newsletter</p>
+      <div class="flex flex-row mt-10">
+        <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+        <button><img src="./images/Submit.png"></button>
+      </div>
+    </div>
+    <div class="md:basis-[60%] basis-1 gap-x-24  md:gap-x-32  grid grid-cols-3">
+      <div>
+        <h1 class="text-yellow-500">Services</h1>
+        <p class="mt-5">Email Marketing</p>
+        <p  class="mt-5">Campaigns</p>
+        <p  class="mt-5">Branding</p>
+        <p  class="mt-5">Offline</p>
+      </div>
+      <div>
+       <h1 class="text-yellow-500">About</h1> 
+       <p  class="mt-5">Our Story</p>
+       <p  class="mt-5">Benefits</p>
+       <p  class="mt-5">Team</p>
+       <p  class="mt-5">Careers</p>
+      </div>
+      <div>
+        <h1 class="text-yellow-500">Help</h1>
+        <p  class="mt-5">FAQs</p>
+        <p  class="mt-5">Contact Us</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div>
+<div class="max-w-screen-xl mx-auto">
+  <div class="flex flex-col items-center justify-between m-5 md:flex-row">
+    <div class="grid grid-cols-2 text-white gap-x-10 md:gap-x-16">
+      <p>Terms & Conditions</p>
+      <p>privacy Policy</p>
+    </div>
+    <div class="grid grid-cols-3 my-10 gap-x-10 md:my-0">
+      <img src="./images/Path.png" alt="">
+      <img src="./images/twitter.png" alt="">
+      <img src="./images/instagram.png" alt="">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixFooter bg-[#EFEFF0] w-full LatoCaptial">
+<div class="container m-5 md:flex hidden flex-row justify-around items-center ">
+  <div class="flex felx-row items-center">
+    <p>Excellent</p>
+    <img class="mx-5 w-[15%] h-[15%]" src="./images/footerstars.png" alt="">
+    <p>4.9 out of 5 based on 666 reviews</p>
+    <img class="w-[2%] mx-5 h-[2%]" src="./images/onestar.png" alt="">
+    <p>Trustpilot</p>
+  </div>
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoCaptial mx-3 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    <button class="bg-yellow-500 ml-5 rounded-md">
+      <div class="flex mx-3 my-2 flex-row justify-center items-center">
+        <img class="w-[10%] hidden sm:block mr-2" src="./images/blacktalkicon.png" alt="">
+        <p class="LatoCaptial">24/5 Support</p>
+      </div>
+    </button>
+  </div>
+</div>
+<div class="container m-5 md:hidden block ">
+ 
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoThinCardmenu mx-10 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    
+  </div>
+</div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/same.js"></script>
+<script>
+    $(document).ready(function () {
+    var navHeight = $("#subNavContainer").offset().top;
+    var navFix = $("#navWrap");
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > navHeight) {
+            navFix.addClass("navFix");
+        }
+        else {
+            navFix.removeClass("navFix");
+        }
+    })
+})
+
+$(".subNav li").click(function(){
+    if(!$(this).hasClass('liActive')){
+        $(this).addClass('liActive')
+        $(this).siblings().removeClass('liActive')
+    }
+})
+
+</script>
+</html>

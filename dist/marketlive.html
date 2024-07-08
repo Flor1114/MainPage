@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Live</title>
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<style>
+
+        .try:hover{
+    color: orange;
+        }
+        .videobanner{
+        width: 100%;
+        position: relative;
+        /* background-image: url('./images/rangebg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat; */
+        height: auto;
+        }
+        .subNavitem{
+            margin-right: 20px;
+        }
+        .subpageFooterBg{
+            width: 100%;
+        position: relative;
+        background-image: url('./images/subfootbg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat;
+
+        }
+        .navFix {
+            position: fixed;
+            top: 73px;
+            height: 60px;
+            padding-top: 10px;
+            z-index: 3;
+            width: 100%;
+            /* transform: all 1s; */
+            background-color: white;
+
+        }
+
+    .videoGetStart{
+  
+  border-radius: 5px;
+  text-align: center;
+  left: 45%;
+  top: 400px;
+  
+  background: linear-gradient(to right,#373838, #7b7c7c, #7b7c7c,transparent, transparent);
+  background-size: 400%;
+  transition: background-position 1s; 
+
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.liActive{
+    color: rgb(255, 170, 0);
+}
+.featureListStyle{
+    list-style: none;
+    list-style-position: inside;
+}
+
+.featureListStyle li:before{
+    content: "\2022";
+    color: #e5a838;
+    font-size:25px;
+    display: inline-block;  
+    transform: translate(-10px,3px);
+    
+}
+.lineContainer {
+    position: relative;
+}  
+.item {
+  width: 1000px;
+}     
+.item::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top: 115px;
+            background-image: linear-gradient(to right, rgb(238, 174, 38) 0%, rgb(238, 174, 38) 50%, transparent 50%);
+            background-size: 30px ;
+            background-repeat: repeat-x;
+            z-index: -1;
+        
+}
+.stepIconContainer div img{ 
+  z-index: 4;
+}
+
+form.example input[type=text] {
+    border-radius: 8px;
+  padding: 15px;
+  font-size: 17px;
+  /* border: 1px solid grey; */
+  float: left;
+  width: 50%;
+  background: #f1f1f1;
+}
+
+form.example button {
+    border-radius: 5px;
+  float: left;
+  width: 7%;
+  /* height: 10%; */
+  padding: 6px;
+  background: #f0a834;
+  color: white;
+  font-size: 15px;
+  transform: translate(255px,-44px);
+  /* border: 1px solid grey; */
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #f0a834;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.numberActive, .numberBgChange:hover{
+ background-color: #e5a838;
+ color: white;
+}
+.scrollHidden{
+  /* margin-right: calc(100% - 100vw); */
+    width: 100%;
+    height: 700px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    /* overflow-y: overlay; */
+}
+.scrollHidden:hover {
+    overflow: overlay;
+}
+</style>
+<body>
+    
+<!--头部菜单开始-->
+<header class="header pt-5">
+  <div class="xl:max-w-screen-xl lg:max-w-screen-lg mx-10 sm:mx-auto max-w-screen-sm md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="container lg:flex hidden max-w-screen-lg xl:max-w-screen-xl mx-auto flex-row justify-between items-center">
+          <div class="latoTextSmall  text-white flex flex-row loginList">
+              <p><a class="hover:text-gray-500 text-white mr-5" href="###">Patner</a></p>
+              <p><a class="hover:text-gray-500 text-white" href="###">PRO</a></p>
+          </div>
+          <div class="flex latoTextSmall  items-center justify-center flex-row text-center text-white typeList ">
+              <div>
+                <a class="hover:text-gray-500 text-white" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">Support</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="hover:text-gray-500 text-white" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="./index.html"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex hidden navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid-cols-2 grid lg:grid hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid-cols-2 grid lg:hidden grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 phoneNav LatoButton text-black " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 navlist lg:block hidden">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5 ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="sidebarClass lg:hidden block">
+        <div class=" flex flex-col">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="m-5 float-right ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col my-10 items-center justify-center">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+    <!--头部菜单结束-->
+    <!--banner-->
+    <div class="w-full">
+        <div class="container text-blcak pb-20 pt-52">
+            <div class="mb-5">
+                <ul class="menu menu-horizontal LatoSubtitle">
+                    <li>HOME > </li>
+                    <li> EDUCATION > </li>
+                    <li> Market Live </li>
+                </ul>
+            </div>
+            <h1 class="LatoSubPageThinTile mb-5 ">Market Live</h1>
+            <p class="LatoThinSubHeadingContent mr-2">We use multiple liquidity providers from Tier 1 Banks and institutions to give you competitive quotes on a wide range of instruments.</p>
+        </div>
+    </div>
+    <!--子导航-->
+    <div id="subNavContainer" class="subNavContainer relative pt-8">
+        <div id="navWrap" class="navWrap border-b-[1px] border-t-[1px] h-[50px] mb-5">
+        <ul class=" flex-row flex subNav justify-center LatoMainNavMenuRespond items-center">
+            <li class="subNavitem liActive mt-3"><a href="">MARKET LIVE</a> </li>
+            <li class="subNavitem mt-3"><a href="#forex">MARKET ANALYSIS</a></li>
+            <li class="subNavitem mt-3"><a href="#forex">VIDEO TUTORIAL</a></li>
+        </ul>
+        </div>
+    </div>
+<!--market live-->
+<div class="my-20 w-full">
+  <div class="container flex lg:flex-row flex-col justify-between items-start">
+    <div class="lg:basis-3/4 basis-1 w-[100%]">
+      <div class="bg-[#B8BDCD]/[0.3] rounded-t-xl flex flex-row items-center">
+        <img class="w-[5%] h-[5%] m-5" src="./images/marketlive.png" alt="">
+        <p class="LatoCardmenu">February 2, 2023</p>
+      </div>
+      <div class="scrollHidden scrollHiddenFirst">
+        <div class="flex flex-col m-5" >
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu ">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu ">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+        <div class="flex flex-col m-5">
+          <div class="flex flex-row justify-between items-center">
+            <p class="mr-10 text-[#76C2F6] LatoCardmenu">14:02:02</p>
+            <p class="latoTextBase">Fifty years after the first mens world title, a group of women came together to demand their right to race through the mud and pain for a cyclocross rainbow jersey</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" basis-1/4 ml-[10%]">
+      <!-- <iframe src="https://twitter.com/the__bcr" frameborder="0"></iframe> -->
+    <img  src="./images/Twitterapi.png" alt="">
+    </div>
+
+  </div>
+</div>
+
+ <!--join us-->
+ <div class="subpageFooterBg">
+  <div class="flex flex-col items-center justify-center max-w-screen-xl py-20 mx-auto text-white">
+      <h1 class="mb-10 text-center text-white text-7xl">Join us as a journey</h1>
+      <p class="mb-10">Sign up in minutes and start doing money right.</p>
+      <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+  </div>
+</div>
+<!--footer-->
+<div class="bg-[#070B0F]">
+<div class="flex flex-col max-w-screen-xl mx-auto">
+<div class="border-b-[1px]">
+<div class="grid grid-cols-2 m-5">
+  <img src="./images/logonew.png" alt="">
+  <div class="flex flex-row text-white justify-self-end">
+    <button class="LatoTextTitle">Ready to get started?</button>
+    <button  class="ml-3 text-white latoRegularTableNav rounded-lg bg-[#FFD400]"><p class="m-3">get start</p> </button>
+  </div>
+</div>
+</div>
+<div>
+<div>
+  <div class="flex flex-col items-center justify-between m-5 text-white md:flex-row">
+    <div class="flex flex-col hidden md:block">
+      <p>Subscribe to our newsletter</p>
+      <div class="flex flex-row mt-10">
+        <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+        <button><img src="./images/Submit.png"></button>
+      </div>
+    </div>
+    <div class="md:basis-[60%] basis-1 gap-x-24  md:gap-x-32  grid grid-cols-3">
+      <div>
+        <h1 class="text-yellow-500">Services</h1>
+        <p class="mt-5">Email Marketing</p>
+        <p  class="mt-5">Campaigns</p>
+        <p  class="mt-5">Branding</p>
+        <p  class="mt-5">Offline</p>
+      </div>
+      <div>
+       <h1 class="text-yellow-500">About</h1> 
+       <p  class="mt-5">Our Story</p>
+       <p  class="mt-5">Benefits</p>
+       <p  class="mt-5">Team</p>
+       <p  class="mt-5">Careers</p>
+      </div>
+      <div>
+        <h1 class="text-yellow-500">Help</h1>
+        <p  class="mt-5">FAQs</p>
+        <p  class="mt-5">Contact Us</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div>
+<div class="max-w-screen-xl mx-auto">
+  <div class="flex flex-col items-center justify-between m-5 md:flex-row">
+    <div class="grid grid-cols-2 text-white gap-x-10 md:gap-x-16">
+      <p>Terms & Conditions</p>
+      <p>privacy Policy</p>
+    </div>
+    <div class="grid grid-cols-3 my-10 gap-x-10 md:my-0">
+      <img src="./images/Path.png" alt="">
+      <img src="./images/twitter.png" alt="">
+      <img src="./images/instagram.png" alt="">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixFooter bg-[#EFEFF0] w-full LatoCaptial">
+<div class="container m-5 md:flex hidden flex-row justify-around items-center ">
+  <div class="flex felx-row items-center">
+    <p>Excellent</p>
+    <img class="mx-5 w-[15%] h-[15%]" src="./images/footerstars.png" alt="">
+    <p>4.9 out of 5 based on 666 reviews</p>
+    <img class="w-[2%] mx-5 h-[2%]" src="./images/onestar.png" alt="">
+    <p>Trustpilot</p>
+  </div>
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoCaptial mx-3 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    <button class="bg-yellow-500 ml-5 rounded-md">
+      <div class="flex mx-3 my-2 flex-row justify-center items-center">
+        <img class="w-[10%] hidden sm:block mr-2" src="./images/blacktalkicon.png" alt="">
+        <p class="LatoCaptial">24/5 Support</p>
+      </div>
+    </button>
+  </div>
+</div>
+<div class="container m-5 md:hidden block ">
+ 
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoThinCardmenu mx-10 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    
+  </div>
+</div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/same.js"></script>
+<!-- <script src='nav.js'></script> -->
+<script>
+    $(document).ready(function () {
+    var navHeight = $("#subNavContainer").offset().top;
+    var navFix = $("#navWrap");
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > navHeight) {
+            navFix.addClass("navFix");
+        }
+        else {
+            navFix.removeClass("navFix");
+        }
+    })
+  
+})
+
+</script>
+</html>

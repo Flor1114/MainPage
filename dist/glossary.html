@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary</title>
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<style>
+.spaceCapital div{
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+        .try:hover{
+    color: orange;
+        }
+        .videobanner{
+        width: 100%;
+        position: relative;
+
+        height: auto;
+        }
+        .subNavitem{
+            margin-right: 20px;
+        }
+        .subpageFooterBg{
+            width: 100%;
+        position: relative;
+        background-image: url('./images/subfootbg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat;
+
+        }
+        .navFix {
+            position: fixed;
+            top: 73px;
+            height: 60px;
+            padding-top: 10px;
+            z-index: 3;
+            width: 100%;
+            /* transform: all 1s; */
+            background-color: white;
+
+        }
+
+    .videoGetStart{
+  
+  border-radius: 5px;
+  text-align: center;
+  left: 45%;
+  top: 400px;
+  
+  background: linear-gradient(to right,#373838, #7b7c7c, #7b7c7c,transparent, transparent);
+  background-size: 400%;
+  transition: background-position 1s; 
+
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.liActive{
+    color: rgb(255, 170, 0);
+}
+.featureListStyle{
+    list-style: none;
+    list-style-position: inside;
+}
+
+.featureListStyle li:before{
+    content: "\2022";
+    color: #e5a838;
+    font-size:25px;
+    display: inline-block;  
+    transform: translate(-10px,3px);
+    
+}
+.lineContainer {
+    position: relative;
+}  
+.item {
+  width: 1000px;
+}     
+.item::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top: 115px;
+            background-image: linear-gradient(to right, rgb(238, 174, 38) 0%, rgb(238, 174, 38) 50%, transparent 50%);
+            background-size: 30px ;
+            background-repeat: repeat-x;
+            z-index: -1;
+        
+}
+.stepIconContainer div img{ 
+  z-index: 4;
+}
+
+form.example input[type=text] {
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 17px;
+  /* border: 1px solid grey; */
+  float: left;
+  width: 55%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  border-radius: 5px;
+  /* float: left; */
+  width: 12%;
+  /* height: 10%; */
+  padding: 8px;
+  background: #f0a834;
+  color: white;
+  font-size: 15px;
+  position:absolute;
+  top:20%;
+  left:65%;
+  /* transform: translate(255px,-44px); */
+  /* border: 1px solid grey; */
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #f0a834;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.numberActive, .numberBgChange:hover{
+ background-color: #e5a838;
+ color: white;
+}
+.diffDetails{
+  display: none;
+}
+
+</style>
+<body>
+    
+<!--头部菜单开始-->
+<header class="pt-5 header">
+  <div class="max-w-screen-sm mx-10 xl:max-w-screen-xl lg:max-w-screen-lg sm:mx-auto md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="container flex-row items-center justify-between hidden max-w-screen-lg mx-auto lg:flex xl:max-w-screen-xl">
+          <div class="flex flex-row text-white latoTextSmall loginList">
+              <p><a class="mr-5 text-white hover:text-gray-500" href="###">Patner</a></p>
+              <p><a class="text-white hover:text-gray-500" href="###">PRO</a></p>
+          </div>
+          <div class="flex flex-row items-center justify-center text-center text-white latoTextSmall typeList ">
+              <div>
+                <a class="text-white hover:text-gray-500" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="text-white hover:text-gray-500" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="text-white hover:text-gray-500" href="###">Support</a>
+              </div>
+              <div class="flex flex-row items-center justify-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="text-white hover:text-gray-500" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="#"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="hidden lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid hidden grid-cols-2 lg:grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid grid-cols-2 lg:hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 text-black phoneNav LatoButton " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 hidden navlist lg:block">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./ Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex flex-row m-5 navInfoDetails">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="text-white LatoThinTitle ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col text-white ml-36">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 ml-5 mr-20 text-left LatoButton gap-x-40 ">
+                        <div class="mb-5 text-left">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 ml-5 mr-20 LatoThinSmall gap-x-40 ">
+                      <div class="flex flex-col text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="block sidebarClass lg:hidden">
+        <div class="flex flex-col ">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="float-right m-5 ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col items-center justify-center my-10">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+    <!--头部菜单结束-->
+    <!--banner-->
+    <div class="w-full">
+        <div class="container text-black pb-20 pt-52">
+            <div class="mb-10">
+                <ul class="menu menu-horizontal LatoSubtitle">
+                    <li class="mr-2">HOME > </li>
+                    <li class="mr-2"> TRADING TOOLS > </li>
+                    <li>GLOSSARY </li>
+                </ul>
+            </div>
+            <h1 class="LatoSubPageThinTile mb-5">Glossary</h1>
+            <p class="mr-2 LatoThinSubHeadingContent">We use multiple liquidity providers from Tier 1 Banks and institutions to give you competitive quotes on a wide range of instruments.</p>
+        </div>
+    </div>
+    <!--子导航-->
+    <div id="subNavContainer" class="subNavContainer relative pt-8">
+        <div id="navWrap" class="navWrap border-b-[1px] border-t-[1px] h-[50px] mb-5">
+        <ul class=" flex-row flex subNav justify-center LatoSmall items-center">
+            <li class="subNavitem mt-3"><a href="">ECONOMIC CALENDAR</a> </li>
+            <li class="subNavitem mt-3 liActive"><a href="#forex">GLOSSARY</a></li>
+        </ul>
+        </div>
+    </div>
+    <!--forex-->
+<div class="">
+    <div class="max-w-screen-xl sm:mx-auto mx-10">
+        <h1 class="text-center LatoThinSubHeading">Please search your keywords or terms</h1>
+        <p class="text-center mt-5 LatoThinBigBody2">Type the keyword/term that you are looking for or select the letters to see the list of words.</p>
+        <div class="relative">
+            <form action="" class="example flex flex-col items-center mt-10 rounded-lg">
+                <input type="text" class="search LatoThinBigBody2" placeholder="type your question">
+                <button type="submit"><i class="LatoCaptial not-italic ">SEARCH</i></button>
+            </form>
+        </div>
+        <p class="ml-[23%] LatoThinBigBody2">Or Select a letter to see the terms</p>
+        <div class="flex spaceCapital  flex-row flex-wrap  justify-center mx-38 lg:justify-center items-center mt-20 mb-10">
+            <div id="category01" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">A</p>
+            </div>
+            <div id="category02" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">B</p>
+            </div>
+            <div id="category03" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">C</p>
+            </div>
+            <div id="category04" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">D</p>
+            </div>
+            <div id="category05"  class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">E</p>
+            </div>
+            <div id="category06" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">F</p>
+            </div>
+            <div id="category07" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">G</p>
+            </div>
+            <div id="category08" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">H</p>
+            </div>
+            <div id="category09" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-6 my-[14px]">I</p>
+            </div>
+            <div id="category10" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">J</p>
+            </div>
+            <div id="category11" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">K</p>
+            </div>
+            <div id="category12" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">L</p>
+            </div>
+            <div id="category13" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">M</p>
+            </div>
+            <div id="category14" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">N</p>
+            </div>
+            <div id="category15" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">O</p>
+            </div>
+            <div id="category16" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">P</p>
+            </div>
+            <div id="category17" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">Q</p>
+            </div>
+            <div id="category18" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">R</p>
+            </div>
+            <div id="category19" class="showDiffInfo border-[1px] h-[50px] numberBgChange">
+                <p class="LatoButton text-center mx-5 my-[14px]">S</p>
+            </div>
+            <div class=" border-[1px] h-[50px] numberBgChange">
+              <p class="LatoButton text-center mx-5 my-[14px]">A</p>
+          </div>
+          <div class=" border-[1px] h-[50px] numberBgChange">
+              <p class="LatoButton text-center mx-5 my-[14px]">B</p>
+          </div>
+          <div class=" border-[1px] h-[50px] numberBgChange">
+              <p class="LatoButton text-center mx-5 my-[14px]">C</p>
+          </div>
+          <div class=" border-[1px] h-[50px] numberBgChange">
+              <p class="LatoButton text-center mx-5 my-[14px]">D</p>
+          </div>
+          <div class=" border-[1px] h-[50px] numberBgChange">
+              <p class="LatoButton text-center mx-5 my-[14px]">E</p>
+          </div>
+          <div class=" border-[1px] h-[50px] numberBgChange">
+              <p class="LatoButton text-center mx-5 my-[14px]">F</p>
+          </div>
+          <div class=" border-[1px] h-[50px] numberBgChange">
+              <p class="LatoButton text-center mx-5 my-[14px]">G</p>
+          </div>
+          
+        </div>
+        <div class="flex flex-row justify-center gap-x-5 mb-10">
+            
+          
+        </div>
+        <div class="DiffInfoContainer">
+           <!--content a-->
+          <div id="A01" class="flex diffDetails flex-col my-20">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">ACCOUNT</h2>
+              <P class="LatoThinBigBody2 my-5">Account refers to the trading account that is held by you with BCR, for the purpose of trading financial products.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">ACCOUNT EQUITY</h2>
+              <P class="LatoThinBigBody2 my-5">Aggregate of current balance in your Account and your current unrealised profit and losses less any margin requirements.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">AGREEMENT</h2>
+              <P class="LatoThinBigBody2 my-5">Contains documents for gathering Client information and also contains disclosure documents such as the Product Guide and Terms of Service. When prospective Clients are interested in opening an account with BCR they are presented with the entire Client Agreement.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">ASK PRICE</h2>
+              <P class="LatoThinBigBody2 mt-5">The price at which the market is prepared to sell a product. Prices are quoted two-way as Bid/Ask. The Ask price is also known as the Offer.</P>
+              <p class="LatoThinBigBody2 my-5">In Forex trading, the Ask represents the price at which a trader can buy the base currency, shown to the left in a currency pair. For example, in the quote AUDUSD 0.76092/0.76109, the base currency is USD, and the Ask price is 0.76109, meaning you can buy one US dollar for 0.76109 Aussie Dollars.</p>
+              <p class="LatoThinBigBody2">In derivative trading, the Ask also represents the price at which a trader can buy the product. For example, in the quote for Oil 57.92/57.97, the product the Ask price is 57.97 for one unit of the underlying market.</p>
+            </div>
+          </div>
+          <!--content b-->
+          <div id="B02" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle  text-yellow-500">BASE CURRENCY</h2>
+              <P class="LatoThinBigBody2 my-5">A base currency is the currency denomination of your account and refers to the first quoted currency in a currency pair, i.e. AUD in AUD/USD.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">BAR CHART</h2>
+              <P class="LatoThinBigBody2 my-5">A type of chart which consists of four significant points: the high and the low prices, which form the vertical bar; the opening price, which is marked with a horizontal line to the left of the bar; and the closing price, which is marked with a horizontal line to the right of the bar.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">BID PRICE</h2>
+              <P class="LatoThinBigBody2 my-5">Contains documents for gathering Client information and also contains disclosure documents such as the Product Guide and Terms of Service. When prospective Clients are interested in opening an account with BCR they are presented with the entire Client Agreement.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">BID-ASK SPREAD</h2>
+              <P class="LatoThinBigBody2 my-5">The difference between the Buy and Sell price of BCR’s quote. A client may Sell at the lower price or Buy at the higher price of the quote.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">BOLLINGER BANDS</h2>
+              <P class="LatoThinBigBody2 my-5">A tool used by technical analysts. A band plotted two standard deviations on either side of a simple moving average, which often indicates support and resistance levels.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">BUSINESS DAY</h2>
+              <P class="LatoThinBigBody2 my-5">Business day is any day on which a particular market (derivatives) is quoted by BCR. Due to the nature of global financial markets, BCR may continue to operate and offer markets on Australian public holidays.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">BUY</h2>
+              <P class="LatoThinBigBody2 my-5">Taking a long position on a product.</P>
+            </div>
+          </div>
+          <!--content c-->
+          <div id="C03" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle  text-yellow-500">CANDLESTICK CHART</h2>
+              <P class="LatoThinBigBody2 my-5">A chart that indicates the trading range for the day as well as the opening and closing price. If the open price is higher than the close price, the rectangle between the open and close price is shaded. If the close price is higher than the open price, that area of the chart is not shaded.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CARRY TRADE</h2>
+              <P class="LatoThinBigBody2 my-5">A trading strategy that captures the difference in the interest rates earned from being long a currency that pays a relatively high interest rate and short another currency that pays a lower interest rate. For example: NZD/JPY (New Zealand Dollar/Japanese Yen) has been a famous carry trade for some time. NZD is the high yielder and JPY is the low yielder. Traders looking to take advantage of this interest rate differential would buy NZD and sell JPY, or be long NZD/JPY. When NZD/JPY begins to downtrend for an extended period of time, most likely due to a change in interest rates, the carry trade is said to be unwinding.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CHARGE</h2>
+              <P class="LatoThinBigBody2 my-5">A visual method of analysing the market using price information to form a picture of previous price movements. Also called technical analysis.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CLEARED FUNDS</h2>
+              <P class="LatoThinBigBody2 mt-5">Funds that have been deposited or processed with BCR and shown on the client’s Account.</p>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CLOSING PRICE</h2>
+              <P class="LatoThinBigBody2 my-5">The closing price refers to the value of the transaction as determined by BCR based on current and anticipated market conditions.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">COMMISSIONS</h2>
+              <P class="LatoThinBigBody2 my-5">The cost that a broker will charge a Client for buying/selling a financial product. Commission on derivatives range from broker to broker. Some charge a flat rate per trade while others charge a percentage of the deal size, say 0.20%. BCR’s Commission rates are disclosed in Section 4.1 of this Product Guide.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CONTRACT SIZE</h2>
+              <P class="LatoThinBigBody2 my-5">The size or amount of in an open position. Contract sizes vary by instrument.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CONTRACT PERIOD</h2>
+              <P class="LatoThinBigBody2 my-5">The contract period for a product as set out in the market information sheets.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">COUNTERPARTY</h2>
+              <P class="LatoThinBigBody2 my-5">One of the participants in a financial transaction.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">COVER</h2>
+              <P class="LatoThinBigBody2 my-5">To sell a long position or buy back a short position.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CREDIT</h2>
+              <P class="LatoThinBigBody2 my-5">Can refer to a Rollover/Rebate/other Fee that is paid to the Client’s account based on positions held (either long or short) ’overnight’.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">CURRENCY PAIR</h2>
+              <P class="LatoThinBigBody2 my-5">The two currencies that make up a foreign exchange rate. For example EUR/USD (Euro/U.S. Dollar).</P>
+            </div>
+          </div>
+          <!--content d-->
+          <div id="D04" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle  text-yellow-500">DEALER</h2>
+              <P class="LatoThinBigBody2 my-5">An individual or firm that acts as a principal or counterpart to a transaction. Principals take one side of a position, hoping to earn a spread (profit) by closing out the position in a subsequent trade with another party. In contrast, a broker is an individual or firm that acts as an intermediary, putting together buyers and sellers for a fee or commission.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">DENOMINATED CURRENCY</h2>
+              <P class="LatoThinBigBody2 my-5">The currency in which you have nominated your Account to be denominated.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">DERIVATIVE</h2>
+              <P class="LatoThinBigBody2 my-5">A financial contract whose value is based on the value of an underlying asset. Some of the most common underlying assets for derivative contracts are indices, equities, commodities and currencies.</P>
+            </div>
+          </div>
+          <!--content e-->
+          <div id="E05" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle  text-yellow-500">EQUITY</h2>
+              <P class="LatoThinBigBody2 my-5">Funds that are not committed to margin obligations that a Client may use to open new positions.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">EXPIRY TRANSACTION</h2>
+              <P class="LatoThinBigBody2 my-5">A Transaction which has a set contract period, at the end of which the Transaction expires automatically.</P>
+            </div>
+          </div>
+          <!--content f-->
+          <div id="F06" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle  text-yellow-500">FILL OR FILLED ORDER</h2>
+              <P class="LatoThinBigBody2 my-5">A completed order.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">FORCE MAJEURE EVENT</h2>
+              <P class="LatoThinBigBody2 my-5">Any cause that prevents BCR from performing or delaying performance of any or all of its obligations under the Client Agreement which arises from, or is attributable to, acts or omissions beyond the control of BCR including, but not limited to, strikes, industrial action, war, sabotage, terrorist activity, national emergency, blockades or government action, an act of God, a failure of the supply of communications or other infrastructure which prevents an orderly trading market being maintained, or which prevents compliance with the law or the applicable regulatory system, an emergency or exceptional market conditions, the suspension or closure of any index/market/Exchange or the abandonment or failure of such index, market or exchange.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">FOREX/FX</h2>
+              <P class="LatoThinBigBody2 my-5">The simultaneous buying of one currency and selling of another. The global market for such transactions is referred to as the forex or FX market.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">FUNDAMENTAL ANALYSIS</h2>
+              <P class="LatoThinBigBody2 my-5">The assessment of all information available on a tradable product to determine its future outlook and therefore predict where the price is heading. Often non-measurable and subjective assessments, as well as quantifiable measurements, are made in fundamental analysis.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">FUTURES CONTRACT</h2>
+              <P class="LatoThinBigBody2 my-5">A futures contract is an agreement to conduct a trade at a specified time in the future where the price is agreed upon now. Therefore, it means that the expiry date is at some point in the future. Our futures products are cash settled so you will never be required to actually deliver, or take delivery of, the physical product.</P>
+            </div>
+          </div>
+          <!--content g-->
+          <div id="G07" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle  text-yellow-500">GAPPING</h2>
+              <P class="LatoThinBigBody2 my-5">Gapping is exposure to loss from failure of market prices or rates to follow a ‘smooth’ or continuous path due to external factors such as world, political, economic and specific corporate events.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">GEARING</h2>
+              <P class="LatoThinBigBody2 my-5">If a trader buys $1000 of Commonwealth Bank stock in the cash market and it rises by 10%, his profit will be $100. But if he buys the same position using a derivative he may only have to put up a deposit of $100. If the stock moves 10% higher his profit on capital invested will be $100 or 100%. This is gearing at work.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">GOING LONG</h2>
+              <P class="LatoThinBigBody2 my-5">The purchase of a stock, commodity or currency for investment or speculation – with the expectation of the price increasing.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">GOING SHORT</h2>
+              <P class="LatoThinBigBody2 my-5">The selling of a currency or product not owned by the seller – with the expectation of the price decreasing.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">GMT</h2>
+              <P class="LatoThinBigBody2 my-5">Greenwich Mean Time - The most commonly referred time zone in the derivatives market. GMT does not change during the year, as opposed to Daylight Savings/Summer time.</P>
+            </div>
+          </div>
+          <!--content h-->
+          <div id="H08" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle  text-yellow-500">HEDGING</h2>
+              <P class="LatoThinBigBody2 my-5">Minimising risk by being simultaneously long and short. Perhaps someone is long $50,000 of stock in the cash market and wants to protect this from potential downside risk. To hedge he would sell $50,000 of the same position. If the share price did go lower the loss on the stock position would be offset by profits made via the short position.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">HIGH PRICE</h2>
+              <P class="LatoThinBigBody2 my-5">The High Price of a particular product on the trading platform is the highest Bid price of the day. The highest Ask price will come from the highest Bid price of the day plus the Spread.</P>
+              <P class="LatoThinBigBody2 my-5">Example: The High Price on the trading platform for EURUSD is 1.14345, and spread is 17 pips. Thus, the highest Bid price is 1.14345, and the highest Ask price is 1.14362.</P>
+            </div>
+          </div>
+           <!--content i-->
+           <div id="I09" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">ILLIQUID</h2>
+              <P class="LatoThinBigBody2 my-5">A market that doesn' t have much volume, usually characterised by a wide bid - ask spreads . Illiquid markets are normally expensive to trade in.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">INDICES</h2>
+              <P class="LatoThinBigBody2 my-5">Indices are a customised basket of securities that track a particular market or segment. Each index has its own calculation methodology and its own specific process used to select particular securities. We offer prices on all of the major financial indexes, such as the S&P/ASX 200, UK 100, DAX 40, Dow Jones and S&P 500.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">INTRODUCING BROKER</h2>
+              <P class="LatoThinBigBody2 my-5">An individual or entity who refers Clients to BCR. In return Introducing Brokers generally earn a Rebate or Commission based the number of Clients introduced to the firm who have opened an account and the trading volume of introduced Clients. IBs for BCR may not trade on behalf of the Clients. </P>
+            </div>
+          </div>
+           <!--content j-->
+           <div id="J10" class="flex flex-col my-20 diffDetails">
+            <p class="LatoThinBigBody2">No Terms Found</p>
+          </div>
+          <!--content k-->
+          <div id="K11" class="flex flex-col my-20 diffDetails">
+            <p class="LatoThinBigBody2">No Terms Found</p>
+          </div>
+          <!--content l-->
+          <div id="L12" class="flex flex-col my-20 diffDetails">
+           <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">LEVERAGE</h2>
+             <P class="LatoThinBigBody2 my-5">Leverage involves borrowing a certain amount of the money needed to invest in something. In the case of derivatives, that money is usually borrowed from a broker. Forex trading does offer high leverage in the sense that for an initial margin requirement, a trader can build up - and control - a huge amount of money.</P>
+           </div>
+           <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">LIMIT ORDER</h2>
+             <P class="LatoThinBigBody2 my-5">An order to buy or to sell a position at a specific price. Example –”Buy 1000 Vodafone shares at $1.20”. This would be placed when Vodafone is trading above $1.20. The potential buyer is hoping for a better price than where the market is currently trading. There is obviously the possibility the order will never get filled. Limit orders can also be used in the same fashion for selling above the market.</P>
+           </div>
+           <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">LIQUIDATION</h2>
+             <P class="LatoThinBigBody2 my-5">The closing of an existing position through the execution of an offsetting transaction. </P>
+           </div>
+           <div>
+            <h2 class="LatoglossaryTitle text-yellow-500">LIQUIDITY OR LIQUID</h2>
+            <P class="LatoThinBigBody2 my-5">The amount of business conducted in a given market or stock. Where possible you always want to trade products that have good liquidity chiefly because they are cheaper to trade because of tight bid-ask spreads. </P>
+          </div>
+          <div>
+            <h2 class="LatoglossaryTitle text-yellow-500">LIQUIDITY PROVIDER</h2>
+            <P class="LatoThinBigBody2 my-5">A bank or other financial institution or third party that provides executable two-way quotes in respect of relevant underlying instruments, to which the financial products relate, on a continuous and regular basis.</P>
+          </div>
+          <div>
+            <h2 class="LatoglossaryTitle text-yellow-500">LONG POSITION</h2>
+            <P class="LatoThinBigBody2 my-5">A client is said to be long if he/she has an open buy position.</P>
+          </div>
+          <div>
+            <h2 class="LatoglossaryTitle text-yellow-500">LOW PRICE</h2>
+            <P class="LatoThinBigBody2 my-5">The Low Price of a particular derivative on the trading platform is the lowest Bid price of the day. The lowest Ask price will come from the lowest Bid price of the day plus the Spread.</P>
+            <P class="LatoThinBigBody2 my-5">Example: The Low Price on the trading platform for EURUSD is 1.14011, and the Spread is 17pips. Thus, the lowest Bid price is 1.14011, the lowest Ask price is 1.14028.</P>
+            <P class="LatoThinBigBody2 my-5">The Low Price will be reset on the trading platform at 00:00 GMT each day.</P>
+          </div>
+         </div>
+          <!--content m-->
+          <div id="M13" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">MAINTENANCE MARGIN</h2>
+              <P class="LatoThinBigBody2 my-5">The minimum amount of equity that must be maintained in a trading account. In the context of BCR’s trading accounts, Clients must maintain 50% of Initial Margin in their trading account to avoid a ’Stop Out’.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">MARGIN</h2>
+              <P class="LatoThinBigBody2 my-5">The amount of money needed to deposit with your broker in order to fund a position. With margined products only a percentage of the nominal value has to be lodged in cash, normally between 5 - 20%.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">MARGIN CALL</h2>
+              <P class="LatoThinBigBody2 my-5">The additional margin required to ensure that total margin is sufficient to cover open positions.</P>
+            </div>
+            <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">MARGIN IN USE</h2>
+             <P class="LatoThinBigBody2 my-5">Represents the aggregate amount of margin being used for all open positions at any one time in your base currency.</P>
+           </div>
+           <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">MARK-UP</h2>
+             <P class="LatoThinBigBody2 my-5">The adjustment of a bid/ask spread to reflect fees that the Client may be obligated to pay if they were introduced by a Referral Party to BCR and promised a fee to the Referral Party.</P>
+           </div>
+           <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">MARKET MAKER</h2>
+             <P class="LatoThinBigBody2 my-5">A dealer who regularly quotes both bid and ask prices and is ready to make a two-sided market for any financial product.</P>
+           </div>
+           <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">MARKET ORDER</h2>
+             <P class="LatoThinBigBody2 my-5">An order to buy or sell at the current bid or ask price.</P>
+           </div>
+          </div>
+          <!--content n-->
+          <div id="N14" class="flex flex-col my-20 diffDetails">
+            <p class="LatoThinBigBody2">No Terms Found</p>
+          </div>
+          <!--content o-->
+          <div id="O15" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">OPEN POSITION</h2>
+              <P class="LatoBigBody2 my-5">A long or short position that has not been closed out.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">OPEN POSITION P&L</h2>
+              <P class="LatoThinBigBody2 my-5">The aggregate amount of unrealised profit and loss on all of your open positions at any one time in your base currency.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">OTC</h2>
+              <P class="LatoThinBigBody2 my-5">Over the Counter products are not traded on an exchange, but are an agreement between two parties.</P>
+            </div>
+            <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">OVERNIGHT FINANCING</h2>
+             <P class="LatoThinBigBody2 my-5">A financing adjustment made to your account when an open position is held overnight. This includes positions held overnight on a non-business day, a Saturday or Sunday and any bank or public holiday.</P>
+           </div>
+           <div>
+             <h2 class="LatoglossaryTitle text-yellow-500">OVERNIGHT POSITION</h2>
+             <P class="LatoThinBigBody2 my-5">A trade that remains open until the next business day.</P>
+           </div>
+          
+          </div>
+          <!--content p-->
+          <div id="P16" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">PIPS</h2>
+              <P class="LatoThinBigBody2 my-5">The smallest price change that a given exchange rate can make. Since most major currency pairs are priced to four decimal places, the smallest change is that of the last decimal point - for most pairs this is the equivalent of 1/100th of one percent, or one basis point.</P>
+              <P class="LatoThinBigBody2 my-5">For example, the smallest move the USD/CAD currency pair can make is $0.0001, or one basis point. The smallest move in a currency does not always need to be equal to one basis point, but this is generally the case with most currency pairs.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">PRICE GAP</h2>
+              <P class="LatoThinBigBody2 my-5">A significant price movement of a security or commodity between two trading sessions, such that there is no overlap in the trading ranges for the two days.</P>
+            </div>
+          </div>
+          <!--content q-->
+          <div id="Q17" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">QUOTE CURRENCY</h2>
+              <P class="LatoThinBigBody2 my-5">The second quoted currency in a currency pair, i.e. USD in AUD/USD.</P>
+            </div>
+          </div>
+          <!--content r-->
+          <div id="R18" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">REALISED GAIN/LOSS</h2>
+              <P class="LatoBigBody2 my-5">The amount of money you have made or lost when a position has been closed.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">REBATE</h2>
+              <P class="LatoThinBigBody2 my-5">Compensation paid to a Referral Party who introduces new Clients to BCR. Compensation is based on number of Clients introduced and/or trading volume of introduced Clients. Compensation is negotiated between RAs and BCR and may differ.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">RELEVANT PERSON</h2>
+              <P class="LatoThinBigBody2 my-5">An employee of ours or an employee of an Associated Company.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">RESISTANCE</h2>
+              <P class="LatoThinBigBody2 my-5">The price at which a prior advance was terminated or a future advance is likely to terminate, or where the market expects selling to materialise. For example, if the S&P 500 Mini is trading at 1,950 you may hear pundits report that “resistance is expected at 1,950”.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">ROLLOVER BENEFIT</h2>
+              <P class="LatoThinBigBody2 my-5">If a Client holds a position past BCR’s Settlement time on Forex product, they may receive a Rollover Benefit. The Rollover Rate for Forex/Precious Metals/Commodity derivatives is a varying rate dependent on the currency pair, the applicable rate in the interbank markets according to the duration of the rollover period, the size of the position and the Spread.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">ROLLOVER CHARGE</h2>
+              <P class="LatoThinBigBody2 my-5">If a Client holds a position past BCR’s Settlement time on Forex products, they may have to pay a Rollover Charge. The Rollover Rate for Forex/Precious Metals/Commodity derivatives is a varying rate dependent on the currency pair, the applicable rate in the interbank markets according to the duration of the rollover period, the size of the position and the Spread.</P>
+            </div>
+          </div>
+           <!--content s-->
+           <div id="S18" class="flex flex-col my-20 diffDetails">
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SELL</h2>
+              <P class="LatoThinBigBody2 my-5">Taking a short position in expectation that the market is going to go down.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SETTLEMENT DATE</h2>
+              <P class="LatoThinBigBody2 my-5">The expiry date and time of a future product as set out in the Swap Information. If such date is not a business day, it will be the business day immediately preceding the futures settlement date unless otherwise specified in the Swap Information.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SETTLEMENT PRICE</h2>
+              <P class="LatoThinBigBody2 my-5">The price at which a position is settled on expiry.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SHORT POSITION</h2>
+              <P class="LatoThinBigBody2 my-5">A client is said to be short if he/she has an open sell position in the market.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SLIPPAGE</h2>
+              <P class="LatoThinBigBody2 my-5">Relates to stop losses and is the difference between where the stop loss level is and where the order was actually filled. If the stop loss order is to sell 1000 Vodafone at $1.20 but the fill is actually at $1.19 then the 1 pip difference is referred to as negative slippage. Slippage is normally not a problem in normal markets but in very volatile ones it can be expected.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SPOT MARKET</h2>
+              <P class="LatoThinBigBody2 my-5">A market whereby products are traded at their market price for immediate exchange.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SPOT PRICE</h2>
+              <P class="LatoThinBigBody2 my-5">The current market price. Settlement of spot transactions usually occurs within two business days.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SPOT TRADE</h2>
+              <P class="LatoThinBigBody2 my-5">The purchase or sale of a product for immediate delivery (as opposed to a date in the future). Spot contracts are typically settled electronically.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SPREAD</h2>
+              <P class="LatoThinBigBody2 my-5">The difference between the bid and the ask price of a contract. A client may Sell at the lower price or Buy at the higher price of the quote.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">STATEMENTS</h2>
+              <P class="LatoThinBigBody2 my-5">A written confirmation of our dealings with you including any Transactions that you open and/or close, any Orders that you set and/or edit and any charges that we apply.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">STOP LOSS</h2>
+              <P class="LatoThinBigBody2 my-5">A predetermined price at which a position will be closed to protect against further loss. The use of stop losses is the only inherently reliable way for a trader to manage risk.</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">STOP OUT</h2>
+              <P class="LatoThinBigBody2 my-5">A broker' s demand on an investor using margin to deposit additional money or securities so that the margin account is brought up to the minimum maintenance margin . You would receive a Stop Out from BCR if one or more of your positions you had decreased in value past a certain point . Due to the volatile nature of financial markets, it is inefficient to notify Clients via a traditional “Margin Call” when their equity falls below acceptable maintenance margin levels .</P>
+            </div>
+            <div>
+              <h2 class="LatoglossaryTitle text-yellow-500">SWAP</h2>
+              <P class="LatoThinBigBody2 my-5">While holding a position overnight, your Account is debited or credited using the applicable overnight Tom-Next rate.</P>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+ <!--join us-->
+ <div class="subpageFooterBg">
+  <div class="flex flex-col items-center justify-center max-w-screen-xl py-20 mx-auto text-white">
+      <h1 class="mb-10 text-center text-white text-7xl">Join us as a journey</h1>
+      <p class="mb-10">Sign up in minutes and start doing money right.</p>
+      <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+  </div>
+</div>
+<!--footer-->
+<div class="bg-[#070B0F]">
+<div class="flex flex-col max-w-screen-xl mx-auto">
+<div class="border-b-[1px]">
+<div class="grid grid-cols-2 m-5">
+  <img src="./images/logonew.png" alt="">
+  <div class="flex flex-row text-white justify-self-end">
+    <button class="LatoTextTitle">Ready to get started?</button>
+    <button  class="ml-3 text-white latoRegularTableNav rounded-lg bg-[#FFD400]"><p class="m-3">get start</p> </button>
+  </div>
+</div>
+</div>
+<div>
+<div>
+  <div class="flex flex-col items-center justify-between m-5 text-white md:flex-row">
+    <div class="flex flex-col hidden md:block">
+      <p>Subscribe to our newsletter</p>
+      <div class="flex flex-row mt-10">
+        <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+        <button><img src="./images/Submit.png"></button>
+      </div>
+    </div>
+    <div class="md:basis-[60%] basis-1 gap-x-24  md:gap-x-32  grid grid-cols-3">
+      <div>
+        <h1 class="text-yellow-500">Services</h1>
+        <p class="mt-5">Email Marketing</p>
+        <p  class="mt-5">Campaigns</p>
+        <p  class="mt-5">Branding</p>
+        <p  class="mt-5">Offline</p>
+      </div>
+      <div>
+       <h1 class="text-yellow-500">About</h1> 
+       <p  class="mt-5">Our Story</p>
+       <p  class="mt-5">Benefits</p>
+       <p  class="mt-5">Team</p>
+       <p  class="mt-5">Careers</p>
+      </div>
+      <div>
+        <h1 class="text-yellow-500">Help</h1>
+        <p  class="mt-5">FAQs</p>
+        <p  class="mt-5">Contact Us</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div>
+<div class="max-w-screen-xl mx-auto">
+  <div class="flex flex-col items-center justify-between m-5 md:flex-row">
+    <div class="grid grid-cols-2 text-white gap-x-10 md:gap-x-16">
+      <p>Terms & Conditions</p>
+      <p>privacy Policy</p>
+    </div>
+    <div class="grid grid-cols-3 my-10 gap-x-10 md:my-0">
+      <img src="./images/Path.png" alt="">
+      <img src="./images/twitter.png" alt="">
+      <img src="./images/instagram.png" alt="">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixFooter bg-[#EFEFF0] w-full LatoCaptial">
+<div class="container m-5 md:flex hidden flex-row justify-around items-center ">
+  <div class="flex felx-row items-center">
+    <p>Excellent</p>
+    <img class="mx-5 w-[15%] h-[15%]" src="./images/footerstars.png" alt="">
+    <p>4.9 out of 5 based on 666 reviews</p>
+    <img class="w-[2%] mx-5 h-[2%]" src="./images/onestar.png" alt="">
+    <p>Trustpilot</p>
+  </div>
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoCaptial mx-3 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    <button class="bg-yellow-500 ml-5 rounded-md">
+      <div class="flex mx-3 my-2 flex-row justify-center items-center">
+        <img class="w-[10%] hidden sm:block mr-2" src="./images/blacktalkicon.png" alt="">
+        <p class="LatoCaptial">24/5 Support</p>
+      </div>
+    </button>
+  </div>
+</div>
+<div class="container m-5 md:hidden block ">
+ 
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoThinCardmenu mx-10 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    
+  </div>
+</div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/same.js"></script>
+<!-- <script src='nav.js'></script> -->
+<script>
+    $(document).ready(function () {
+    var navHeight = $("#subNavContainer").offset().top;
+    var navFix = $("#navWrap");
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > navHeight) {
+            navFix.addClass("navFix");
+        }
+        else {
+            navFix.removeClass("navFix");
+        }
+    })
+    $(".showDiffInfo").click(function(){
+      if(!$(this).hasClass('numberActive')){
+        $(this).addClass('numberActive')
+      }
+      $(this).siblings().removeClass("numberActive");
+      var id = $(this).attr('id');
+            id = id.slice(-2);
+            console.log(id)
+          
+          // console.log(id)
+            var showId = $(".DiffInfoContainer").find(".diffDetails").eq((id-1)).attr('id');
+            showId ='#' + showId;
+            console.log(showId)
+            
+            $(showId).show();
+            $(showId).siblings().hide();
+    })
+})
+
+</script>
+</html>

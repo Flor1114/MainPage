@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+    <style>
+    .center{
+        text-align: center;
+        margin-top: 100px;
+    }
+    #state{
+        font-size: 20px;
+        color: black;
+        font-family: "Adobe 黑体 Std R";
+        font-weight: bold;
+    }
+    .btn{
+        width: 60px;
+    }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <input type="checkbox" name="switch">
+        <p id="state"></p><br>
+        <button type="button" class="btn btn-primary" id="on">on</button>
+        <button type="button" class="btn btn-warning" id="off">off</button>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-switch/3.3.4/js/bootstrap-switch.js"></script>
+<script>
+    $("input[name='switch']").bootstrapSwitch({
+        onText: "turn on",
+        offText: "turn off",
+        onSwitchChange: function (event, state) {
+            //监听switch change事件，可以根据状态把相应的业务逻辑代码写在这里
+            if (state == true) {
+                $("#state").html('switch turn no')
+            } else {
+                $("#state").html('switch turn off')
+            }
+        }
+    })
+    //两个按钮点击动态切换bootsrap开关状态
+    $("#on").click(function(e){
+        $("input[name='switch']").bootstrapSwitch("state",true);
+    })
+    $("#off").click(function(e){
+        $("input[name='switch']").bootstrapSwitch("state",false);
+    })
+</script>
+</html>

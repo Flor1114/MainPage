@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gift rewards</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+/* .header{
+  position:"sticky";
+  top:50;
+  background-color:black
+} */
+.header:hover{
+  background:#070B0F;
+  /* transition: all 1s; */
+}
+.header{
+  position: absolute;
+  left: 0;
+ 
+  /* overflow-x: auto; */
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0));
+  transition: all 1s;
+}
+.header > .top {
+height: 30px;
+line-height: 30px;
+
+}
+/* .loginList{
+  margin-left: 70px;
+} */
+/* .header > .top .container .loginList p {
+  float: left; 
+  margin-right:10px;
+} */
+.header > .top .container .typeList div {
+  color: white;
+}
+.navinfo{
+  display: none;
+  /* position: absolute; */
+  /* left: 0px; */
+  width: 100%;
+}
+.navContainer{
+  z-index: 11111;
+  /* padding: 5px 9% 0px 9%; */
+  /* left:0; */
+  /* top:45px; */
+  /* width:100%; */
+  background-color:transparent
+}
+        .try:hover{
+    color: orange;
+        }
+        .videobanner{
+        width: 100%;
+        position: relative;
+        /* background-image: url('./images/rangebg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat; */
+        height: auto;
+        }
+        .subNavitem{
+            margin-right: 20px;
+        }
+        .subpageFooterBg{
+            width: 100%;
+        position: relative;
+        background-image: url('./images/subfootbg.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat:no-repeat;
+
+        }
+        .navFix {
+            position: fixed;
+            top: 73px;
+            height: 60px;
+            padding-top: 10px;
+            z-index: 3;
+            width: 100%;
+            /* transform: all 1s; */
+            background-color: white;
+
+        }
+
+    .videoGetStart{
+  
+  border-radius: 5px;
+  text-align: center;
+  left: 45%;
+  top: 400px;
+  
+  background: linear-gradient(to right,#373838, #7b7c7c, #7b7c7c,transparent, transparent);
+  background-size: 400%;
+  transition: background-position 1s; 
+
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.liActive{
+    color: rgb(255, 170, 0);
+}
+.featureListStyle{
+    list-style: none;
+    list-style-position: inside;
+}
+
+.featureListStyle li:before{
+    content: "\2022";
+    color: #e5a838;
+    font-size:25px;
+    display: inline-block;  
+    transform: translate(-10px,3px);
+    
+}
+.lineContainer {
+    position: relative;
+}  
+.item {
+  width: 1000px;
+}     
+.item::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    left: 0;
+    top: 115px;
+    background-image: linear-gradient(to right, rgb(238, 174, 38) 0%, rgb(238, 174, 38) 50%, transparent 50%);
+    background-size: 30px ;
+    background-repeat: repeat-x;
+    z-index: -1;
+        
+}
+.detailshidden{
+list-style: none;
+max-width: 1000px;
+
+}
+.detailshidden ::after {
+    content: '';
+    position: relative;
+    width: 0.8em; 
+    height: 0.8em;
+    margin: 0 20px 0 0;
+    background: url('./images/blackdownarrow.png') no-repeat;
+    background-size: 100% 100%;
+    transition: transform 0.2s;
+    float: right;
+    margin-top: 0.4em;
+}
+.detailsHidden:not([open]) .detailshidden ::after {
+    margin-top: 0.3em;
+    transform: rotate(3.142rad);
+    transition: all 1s;
+    
+}
+.detailsHidden:not([open]) .detailshidden  {
+   background-color: #f8f1f122;
+   color:#071633;
+   transition: all 1s;
+}
+.detailsHidden .detailshidden  {
+  background-color: #f6f4f1;
+   color:#071633;
+   transition: all 1s;
+}
+.detailsHidden + dl {
+    max-height: 0;
+    transition: max-height .25s;
+    overflow: hidden;
+}
+[open] + dl {
+    max-height: 800px;
+}
+.stepIconContainer div img{ 
+  z-index: 4;
+}
+.sidebarClass {
+		/* text-align: right; */
+		bottom: 0;
+		background-color: rgb(252, 251, 251);
+
+		/* right: 0; */
+		top: 0px;
+		/* background-color: rgba(213, 22, 213, 0.1); */
+		position: fixed;    /* 先给个定位，侧边栏一般是相对于浏览器定位 */
+		right: -300px;    /* 侧边栏有多宽，就-多少，相当于先藏在视窗外边*/
+		width: 300px;
+		/* height: calc(100vh - 2.5rem);  */
+    height: 100vh  ;  /* 减去底部导航栏的高度 */
+		z-index: 1001;    /* 设置一个超大的数字覆盖所有元素 */
+		transition: right 1s;    /* 最关键的一步！利用transition实现过渡效果*/
+	}
+	/* 利用transition：width改变就会启动过渡效果 */
+	.addWidth { 
+		right: 0px;    /*设置为侧边栏宽度的2倍 */
+		background-color: rgb(252, 251, 251);
+    transition: right 1s;
+	}
+  .overlay {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 8;
+		display:none;
+		filter:alpha(opacity=60);
+		background-color: #777;
+		opacity: 0.5;
+		-moz-opacity: 0.5;
+	}
+  .navBox{
+    z-index: 10;
+  }
+  .readNowUnderline{
+    width:110px;
+    border-bottom: 2px solid  #e5a838;
+    transition: all 1s;
+  }
+  .blackarrow{
+    visibility:hidden ;
+    margin-left: 5px;
+    /* transition: all 1s; */
+  }
+  .readMoreBox:hover .blackarrow{
+    display:flex;
+    visibility:visible ;
+    /* transition:all 1s; */
+    /* margin-left: 10px; */
+  }
+  .readMoreBox:hover .readNowUnderline{
+    width: 120px;
+    /* width: 150px; */
+    transition: all 1s;
+  }
+  .featureBg1{
+    background: url('./images/featurepostbg1.png') no-repeat;
+    background-size: cover;
+    height: 400px;
+    
+    /* height: auto;
+    width: 100%; */
+  }
+  .featureBg2{
+    background: url('./images/featurepost2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 5% 0 5%;
+    /* height:800px */
+  }
+  legend {
+    color:#333;
+    padding:5px 10px;
+    /* font-weight:800;  */
+    /*background:white;*/
+} 
+fieldset.test {
+    padding:10px;
+    margin:10px;
+    width:100%;
+    color:#333; 
+    border-radius: 8px;
+    border:#D9D9D9 solid 1px;
+} 
+.fName{
+    border:none;
+    outline:medium
+}
+</style>    
+<body>
+<!--头部菜单开始-->
+<header class="header pt-5">
+  <div class="xl:max-w-screen-xl lg:max-w-screen-lg mx-10 sm:mx-auto max-w-screen-sm md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="container lg:flex hidden max-w-screen-lg xl:max-w-screen-xl mx-auto flex-row justify-between items-center">
+          <div class="latoTextSmall  text-white flex flex-row loginList">
+              <p><a class="hover:text-gray-500 text-white mr-5" href="###">Patner</a></p>
+              <p><a class="hover:text-gray-500 text-white" href="###">PRO</a></p>
+          </div>
+          <div class="flex latoTextSmall  items-center justify-center flex-row text-center text-white typeList ">
+              <div>
+                <a class="hover:text-gray-500 text-white" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">Support</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="hover:text-gray-500 text-white" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="./index.html"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex hidden navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid-cols-2 grid lg:grid hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid-cols-2 grid lg:hidden grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 phoneNav LatoButton text-black " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 navlist lg:block hidden">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5 ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="sidebarClass lg:hidden block">
+        <div class=" flex flex-col">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="m-5 float-right ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col my-10 items-center justify-center">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+    <!--头部菜单结束-->
+    <!--banner-->
+<div class="videobanner">
+    <div class="max-w-screen-xl mx-auto text-black pb-20 pt-52">
+        <div class="mb-10">
+            <ul class="menu menu-horizontal LatoSubtitle">
+                <li class="mr-2">HOME > </li>
+                <li class="mr-2"> ABOUT US > </li>
+                <li> PROMOTIONS </li>
+            </ul>
+        </div>
+        <h1 class="LatoSubPagetitle mb-10">Promotions</h1>
+        <p class="LatoBigBody">We use multiple liquidity providers from Tier 1 Banks and institutions to give you competitive quotes on a wide range of instruments.</p>
+    </div>
+</div>
+    <!--子导航-->
+    <div id="subNavContainer" class="subNavContainer relative pt-8">
+        <div id="navWrap" class="navWrap border-b-[1px] border-t-[1px] h-[50px] mb-5">
+        <ul class=" flex-row flex subNav justify-center LatoMainNavMenuRespond items-center">
+            <li class="subNavitem mt-3 liActive"><a href="">BOUNS</a> </li>
+            <li class="subNavitem mt-3"><a href="#forex">GIFT REWARDS</a></li>
+            <li class="subNavitem mt-3 "><a href="#shares">DEPOSIT REWARDS</a></li>
+            <!-- <li class="subNavitem  mt-3 "><a href="#shares">DISCLOSURE DOCUMENTS</a></li> -->
+        </ul>
+    </div>
+</div>
+<!--participation details-->
+<div>
+    <div class="max-w-screen-lg mx-auto">
+        <img src="./images/rewardsbg.png" alt="">
+        <a class="flex flex-row my-3 items-center" href="https://cfds1.chnthebcr.com/documents/iphone-terms-and-condition">
+            <img class="w-[2%] h-[2%]" src="./images/downloadpdf.png" alt="">
+            <p class="LatoCaptial">下载电子产品回馈条款与条理</p>
+        </a>
+       <h2 class="my-10 LatoTableText">Participation Details</h2>
+       <p class="my-3 latoTextBase">Period :<span class="text-yellow-500">  2023年2月1日 - 2023年2月28日</span></p>
+       <p class="my-3 latoTextBase">所有参加此活动的客户必须在此活动期间内成功开户并存入要求的保证金。</p>
+       <p class="my-3 latoTextBase">通过 EA 或其他程序交易或信用卡存款交易帐户不能参与此次活动。</p>
+       <p class="my-3 latoTextBase">无论客户在 BCR 开设多少数量或类型的账户，每位客户仅参与一次，且每位客户仅能赚取一次，即一个名字只能赚取一次</p>
+       <p class="my-3 latoTextBase">客户必须遵守 BCR 在 图表 1 中设定的活动要求，在 BCR 首次存入活动要求的保证金及在规定时间内完成交易要求并遵守提款规定。</p>
+       <p class="my-3 latoTextBase">已预订的客户入金当日起开始计算交易手数，若在拿到物品之前提取保证金将被算作自动退出该活动以及物品的领取。</p>
+       <p class="my-3 latoTextBase">物品领取时间BCR 将不做任何保证，一切仅以该物品开放购买市场时间为准。</p>
+       <p class="my-3 latoTextBase">客户了解物品的金额以当地官方旗舰店为准,如若实际物品价值高于列出的金额,客户需自行补上差价。</p>
+       <p class="my-3 latoTextBase">在未完成活动要求的交易手数前，提取任何部分的保证金（盈利部分除外），或账户净值在任何时间低于礼品价值金额，则账户内将被扣除礼品价值金额等值的保证金。</p>
+       <p class="my-3 latoTextBase">持仓的时间小于1分钟之内的平仓单将不计入活动要求手数。</p>
+       <p class="my-3 latoTextBase">标准账户选择提前领取礼品则不能同时参加赠金活动。</p>
+       <p class="my-3 latoTextBase">阿尔法账户必須在完成交易要求后方可领取</p>
+       <div>
+        <h1 class="LatoTableText mt-10 mb-5">申请物品</h1>
+        <p class="my-5 latoTextBase">如要申请，客户必需在入金确认后五个工作天内通过其注册的账户邮箱发送物品申请书至 info@thebcr.com，逾期将不获处理。</p>
+        <p class="my-5 latoTextBase">物品可通过邮寄方式直接邮寄客户地址，或可在 BCR 办事处亲自领取。如果活动中提及的特定设备型号已经不再提供，则BCR 将会根据其自行裁定权选择与物品价值同等的替代物品。</p>
+        <p class="my-5 latoTextBase">在 BCR 核实客户完全履行了活动要求之后,物品会根据官方旗舰店实际收货日期的十个工作天之内邮寄或通知客人领取。物品一旦寄出,对于物品未能收到,遭破坏或其他任何损失,BCR 概不承担任何责任。</p>
+        <p class="my-5 latoTextBase">如有理由怀疑客户滥用，或试图滥用活动，或使用特殊软件，或其他任何缺乏诚信的行为，BCR 将会按照其自行裁定权，拒绝，保留或收回客户参加活动的合格性并在客户账户中扣除客户赚取的活动物品市值的同等金额。</p>
+        <p class="my-5 latoTextBase">BCR保留在任何时间修改，改变或终止此活动且无需经客户同意的权利。BCR也保留修改此活动相关的条例且无需另行通知的权利。</p>
+       </div>
+    </div>
+</div>
+<!--participation criteris-->
+<div>
+    <div class="max-w-screen-lg mx-auto">
+       <h2 class="my-10 LatoTableText">Participation Criteria</h2>
+          <div>
+              <div class="flex flex-row justify-between items-center">
+                <div class="flex basis-[15%] flex-col">
+                    <div class="text-center bg-[#FAFAFA]  h-[80px] border-b-[1px] border-r-[1px] border-l-[1px] LatoSubtitle">
+                      <p class="m-5">活动首次保证金要求</p>
+                    </div>
+                    <div class="text-center border-b-[1px] h-[80px] border-r-[1px] border-l-[1px] LatoSubtitle">
+                      <p class="m-8">$3,000</p>
+                    </div>
+                    <div class="text-center border-b-[1px] h-[80px] border-r-[1px] border-l-[1px] LatoSubtitle">
+                      <p class="m-8">$5,000</p>
+                    </div>
+                    <div class="text-center border-b-[1px] h-[80px] border-r-[1px] border-l-[1px] LatoSubtitle">
+                      <p class="m-8">$10,000</p>
+                    </div>
+                    <div class="text-center border-b-[1px] h-[80px] border-r-[1px] border-l-[1px] LatoSubtitle">
+                      <p class="m-8">$20,000</p>
+                    </div>
+                    <div class="text-center border-b-[1px] h-[80px] border-r-[1px] border-l-[1px] LatoSubtitle">
+                      <p class="m-8">$30,000</p>
+                    </div>
+                    <div class="text-center border-b-[1px] h-[80px] border-r-[1px] border-l-[1px] LatoSubtitle">
+                      <p class="m-8">$50,000</p>
+                    </div>
+                </div>
+                <div class="flex flex-col basis-[20%]">
+                  <div class="text-center h-[80px] border-b-[1px] bg-[#FAFAFA] border-r-[1px] LatoSubtitle">
+                    <p class="m-8">奖品</p>
+                  </div>
+                  <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                    <p class="m-8">AirPods Pro 2</p>
+                  </div>
+                  <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                    <p class="m-5">Apple Watch 8 铝金属表壳 GPS 41mm 或 45mm</p>
+                  </div>
+                  <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                    <p class="m-5">iPad Air 64GB Wifi</p>
+                  </div> 
+                  <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                    <p class="m-5">华為 Mate 50 256GB 或 Apple Watch Ultra</p>
+                  </div> 
+                  <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                    <p class="mx-5 my-3">华為 Mate 50 Pro 512GB 或 荣耀 Magic4 至臻版 128GB+512GB</p>
+                  </div> 
+                  <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                    <p class="mx-5 my-3">华為 Mate Xs 2 8GB + 256GB 或 小米 Mix Fold2 128GB+512GB</p>
+                  </div>
+                </div>
+                <div class="flex flex-col basis-[35%]">
+                  <div class=" border-b-[1px] border-r-[1px]">
+                    <div class="items-center bg-[#FAFAFA] w-full flex-col h-[80px] flex LatoSubtitle">
+                      <div class="h-[40px] text-center w-[100%] border-b-[1px]">
+                        <p class="my-3 ">永久拥有物品的交易要求</p>
+
+                      </div>
+                      <div class="grid-cols-2 grid  items-center">
+                        <div class="border-r-[1px] h-[40px]">
+                          <p class="my-2">标准账户</p>
+                        </div>
+                        <div class=" h-[40px]">
+                          <p class="my-2 ml-10">阿尔法账户</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                  <div class="grid grid-cols-2 ">
+                    <div class="flex flex-col">
+                      <div class="text-center  h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                        <p class="m-5">客户必须完成50积分的交易要求</p>
+                      </div>
+                      <div class="text-center  h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                        <p class="m-5">客户必须完成100积分的交易要求</p>
+                      </div>
+                      <div class="text-center  h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                        <p class="m-5">客户必须完成200积分的交易要求</p>
+                      </div>
+                      <div class="text-center  h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                        <p class="m-5">客户必须完成300积分的交易要求</p>
+                      </div>
+                      <div class="text-center  h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                        <p class="m-5">客户必须完成400积分的交易要求</p>
+                      </div>
+                      <div class="text-center  h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                        <p class="m-5">客户必须完成500积分的交易要求</p>
+                      </div>
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                      <p class="m-5">客户必须完成200积分的交易要求</p>
+                    </div>
+                    <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                      <p class="m-5">客户必须完成400积分的交易要求</p>
+                    </div>
+                    <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                      <p class="m-5">客户必须完成800积分的交易要求</p>
+                    </div>
+                    <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                      <p class="m-5">客户必须完成1200积分的交易要求</p>
+                    </div>
+                    <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                      <p class="m-5">客户必须完成1600积分的交易要求</p>
+                    </div>
+                    <div class="text-center h-[80px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                      <p class="m-5">客户必须完成2000积分的交易要求</p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="basis-[15%] flex flex-col">
+                  <div class="text-center border-b-[1px] bg-[#FAFAFA] h-[80px] border-r-[1px]  LatoSubtitle">
+                    <p class="">活动时间</p>
+                  </div>
+                  <div class="text-center h-[480px] border-b-[1px] border-r-[1px] LatoSubtitle">
+                    <p class="mt-[120%]">90 天</p>
+                  </div>
+                </div>
+                <div class="basis-[15%] flex flex-col">
+                  <div class="text-center border-b-[1px] bg-[#FAFAFA] h-[80px] border-r-[1px] LatoSubtitle">
+                    <p class="">提款要求</p>
+                  </div>
+                  <div class="text-center h-[480px]  border-b-[1px]  border-r-[1px] LatoSubtitle">
+                    <p class="mt-[90%]">客户必须满足及交易要求方可提取任何部分的活动保证金（除交易盈利外）否则物品市值的同等金额将会在账户内及时被扣除。</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+        <p class="latoTextBase pt-10 pb-5">积分计算方式:</p>
+        <ul class="list-disc list-inside latoTextBase">
+          <li  >以下差价合约每交易一手平仓单等同于 1 分：贵金属，原油，天然气差价合约。</li>
+          <li>以下差价合约每交易一手平仓单等同于 0.5 分：指数差价合约。</li>
+          <li>以下差价合约每交易一手平仓单等同于 0.25 分: 所有外汇差价合约。</li>
+          <li>以下差价合约将不做计算：所有股票及加密货币差价合约。</li>
+
+        </ul>
+        <p class="LatoCaptial text-[#838CA8] mt-10">* 物品市值及供应量以官方为准</p>
+        <p class="LatoCaptial text-[#838CA8]">*  物品市值按该地区税后计算</p>
+
+       </div>
+        
+    </div>
+</div>
+
+<!--other considerations-->
+<div>
+    <div class="max-w-screen-lg mx-auto">
+        
+        <div class="text-center my-20" >
+            <button  class="bg-yellow-500 hover:bg-black text-white rounded-md mr-10"><p class="mx-5 my-2  LatoCaptial">立即注册</p></button>
+            <button class="bg-[#393D48] hover:bg-black text-white rounded-md"><p class="mx-5 my-2 LatoCaptial">快速入金</p></button>
+        </div>
+        <div class="bg-[#FAFAFA] mb-20">
+            <div class="p-5">
+                <div class="flex flex-row items-center pb-3">
+                    <img class="w-[3%]" src="./images/Error.png" alt="">
+                    <p class="LatoCaptial">风险披露</p>
+                </div>
+                <p class="LatoCaptial">场外交易的杠杆金融产品有重大风险，且有可能导致重大损失。您损失的资金可能超过您的初始存款，因此该金融产品可能并不适合所有投资者。在决定是否参与此奖励活动之前，您应考虑从我们的网站cfds.thebcr.com上获得的《产品指南》，以了解进行场外交易外汇和衍生产品所涉及的风险。 BCR对于您参与奖励活动可能遭受的任何损失，成本，费用或损害不承担任何责任，并且根据法律，这些条款也不排除这些损失，费用，费用或损害
+                    交易差价合约可能并不适合所有人，因此请确保您完全了解其所涉及的风险。 BCR不提供任何关于买入，持有或者处理差价合约的个人建议，推荐或观点。BCR不是一个专业的金融资讯顾问，所有服务仅在执行的基础上提供。本活动中的信息无意于分发或使用会违反当地法律或法规的任何国家或地区的任何人分发或使用。 BCR保留随时修改条款和条件的权利，恕不另行通知。
+                </p class="LatoCaptial">
+            </div>
+        </div>
+    </div>
+</div>
+    <!--join us-->
+    <div class="subpageFooterBg">
+        <div class="py-20 max-w-screen-xl text-white mx-auto flex flex-col justify-center items-center">
+            <h1 class="mb-10 text-white text-7xl text-center">Join us as a journey</h1>
+            <p class="mb-10">Sign up in minutes and start doing money right.</p>
+            <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+        </div>
+    </div>
+
+<!--footer-->
+<div class="bg-[#070B0F]">
+    <div class="flex flex-col max-w-screen-xl mx-auto">
+      <div class="border-b-[1px]">
+        <div class="grid grid-cols-2 m-5">
+          <img src="./images/logonew.png" alt="">
+          <div class="flex flex-row text-white justify-self-end">
+            <button class="text-xl">Ready to get started?</button>
+            <button  class="ml-5 text-white btn btn-warning">get start</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="flex flex-row items-center justify-between m-5 text-white">
+            <div class="flex flex-col ">
+              <p>Subscribe to our newsletter</p>
+              <div class="flex flex-row mt-10">
+                <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+                <button><img src="./images/Submit.png"></button>
+              </div>
+            </div>
+            <div class="basis-[60%]  gap-x-32  grid grid-cols-3">
+              <div>
+                <h1 class="text-yellow-500">Services</h1>
+                <p class="mt-5">Email Marketing</p>
+                <p  class="mt-5">Campaigns</p>
+                <p  class="mt-5">Branding</p>
+                <p  class="mt-5">Offline</p>
+              </div>
+              <div>
+               <h1 class="text-yellow-500">About</h1> 
+               <p  class="mt-5">Our Story</p>
+               <p  class="mt-5">Benefits</p>
+               <p  class="mt-5">Team</p>
+               <p  class="mt-5">Careers</p>
+              </div>
+              <div>
+                <h1 class="text-yellow-500">Help</h1>
+                <p  class="mt-5">FAQs</p>
+                <p  class="mt-5">Contact Us</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="max-w-screen-xl mx-auto">
+          <div class="flex flex-row items-center justify-between m-5">
+            <div class="grid grid-cols-2 text-white gap-x-16">
+              <p>Terms & Conditions</p>
+              <p>privacy Policy</p>
+            </div>
+            <div class="grid grid-cols-3 gap-x-10">
+              <img src="./images/Path.png" alt="">
+              <img src="./images/twitter.png" alt="">
+              <img src="./images/instagram.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/same.js"></script>
+<!-- <script src='nav.js'></script> -->
+<script>
+    $(document).ready(function () {
+    var navHeight = $("#subNavContainer").offset().top;
+    var navFix = $("#navWrap");
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > navHeight) {
+            navFix.addClass("navFix");
+        }
+        else {
+            navFix.removeClass("navFix");
+        }
+    })
+  
+})
+
+</script>
+</html>

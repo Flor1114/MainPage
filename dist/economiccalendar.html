@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Calendar</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    /* 打开和关闭手风琴面板的样式 */
+.accordion {
+  background-color: #FAFAFA;
+  color: #444;
+  cursor: pointer;
+  padding:15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  
+}
+.timeTable{
+  height: 550px;
+  overflow-y: hidden;
+}
+ 
+/* 设置点击和鼠标移到选项上面时（悬停）的样式 */
+ /* .accordion:hover {
+  background-color: #ccc;
+} */
+.active{
+    background-color: #393D48;
+    color: rgb(255, 213, 0);
+}
+/* 为手风琴面板设计样式。 默认隐藏 */
+.panel {
+  /* padding: 0 18px; */
+  /* background-color: white; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/* 设置 +、- 标志 */
+.accordion:after {
+  content: url(./images/tabledown.png);  /* Unicode 字符 + 号 */
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+
+}
+.active:after { 
+  content: url(./images/tableup.png);  /* Unicode 字符 - 号 */
+}
+.try:hover{
+    color: orange;
+}
+.videobanner{
+width: 100%;
+position: relative;
+/* background-image: url('./images/rangebg.png');
+background-size:cover;
+background-position: center;
+background-repeat:no-repeat; */
+height: auto;
+}
+.subNavitem{
+    margin-right: 20px;
+}
+.subpageFooterBg{
+    width: 100%;
+position: relative;
+background-image: url('./images/subfootbg.png');
+background-size:cover;
+background-position: center;
+background-repeat:no-repeat;
+
+}
+.navFix {
+    position: fixed;
+    top: 73px;
+    height: 60px;
+    padding-top: 10px;
+    z-index: 3;
+    width: 100%;
+    /* transform: all 1s; */
+    background-color: white;
+
+}
+
+.videoGetStart{
+
+border-radius: 5px;
+text-align: center;
+left: 45%;
+top: 400px;
+
+background: linear-gradient(to right,#373838, #7b7c7c, #7b7c7c,transparent, transparent);
+background-size: 400%;
+transition: background-position 1s; 
+
+}
+.videoGetStart:hover{
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
+  background-position: 100% 0;
+  transition: background-position 1s;
+}
+.liActive{
+    color: rgb(255, 170, 0);
+}
+#searchText {
+height: 30px;;
+border-radius: 18px;
+transform: translateX(35%);
+background: #EFEFF0;
+border: 1px solid #EFEFF0;
+box-shadow: 0 0 3px #EFEFF0 inset;
+visibility:visible;
+}
+.searchbarBg:hover{
+background-color: rgb(255, 204, 0);
+}
+.searchBarBox #searchbarBg:hover ~#searchText{
+    visibility:hidden
+}
+.scrollHidden{
+  /* margin-right: calc(100% - 100vw); */
+    width: 100%;
+    height: 450px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    /* overflow-y: overlay; */
+}
+.scrollHidden:hover {
+    overflow: overlay;
+}
+
+</style>
+<body>
+    
+<!--头部菜单开始-->
+<header class="header pt-5">
+  <div class="xl:max-w-screen-xl lg:max-w-screen-lg mx-10 sm:mx-auto max-w-screen-sm md:max-w-screen-md ">
+     <!-- 头部的第一行 -->
+    <div class="top">
+      <div class="container lg:flex hidden max-w-screen-lg xl:max-w-screen-xl mx-auto flex-row justify-between items-center">
+          <div class="latoTextSmall  text-white flex flex-row loginList">
+              <p><a class="hover:text-gray-500 text-white mr-5" href="###">Patner</a></p>
+              <p><a class="hover:text-gray-500 text-white" href="###">PRO</a></p>
+          </div>
+          <div class="flex latoTextSmall  items-center justify-center flex-row text-center text-white typeList ">
+              <div>
+                <a class="hover:text-gray-500 text-white" href="###">WebTrader</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[10%] mr-2 h-[10%]" src="./images/demoaccount.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">DemoAccount</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/support.png" alt="">
+                <a class="hover:text-gray-500 text-white" href="###">Support</a>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <img class="w-[15%] mr-2 h-[15%]" src="./images/english.png" alt="">
+                
+                <a class="hover:text-gray-500 text-white" href="###">English</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navBox">
+      <div class="flex flex-row md:translate-y-[-20px] translate-y-[-5px] lg:translate-y-[0px] justify-between items-center navContainer">
+        <div >
+          <h1><a href="./index.html"><img class="sm:w-[100%] w-[60%]" src="images/logonew.png" /></a></h1>
+        </div>
+        <ul class="lg:LatoMainNavMenu LatoMainNavMenuRespond lg:flex hidden navUl menu menu-horizontal">
+          <li id="Mainnav1"><a class="text-white" href="#">Trading</a></li>
+          <li id="Mainnav2"><a class="text-white" href="#">Platform</a></li>
+          <li id="Mainnav3"><a class="text-white" href="#">Resources</a></li>
+          <li id="Mainnav4"><a class="text-white" href="#">Company</a></li>
+          <!-- <li id="Mainnav5"><a class="text-white" href="#">About Us</a></li> -->
+        </ul>
+        <div class="grid-cols-2 grid lg:grid hidden">
+          <button class="text-white try LatoButton">Log in</button>
+          <button class="my-5 border-yellow-500 border-[1px] rounded-md LatoButton text-black bg-yellow-500 hover:border-[1px] hover:text-yellow-500 hover:bg-[transparent]" ><p class="mx-5 my-2">Join Now</p></button>
+        </div> 
+        <div class="grid-cols-2 grid lg:hidden grid">
+          <button class="text-white try LatoButton">Log in</button>
+          <button id="phoneNavSlider" class="my-5 phoneNav LatoButton text-black " ><img src="./images/navbar.png" alt="" class="mx-5 my-2"></button>
+        </div>
+      </div>
+      
+      <div class="z-10 navlist lg:block hidden">
+        <div class="bg-[#070B0F] navinfo">
+            <div class="hiddenNav">
+              <div id="market1" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-3 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5 ">
+                          <p>Trading Accounts</a></p>
+                        </div>
+                        <div class="text-left">
+                          <p>Markets</p>
+                        </div>
+                        <div class="text-center">
+                          <p>Trading Conditions</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./accountOverview.html"> Account Overview </a></p>
+                        <p class="my-2 navTextColor"><a href="./desktops.html">Deposit & Withdrawal</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./Subpage.html">Range of Mrkets</a></p>
+                        <p class="my-2 navTextColor"><a href="./forex.html">Forex</a></p>
+                        <p class="my-2 navTextColor"><a href="./shares.html">Shares</a></p>
+                        <p class="my-2 navTextColor"><a href="./metals.html">Metals</a></p>
+                        <p class="my-2 navTextColor"><a href="./commodites.html">Commodities</a></p>
+                        <p class="my-2 navTextColor"><a href="./crypto.html">Cryptos</a></p>
+                        <p class="my-2 navTextColor"><a href="./indices.html">Indices</a></p>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./spreads&commission&swap.html">Spreads,Commission & Swap</a></p>
+                        <p class="my-2 navTextColor"><a href="./marginLeverage.html">Margin & Leverage</a></p>
+                        <p class="my-2 navTextColor"><a href="./tradinghours.html"> Trading Hours</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="platform2" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>MetaTrader</p>
+                        </div>
+                        <div class="text-left">
+                          <p>MAM</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./mt4.html"> MT4</a></p>
+                        <p class="my-2 navTextColor "><a href="./mt5.html">MT5</a></p>
+                        <p class="my-2 navTextColor"><a href="https://cfds.thebcr.com/en/platform/webtrader">WebTrader</a></p>
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./mam.html"> MAM</a></p>
+                        
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div id="Tools3" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>Trading Tool</p>
+                        </div>
+                        <div class="text-left">
+                          <p>Education</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./economiccalendar.html">Economic Calendar </a></p>
+                        <p class="my-2 navTextColor"><a href="./glossary.html">Clossary</a></p>
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./marketlive.html">Market Live</a></p>
+                        <p class="my-2 navTextColor"><a href="./marketAnalysis.html">Market Analysis</a></p>
+                        <p class="my-2 navTextColor "><a href="./videoTutorial.html">Video Tutorials</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="Analysis4" class="flex navInfoDetails flex-row m-5">
+                <div class="flex flex-col mt-5 basis-1/4">
+                  <h1 class="LatoThinTitle text-white ">Dmmy text 124 dummy text dummy</h1>
+                    <div class="flex flex-col my-10">
+                      <button class="btn my-5 LatoButton bg-yellow-500 hover:border-yellow-500 hover:bg-[transparent]" >join Now</button>
+                      <button class="hover:bg-[transparent] btn">Log in</button>
+                    </div>
+                  </div>
+                  <div class="ml-36  flex flex-col text-white">
+                    <div class="mb-5 border-b-2">
+                      <div class="grid grid-cols-2 LatoButton gap-x-40 text-left ml-5 mr-20 ">
+                        <div class="text-left mb-5">
+                          <p>About Us</p>
+                        </div>
+                        <div class="text-left">
+                          <p>More</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 LatoThinSmall  gap-x-40 ml-5 mr-20 ">
+                      <div class="flex flex-col  text-left ">
+                        <p class="my-2 navTextColor"><a href="./bcr profile.html">BCR Profile</a></p>
+                        <p class="my-2 navTextColor"><a href="./whybcr.html">Why BCR</a></p>
+                        <p class="my-2 navTextColor"><a href="./contactUs.html">Contact Us</a></p>
+                        <p class="my-2 navTextColor"><a href="./disclosuredocument.html">Disclosure Documents</a></p>
+
+                        <!-- <p class="my-2">WebTrader</p> -->
+                        <!-- <p class="my-2">商品</p>
+                        <p class="my-2">指数</p>
+                        <p class="my-2">加密货币</p>
+                        <p class="my-2">股票</p> -->
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <p class="my-2 navTextColor"><a href="./promotions.html">Promotions</a></p>
+                        <p class="my-2 navTextColor"><a href="./careers.html">Careers</a></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--leftnav-->
+      <div id="sideBar" class="sidebarClass lg:hidden block">
+        <div class=" flex flex-col">
+          <div class="border-b-[1px]">
+            <div id="clickImg" class="m-5 float-right ">
+              <img src="./images/close.png" alt="">
+            </div>
+          </div>
+          <div>
+            <details  class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+            <details class="detailsHidden">
+              <summary class="mb-3 text-gray-800 detailshidden ">
+                <p class="py-2 ml-10 text-xl ">Pricing</p>
+                <img/>
+              </summary>
+            </details>
+            <dl>
+              <dd class="text-center"><a href="">Spreads,commissions and swaps</a></dd>
+            </dl>
+            
+          </div>
+          <div class="flex flex-col my-10 items-center justify-center">
+            <button class="btn my-5 w-[80%] LatoButton bg-yellow-500 hover:border-yellow-500 hover:text-black hover:bg-[transparent]" >join Now</button>
+            <button class=" w-[80%] hover:bg-[transparent] btn  hover:text-black">Log in</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="overlay" class="overlay"></div>
+    <!--头部菜单结束-->
+    <!--banner-->
+    <div class="w-full">
+        <div class="container pb-20 pt-52">
+            <div class="mb-10">
+                <ul class="menu menu-horizontal LatoSubtitle">
+                    <li class="mr-2">HOME > </li>
+                    <li class="mr-2"> TRADING TOOLS > </li>
+                    <li>ECONOMIC CALENDAR</li>
+                </ul>
+            </div>
+            <h1 class="LatoSubPageThinTile mb-10">Economic Calendar</h1>
+            <p class="LatoThinSubHeadingContent">We use multiple liquidity providers from Tier 1 Banks and institutions to give you competitive quotes on a wide range of instruments.</p>
+        </div>
+    </div>
+    <!--子导航-->
+    <div id="subNavContainer" class="subNavContainer relative pt-8">
+        <div id="navWrap" class="navWrap border-b-[1px] border-t-[1px] h-[50px] mb-5">
+        <ul class=" flex-row flex subNav justify-center LatoSmall items-center">
+            <li class="subNavitem mt-3 liActive"><a href="">ECONOMIC CALENDAR</a> </li>
+            <li class="subNavitem mt-3 "><a href="#forex">GLOSSARY</a></li>
+            <!-- <li class="subNavitem mt-3 "><a href="#shares">TRADING HOURS</a></li> -->
+        </ul>
+    </div>
+    </div>
+   
+  <!--MAIN-->
+  <div class="pt-10 pb-20 w-full">
+    <!-- <a name="forex" style="position: relative;top: -200px;"></a> -->
+        <div class="container flex flex-col">
+            <!-- <img class="w-[8%]" src="./images/subforex.png" alt=""> -->
+            <div class="flex flex-col">
+                <h1 class="LatoThinSubHeading">Trading Hours</h1>
+                <p class="LatoThinBigBody2 my-5 w-[100%] md:w-[50%]">Our calendar keeps BCR clients informed and allow them to monitor market activities in 38 different countries, by day, week, month or selecting a time range.</p>
+            </div>
+        </div>
+        <div class="border-[1px] timeTable  rounded-xl max-w-screen-xl mx-auto mt-10">
+            <div class="flex flex-col">
+                <div class="flex m-3 flex-row justify-between items-center">
+                    <p class="lg:basis-[20%] basis-[40%] LatoSubtitle">2023 Feb 02 / Thursday</p>
+                    <div class="xl:flex hidden basis-[94%] flex-row items-center justify-around">
+                        <div class="flex flex-row searchBarBox items-center basis-[65%] ">
+                            <input type="text" id="searchText" class="search w-[150%] text-left" placeholder="search for event" >
+                            <button id="searchbarBg" class="searchbarBg z-10 rounded-[100%] translate-x-[570%]">
+                                <img class="mx-auto w-[50%] my-2" src="./images/searcheconomicicon.png" alt="">
+                            </button>
+                        </div>
+                        <button class="searchbarBg translate-x-[350%] basis-[3%] rounded-[100%]"><img class="w-[50%] my-2 mx-auto" src="./images/filericon.png" alt=""></button>
+                        <button class="searchbarBg translate-x-[70%] basis-[3%] rounded-[100%]"><img  class="w-[50%] my-2 mx-auto" src="./images/earthicon.png" alt=""></button>
+                    </div>
+                    <div class="xl:hidden flex basis-[94%] flex-row items-center justify-around">
+                      <div class="flex flex-row searchBarBox items-center sm:basis-[60%] basis-[70%] md:basis-[45%] ">
+                          <input type="text" id="searchText" class="search w-[150%] text-left" placeholder="search for event" >
+                          <button class="bg-yellow-500 rounded-md text-black sm:block hidden translate-x-[100%] md:translate-x-[220%] lg:translate-x-[300%]">
+                             <p class="m-2">search</p>
+                          </button>
+                          <button id="searchbarBg" class="sm:hidden block translate-x-[70%] sm:translate-x-[100%]">
+                            <img class="mx-auto w-[50%] my-2" src="./images/searcheconomicicon.png" alt="">
+                        </button>
+                      </div>
+                     
+                  </div>
+                </div>
+                <div class="bg-[#E5E5E7]/[0.3]">
+                    <div class="flex m-5 LatoSmall justify-between items-center flex-row">
+                        <div class="basis-[12%] text-center">
+                            <p >TIME</p>
+                        </div>
+                        <div class="basis-[12%] text-center">
+                            <P>COUNTRY</P>
+                        </div>
+                        <div class="basis-[30%] text-center">
+                            <P>EVENT</P>
+                        </div>
+                        <div class="basis-[12%] text-center">
+                            <P>IMPORTANT</P>
+                        </div>
+                        <div class="basis-[12%] text-center">
+                            <P>ACTUAL</P>
+                        </div>
+                        <div class="basis-[12%] text-center">
+                            <P>FORECAST</P>
+                        </div>
+                        <div class="basis-[12%] text-center">
+                            <P>PRIOR</P>
+                        </div>
+                    </div>
+                </div>
+              <div class="scrollHidden ">
+                    <div class="flex flex-col ">
+                        <div class="flex m-5 LatoSmall  justify-between items-start flex-row">
+                            <div class="basis-[12%] text-center">
+                                <p>18:00</p>
+                            </div>
+                            <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                                <div class="flex flex-row timeFlagContainer basis-[12%] justify-center text-center items-center">
+                                    <img class="w-[18%] flagImg" src="./images/franceflag.png" alt="">
+                                    <p>France</p>
+                                </div>
+                                <div class="flex flex-row mt-5 timeFlagContainer basis-[12%]  justify-center text-center items-center">
+                                    <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                    <p >Australis</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                                <p>Investment Lending for Homes</p>
+                                <p class="mt-5">Investment Lending for Homes</p>
+
+                            </div>
+                            <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                                
+                                <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                                <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+
+                            </div>
+                            <div class="flex flex-col justify-center basis-[12%] text-center">
+                                <p>-4.2%</p>
+                                
+                                <p class="mt-5">-4.2%</p>
+
+                            </div>
+                            <div class="flex flex-col basis-[12%] text-center">
+                                <p>-2.75%</p>
+                                
+                                <p class="mt-5">-2.75%</p>
+
+                            </div>
+                            <div class="flex flex-col basis-[12%] text-center">
+                                <p>-3.8%</p>
+                              
+                                <p class="mt-5">-3.8%</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                            <div class="basis-[12%] text-center">
+                                <p>18:00</p>
+                            </div>
+                            <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                                
+                                <div class="flex flex-row timeFlagContainer basis-[12%] justify-center text-center items-center">
+                                    <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                    <p >Australis</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                                <p>Investment Lending for Homes</p>
+                                <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                            </div>
+                            <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                                
+                                <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                                <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                            </div>
+                            <div class="flex flex-col justify-center basis-[12%] text-center">
+                                <p>-4.2%</p>
+                                
+                                <!-- <p class="mt-5">-4.2%</p> -->
+
+                            </div>
+                            <div class="flex flex-col basis-[12%] text-center">
+                                <p>-2.75%</p>
+                                
+                                <!-- <p class="mt-5">-2.75%</p> -->
+
+                            </div>
+                            <div class="flex flex-col basis-[12%] text-center">
+                                <p>-3.8%</p>
+                              
+                                <!-- <p class="mt-5">-3.8%</p> -->
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="flex flex-col">
+                          <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                              <div class="basis-[12%] text-center">
+                                  <p>18:00</p>
+                              </div>
+                              <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                                  
+                                  <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                      <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                      <p >Australis</p>
+                                  </div>
+                              </div>
+                              
+                              <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                                  <p>Investment Lending for Homes</p>
+                                  <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                              </div>
+                              <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                                  
+                                  <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                                  <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                              </div>
+                              <div class="flex flex-col justify-center basis-[12%] text-center">
+                                  <p>-4.2%</p>
+                                  
+                                  <!-- <p class="mt-5">-4.2%</p> -->
+
+                              </div>
+                              <div class="flex flex-col basis-[12%] text-center">
+                                  <p>-2.75%</p>
+                                  
+                                  <!-- <p class="mt-5">-2.75%</p> -->
+
+                              </div>
+                              <div class="flex flex-col basis-[12%] text-center">
+                                  <p>-3.8%</p>
+                                
+                                  <!-- <p class="mt-5">-3.8%</p> -->
+                              </div>
+                          </div>
+                      
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                            <div class="basis-[12%] text-center">
+                                <p>18:00</p>
+                            </div>
+                            <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                                
+                                <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                    <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                    <p >Australis</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                                <p>Investment Lending for Homes</p>
+                                <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                            </div>
+                            <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                                
+                                <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                                <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                            </div>
+                            <div class="flex flex-col justify-center basis-[12%] text-center">
+                                <p>-4.2%</p>
+                                
+                                <!-- <p class="mt-5">-4.2%</p> -->
+
+                            </div>
+                            <div class="flex flex-col basis-[12%] text-center">
+                                <p>-2.75%</p>
+                                
+                                <!-- <p class="mt-5">-2.75%</p> -->
+
+                            </div>
+                            <div class="flex flex-col basis-[12%] text-center">
+                                <p>-3.8%</p>
+                              
+                                <!-- <p class="mt-5">-3.8%</p> -->
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                          <div class="basis-[12%] text-center">
+                              <p>18:00</p>
+                          </div>
+                          <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                              
+                              <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                  <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                  <p >Australis</p>
+                              </div>
+                          </div>
+                          
+                          <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                              <p>Investment Lending for Homes</p>
+                              <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                          </div>
+                          <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                              
+                              <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                              <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                          </div>
+                          <div class="flex flex-col justify-center basis-[12%] text-center">
+                              <p>-4.2%</p>
+                              
+                              <!-- <p class="mt-5">-4.2%</p> -->
+
+                          </div>
+                          <div class="flex flex-col basis-[12%] text-center">
+                              <p>-2.75%</p>
+                              
+                              <!-- <p class="mt-5">-2.75%</p> -->
+
+                          </div>
+                          <div class="flex flex-col basis-[12%] text-center">
+                              <p>-3.8%</p>
+                            
+                              <!-- <p class="mt-5">-3.8%</p> -->
+                          </div>
+                      </div>
+                  
+                    </div>
+                  <div class="flex flex-col">
+                    <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                        <div class="basis-[12%] text-center">
+                            <p>18:00</p>
+                        </div>
+                        <div class="felx flex-col basis-[12%] justify-center text-center items-center">
+                            
+                            <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                <p >Australis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                            <p>Investment Lending for Homes</p>
+                            <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                        </div>
+                        <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                            
+                            <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                            <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                        </div>
+                        <div class="flex flex-col justify-center basis-[12%] text-center">
+                            <p>-4.2%</p>
+                            
+                            <!-- <p class="mt-5">-4.2%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-2.75%</p>
+                            
+                            <!-- <p class="mt-5">-2.75%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-3.8%</p>
+                          
+                            <!-- <p class="mt-5">-3.8%</p> -->
+                        </div>
+                    </div>
+                
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                        <div class="basis-[12%] text-center">
+                            <p>18:00</p>
+                        </div>
+                        <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                            
+                            <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                <p >Australis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                            <p>Investment Lending for Homes</p>
+                            <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                        </div>
+                        <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                            
+                            <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                            <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                        </div>
+                        <div class="flex flex-col justify-center basis-[12%] text-center">
+                            <p>-4.2%</p>
+                            
+                            <!-- <p class="mt-5">-4.2%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-2.75%</p>
+                            
+                            <!-- <p class="mt-5">-2.75%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-3.8%</p>
+                          
+                            <!-- <p class="mt-5">-3.8%</p> -->
+                        </div>
+                    </div>
+                
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                        <div class="basis-[12%] text-center">
+                            <p>18:00</p>
+                        </div>
+                        <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                            
+                            <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                <p >Australis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                            <p>Investment Lending for Homes</p>
+                            <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                        </div>
+                        <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                            
+                            <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                            <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                        </div>
+                        <div class="flex flex-col justify-center basis-[12%] text-center">
+                            <p>-4.2%</p>
+                            
+                            <!-- <p class="mt-5">-4.2%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-2.75%</p>
+                            
+                            <!-- <p class="mt-5">-2.75%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-3.8%</p>
+                          
+                            <!-- <p class="mt-5">-3.8%</p> -->
+                        </div>
+                    </div>
+                
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                        <div class="basis-[12%] text-center">
+                            <p>18:00</p>
+                        </div>
+                        <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                            
+                            <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                <p >Australis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                            <p>Investment Lending for Homes</p>
+                            <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                        </div>
+                        <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                            
+                            <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                            <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                        </div>
+                        <div class="flex flex-col justify-center basis-[12%] text-center">
+                            <p>-4.2%</p>
+                            
+                            <!-- <p class="mt-5">-4.2%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-2.75%</p>
+                            
+                            <!-- <p class="mt-5">-2.75%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-3.8%</p>
+                          
+                            <!-- <p class="mt-5">-3.8%</p> -->
+                        </div>
+                    </div>
+                
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="flex m-5 LatoSmall justify-between items-start flex-row">
+                        <div class="basis-[12%] text-center">
+                            <p>18:00</p>
+                        </div>
+                        <div class="felx flex-col  basis-[12%] justify-center text-center items-center">
+                            
+                            <div class="flex flex-row basis-[12%] timeFlagContainer justify-center text-center items-center">
+                                <img class="w-[18%]" src="./images/australiaflag.png" alt="">
+                                <p >Australis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col LatoSmall basis-[30%] text-center">
+                            <p>Investment Lending for Homes</p>
+                            <!-- <p class="mt-5">Investment Lending for Homes</p> -->
+
+                        </div>
+                        <div class=" flex flex-col w-1/2 text-center basis-[12%] text-center  text-white">
+                            
+                            <p class="bg-[#B8BDCD] rounded-md py-1 w-1/2 mx-auto">MEDIUM</p>
+                            <!-- <p class="bg-[#B8BDCD] mt-5 rounded-md py-1 w-1/2 mx-auto">MEDIUM</p> -->
+
+                        </div>
+                        <div class="flex flex-col justify-center basis-[12%] text-center">
+                            <p>-4.2%</p>
+                            
+                            <!-- <p class="mt-5">-4.2%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-2.75%</p>
+                            
+                            <!-- <p class="mt-5">-2.75%</p> -->
+
+                        </div>
+                        <div class="flex flex-col basis-[12%] text-center">
+                            <p>-3.8%</p>
+                          
+                            <!-- <p class="mt-5">-3.8%</p> -->
+                        </div>
+                    </div>
+                
+                  </div>
+              </div>
+                
+            </div>
+    </div>
+</div>
+ <!--join us-->
+ <div class="subpageFooterBg">
+  <div class="flex flex-col items-center justify-center max-w-screen-xl py-20 mx-auto text-white">
+      <h1 class="mb-10 text-center text-white text-7xl">Join us as a journey</h1>
+      <p class="mb-10">Sign up in minutes and start doing money right.</p>
+      <button class="text-[#E7E7E7] w-[150px] h-[50px] videoGetStart mt-[8px] text-2xl font-normal">Get Started</button>
+  </div>
+</div>
+<!--footer-->
+<div class="bg-[#070B0F]">
+<div class="flex flex-col max-w-screen-xl mx-auto">
+<div class="border-b-[1px]">
+<div class="grid grid-cols-2 m-5">
+  <img src="./images/logonew.png" alt="">
+  <div class="flex flex-row text-white justify-self-end">
+    <button class="LatoTextTitle">Ready to get started?</button>
+    <button  class="ml-3 text-white latoRegularTableNav rounded-lg bg-[#FFD400]"><p class="m-3">get start</p> </button>
+  </div>
+</div>
+</div>
+<div>
+<div>
+  <div class="flex flex-col items-center justify-between m-5 text-white md:flex-row">
+    <div class="flex flex-col hidden md:block">
+      <p>Subscribe to our newsletter</p>
+      <div class="flex flex-row mt-10">
+        <input class="bg-[#070B0F]  border-b-[1px]" placeholder="Email address" type="text" name="" id="">
+        <button><img src="./images/Submit.png"></button>
+      </div>
+    </div>
+    <div class="md:basis-[60%] basis-1 gap-x-24  md:gap-x-32  grid grid-cols-3">
+      <div>
+        <h1 class="text-yellow-500">Services</h1>
+        <p class="mt-5">Email Marketing</p>
+        <p  class="mt-5">Campaigns</p>
+        <p  class="mt-5">Branding</p>
+        <p  class="mt-5">Offline</p>
+      </div>
+      <div>
+       <h1 class="text-yellow-500">About</h1> 
+       <p  class="mt-5">Our Story</p>
+       <p  class="mt-5">Benefits</p>
+       <p  class="mt-5">Team</p>
+       <p  class="mt-5">Careers</p>
+      </div>
+      <div>
+        <h1 class="text-yellow-500">Help</h1>
+        <p  class="mt-5">FAQs</p>
+        <p  class="mt-5">Contact Us</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div>
+<div class="max-w-screen-xl mx-auto">
+  <div class="flex flex-col items-center justify-between m-5 md:flex-row">
+    <div class="grid grid-cols-2 text-white gap-x-10 md:gap-x-16">
+      <p>Terms & Conditions</p>
+      <p>privacy Policy</p>
+    </div>
+    <div class="grid grid-cols-3 my-10 gap-x-10 md:my-0">
+      <img src="./images/Path.png" alt="">
+      <img src="./images/twitter.png" alt="">
+      <img src="./images/instagram.png" alt="">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixFooter bg-[#EFEFF0] w-full LatoCaptial">
+<div class="container m-5 md:flex hidden flex-row justify-around items-center ">
+  <div class="flex felx-row items-center">
+    <p>Excellent</p>
+    <img class="mx-5 w-[15%] h-[15%]" src="./images/footerstars.png" alt="">
+    <p>4.9 out of 5 based on 666 reviews</p>
+    <img class="w-[2%] mx-5 h-[2%]" src="./images/onestar.png" alt="">
+    <p>Trustpilot</p>
+  </div>
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoCaptial mx-3 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    <button class="bg-yellow-500 ml-5 rounded-md">
+      <div class="flex mx-3 my-2 flex-row justify-center items-center">
+        <img class="w-[10%] hidden sm:block mr-2" src="./images/blacktalkicon.png" alt="">
+        <p class="LatoCaptial">24/5 Support</p>
+      </div>
+    </button>
+  </div>
+</div>
+<div class="container m-5 md:hidden block ">
+ 
+  <div class="flex flex-row  justify-center items-center">
+    <button class="bg-yellow-500 rounded-md">
+      <p class=" LatoThinCardmenu mx-10 my-2">OPEN AN ACOCUNT</p>
+    </button>
+    
+  </div>
+</div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.sticky.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/same.js"></script>
+<!-- <script src='nav.js'></script> -->
+<script>
+    $(document).ready(function () {
+    var navHeight = $("#subNavContainer").offset().top;
+    var navFix = $("#navWrap");
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > navHeight) {
+            navFix.addClass("navFix");
+        }
+        else {
+            navFix.removeClass("navFix");
+        }
+    })
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+})
+
+</script>
+</html>
